@@ -1,0 +1,3012 @@
+_version: 2
+
+"app":
+  "agent":
+    "backend_missing":
+      "en": "This chat is bound to %{backend}. Install that Agent in Settings → Coding agents."
+      "zh-CN": "此聊天固定使用 %{backend}，请在设置 → 编码搭档中安装该 Agent。"
+    "builder":
+      "en": "Builder"
+      "zh-CN": "构建方"
+    "builder_readonly":
+      "en": "Builder conversation · read-only (controlled by rebuild orchestration)"
+      "zh-CN": "构建方会话 · 只读（由复刻编排驱动）"
+    "cancel":
+      "en": "Cancel"
+      "zh-CN": "取消"
+    "chat":
+      "en": "Chat"
+      "zh-CN": "聊天"
+    "closed_hint":
+      "en": "The Agent process is not running. Sending a message will resume this conversation."
+      "zh-CN": "Agent 进程未运行；发送消息时会恢复这个会话。"
+    "cmd_builtin":
+      "en": "Built-in"
+      "zh-CN": "内置"
+    "cmd_compact":
+      "en": "Compact context manually · optional instructions"
+      "zh-CN": "手动压缩上下文 · 可选指令"
+    "cmd_model":
+      "en": "Change model and effort · for example, /model opus high"
+      "zh-CN": "切换模型和力度 · 例如 /model opus high"
+    "cmd_name":
+      "en": "Rename this conversation · title required"
+      "zh-CN": "重命名此会话 · 需要填写标题"
+    "copy_trace":
+      "en": "Copy failure diagnostic ID"
+      "zh-CN": "复制失败诊断 ID"
+    "derived":
+      "en": "Derived"
+      "zh-CN": "已推导"
+    "effort_high":
+      "en": "High"
+      "zh-CN": "高"
+    "effort_high_hint":
+      "en": "Deep reasoning"
+      "zh-CN": "深度推理"
+    "effort_low":
+      "en": "Low"
+      "zh-CN": "低"
+    "effort_low_hint":
+      "en": "Light reasoning"
+      "zh-CN": "轻量推理"
+    "effort_max":
+      "en": "Maximum"
+      "zh-CN": "最高"
+    "effort_max_hint":
+      "en": "Maximum reasoning"
+      "zh-CN": "最高推理"
+    "effort_medium":
+      "en": "Medium"
+      "zh-CN": "中"
+    "effort_medium_hint":
+      "en": "Balanced reasoning"
+      "zh-CN": "均衡推理"
+    "effort_minimal":
+      "en": "Minimal"
+      "zh-CN": "最简"
+    "effort_minimal_hint":
+      "en": "Minimal reasoning"
+      "zh-CN": "最简推理"
+    "effort_off":
+      "en": "Off"
+      "zh-CN": "关闭"
+    "effort_off_hint":
+      "en": "No reasoning"
+      "zh-CN": "无推理"
+    "effort_unsupported":
+      "en": "This model does not support effort “%{effort}”"
+      "zh-CN": "这个模型不支持力度“%{effort}”"
+    "effort_xhigh":
+      "en": "Extra high"
+      "zh-CN": "超高"
+    "effort_xhigh_hint":
+      "en": "Extra-deep reasoning"
+      "zh-CN": "超深度推理"
+    "evidence":
+      "en": "Evidence"
+      "zh-CN": "证据"
+    "image":
+      "en": "Image"
+      "zh-CN": "图片"
+    "inferred":
+      "en": "Inferred"
+      "zh-CN": "推测"
+    "invalid_effort":
+      "en": "Unrecognized reasoning effort"
+      "zh-CN": "无法识别的推理强度"
+    "invalid_model_effort":
+      "en": "The model does not support the requested reasoning effort"
+      "zh-CN": "模型不支持指定推理强度"
+    "missing_locator":
+      "en": "The Agent did not return a native session location"
+      "zh-CN": "Agent 没有返回原生会话位置"
+    "model_context":
+      "en": "%{route} · %{tokens} context"
+      "zh-CN": "%{route} · %{tokens} 上下文"
+    "model_many":
+      "en": "Multiple models match: %{candidates}. Be more specific"
+      "zh-CN": "匹配到多个模型：%{candidates}，请写得更具体"
+    "model_none":
+      "en": "No models match “%{query}”"
+      "zh-CN": "没有匹配“%{query}”的模型"
+    "model_unavailable":
+      "en": "The model is no longer available. Refresh and select it again"
+      "zh-CN": "模型已不可用，请刷新后重选"
+    "model_unknown":
+      "en": "The current model is not in the available list; effort cannot be changed separately"
+      "zh-CN": "当前模型不在可选列表中，无法只改力度"
+    "model_usage":
+      "en": "Usage: /model <model> [effort], for example, /model opus high"
+      "zh-CN": "用法：/model <模型名> [力度]，例如 /model opus high"
+    "name_empty":
+      "en": "Enter a title after /name"
+      "zh-CN": "请在 /name 后填写标题"
+    "new_chat":
+      "en": "New chat"
+      "zh-CN": "新建聊天"
+    "no":
+      "en": "No"
+      "zh-CN": "否"
+    "no_chats":
+      "en": "This project has no chats yet. Create one using the button above."
+      "zh-CN": "这个项目还没有聊天。点击右上角新建。"
+    "no_default":
+      "en": "Select a default Agent in Settings → Coding agents, or select an Agent in project settings."
+      "zh-CN": "请在设置 → 编码搭档中选择默认 Agent，或在项目设置中选择 Agent。"
+    "no_workspace":
+      "en": "Select a project on the left first."
+      "zh-CN": "先在左侧选择一个项目。"
+    "none_installed":
+      "en": "No Agent is installed. Install one in Settings → Coding agents."
+      "zh-CN": "尚未安装 Agent。请在设置 → 编码搭档中安装。"
+    "observed":
+      "en": "Observed"
+      "zh-CN": "已观察"
+    "open_evidence":
+      "en": "Open in evidence panel"
+      "zh-CN": "在证据面板中打开"
+    "other":
+      "en": "Other (enter your answer)"
+      "zh-CN": "其他（自行填写）"
+    "permission":
+      "en": "Tool execution request"
+      "zh-CN": "请求运行工具"
+    "phase_closed":
+      "en": "Not running"
+      "zh-CN": "未运行"
+    "phase_idle":
+      "en": "Idle"
+      "zh-CN": "空闲"
+    "phase_running":
+      "en": "Running"
+      "zh-CN": "运行中"
+    "phase_waiting":
+      "en": "Awaiting answer"
+      "zh-CN": "等待回答"
+    "placeholder":
+      "en": "Enter a message; Enter to send, Shift+Enter for a new line"
+      "zh-CN": "输入消息；Enter 发送，Shift+Enter 换行"
+    "question":
+      "en": "Agent question"
+      "zh-CN": "Agent 提问"
+    "send":
+      "en": "Send"
+      "zh-CN": "发送"
+    "starting":
+      "en": "Starting Agent…"
+      "zh-CN": "正在启动 Agent…"
+    "stop":
+      "en": "Stop"
+      "zh-CN": "停止"
+    "streaming":
+      "en": "Generating… ▍"
+      "zh-CN": "正在生成… ▍"
+    "submit":
+      "en": "Submit"
+      "zh-CN": "提交"
+    "thinking":
+      "en": "Thinking"
+      "zh-CN": "思考"
+    "tool_input":
+      "en": "Input"
+      "zh-CN": "输入"
+    "tool_output":
+      "en": "Output"
+      "zh-CN": "输出"
+    "truncated":
+      "en": "Earlier messages are not displayed here. The Agent still retains the complete history."
+      "zh-CN": "较早的消息未在此显示（Agent 仍保留完整历史）。"
+    "unknown":
+      "en": "Unknown"
+      "zh-CN": "未知"
+    "usage_catalog":
+      "en": "Model catalog"
+      "zh-CN": "模型目录"
+    "usage_counters":
+      "en": "\nInput (including cache): %{input}\nOutput: %{output}\nCache read (subset of input): %{cache_read}\nCache write (subset of input): %{cache_write}\nReasoning (subset of output): %{reasoning}\nContext: %{source}"
+      "zh-CN": "\n输入（含缓存）：%{input}\n输出：%{output}\n缓存读取（输入子集）：%{cache_read}\n缓存写入（输入子集）：%{cache_write}\n推理（输出子集）：%{reasoning}\n上下文：%{source}"
+    "usage_detail":
+      "en": "Current context: %{used} / %{window} tokens\nWindow source: %{source}\nCumulative tokens: %{total}\nCost is shown only when reported by the engine; catalog reference prices are not applied."
+      "zh-CN": "当前上下文：%{used} / %{window} tokens\n窗口来源：%{source}\n累计 tokens：%{total}\n费用仅显示引擎报告，不套用目录参考价。"
+    "usage_engine":
+      "en": "Engine"
+      "zh-CN": "引擎"
+    "usage_estimate":
+      "en": "Engine estimate"
+      "zh-CN": "引擎估算"
+    "usage_reported":
+      "en": "Engine report (unreported values remain unknown)"
+      "zh-CN": "引擎报告（未报告的值保持未知）"
+    "usage_unavailable":
+      "en": "\nNo usage report is available from this engine yet."
+      "zh-CN": "\n此引擎尚无可用用量报告。"
+    "yes":
+      "en": "Yes"
+      "zh-CN": "是"
+  "errors":
+    "FILE_PICKER_FAILED":
+      "en": "Could not open file picker."
+      "zh-CN": "无法打开文件选择器"
+    "LOG_INIT_FAILED":
+      "en": "Logging initialization failed; check data directory permissions."
+      "zh-CN": "日志初始化失败，请检查数据目录权限"
+    "STARTUP_ARGUMENTS_INVALID":
+      "en": "Invalid startup arguments; check --data-dir <directory>."
+      "zh-CN": "启动参数无效，请检查 --data-dir <目录>"
+    "STARTUP_FAILED":
+      "en": "Application service initialization failed."
+      "zh-CN": "应用服务初始化失败"
+  "home":
+    "analysis_mode":
+      "en": "Analysis mode"
+      "zh-CN": "分析方式"
+    "automatic_stack":
+      "en": "Automatic"
+      "zh-CN": "自动选择"
+    "target_kind":
+      "en": "Target type"
+      "zh-CN": "目标类型"
+    "application":
+      "en": "Application"
+      "zh-CN": "应用"
+    "assets_off":
+      "en": "No generated assets"
+      "zh-CN": "不生成素材"
+    "assets_on":
+      "en": "Generate assets"
+      "zh-CN": "生成素材"
+    "budget":
+      "en": "Asset budget (USD)"
+      "zh-CN": "素材预算（美元）"
+    "builder":
+      "en": "Builder"
+      "zh-CN": "构建方"
+    "model":
+      "en": "Model"
+      "zh-CN": "模型"
+    "cancel":
+      "en": "Cancel"
+      "zh-CN": "取消"
+    "change":
+      "en": "Change…"
+      "zh-CN": "更改…"
+    "choose":
+      "en": "Choose…"
+      "zh-CN": "选择…"
+    "choose_existing":
+      "en": "Choose how to handle existing files, or cancel the folder selection."
+      "zh-CN": "请选择如何处理已有文件，或取消该文件夹。"
+    "clean_hint":
+      "en": "Observe public behavior and appearance without inspecting the implementation."
+      "zh-CN": "观察公开行为和外观，不读取目标实现。"
+    "clean_room":
+      "en": "Clean room"
+      "zh-CN": "净室"
+    "clear_references":
+      "en": "Remove reference images"
+      "zh-CN": "移除参考图片"
+    "copy_name":
+      "en": "%{name} copy"
+      "zh-CN": "%{name} 副本"
+    "deep":
+      "en": "Deep"
+      "zh-CN": "深度"
+    "deep_hint":
+      "en": "Inspect target files and implementation details."
+      "zh-CN": "深入分析目标文件及实现细节。"
+    "default_folder":
+      "en": "Default projects directory"
+      "zh-CN": "默认项目目录"
+    "delete":
+      "en": "Delete"
+      "zh-CN": "删除"
+    "delete_confirm":
+      "en": "Delete “%{name}”? Only generated content is removed. This cannot be undone."
+      "zh-CN": "删除“%{name}”？仅删除生成的内容，此操作无法撤销。"
+    "duplicate":
+      "en": "Duplicate"
+      "zh-CN": "复制"
+    "edit":
+      "en": "Work on mine"
+      "zh-CN": "改我的项目"
+    "effort_high":
+      "en": "High"
+      "zh-CN": "高"
+    "effort_low":
+      "en": "Low"
+      "zh-CN": "低"
+    "effort_max":
+      "en": "Maximum"
+      "zh-CN": "最高"
+    "effort_medium":
+      "en": "Medium"
+      "zh-CN": "中"
+    "effort_minimal":
+      "en": "Minimal"
+      "zh-CN": "最简"
+    "effort_off":
+      "en": "Off"
+      "zh-CN": "关闭"
+    "effort_xhigh":
+      "en": "Extra high"
+      "zh-CN": "超高"
+    "existing_edit":
+      "en": "Edit existing files"
+      "zh-CN": "编辑现有文件"
+    "existing_files":
+      "en": "This folder contains files. Choose how to continue:"
+      "zh-CN": "所选文件夹已有文件，请选择："
+    "existing_start":
+      "en": "Start from these files"
+      "zh-CN": "以此为起点"
+    "folder_failed":
+      "en": "Could not read the selected folder"
+      "zh-CN": "无法读取所选文件夹"
+    "folder_required":
+      "en": "Choose your existing project folder."
+      "zh-CN": "请选择已有项目文件夹。"
+    "follow_default":
+      "en": "Follow default (%{name})"
+      "zh-CN": "跟随默认（%{name}）"
+    "game":
+      "en": "Game"
+      "zh-CN": "游戏"
+    "game_stack":
+      "en": "Build with"
+      "zh-CN": "用什么做"
+    "inspect":
+      "en": "Look inside"
+      "zh-CN": "只看里面"
+    "install":
+      "en": "Install"
+      "zh-CN": "去安装"
+    "invalid_budget":
+      "en": "The budget must be a finite, nonnegative number."
+      "zh-CN": "预算必须是非负有限数字。"
+    "make":
+      "en": "Make my own"
+      "zh-CN": "做我自己的版本"
+    "name":
+      "en": "Project name"
+      "zh-CN": "项目名称"
+    "name_required":
+      "en": "Enter a project name."
+      "zh-CN": "请输入项目名称。"
+    "no_target":
+      "en": "No target"
+      "zh-CN": "无目标"
+    "open":
+      "en": "Open"
+      "zh-CN": "打开"
+    "open_folder":
+      "en": "Open folder"
+      "zh-CN": "打开文件夹"
+    "picker_failed":
+      "en": "Could not open the file picker"
+      "zh-CN": "无法打开文件选择器"
+    "projects":
+      "en": "My projects"
+      "zh-CN": "我的项目"
+    "rebuild_unavailable":
+      "en": "No rebuild service is available. You can still use Look inside."
+      "zh-CN": "当前没有可用的复刻服务；你仍可使用“只看里面”。"
+    "reference_cleanup_failed":
+      "en": "References were saved, but temporary copies could not be removed"
+      "zh-CN": "参考图片已保存，但无法清理临时副本"
+    "reference_count":
+      "en": "Paste images as references (%{count} attached)."
+      "zh-CN": "可粘贴图片作为参考（已附加 %{count} 张）。"
+    "reference_failed":
+      "en": "Could not save reference images"
+      "zh-CN": "无法保存参考图片"
+    "refresh":
+      "en": "Refresh"
+      "zh-CN": "刷新"
+    "rename":
+      "en": "Rename"
+      "zh-CN": "重命名"
+    "request":
+      "en": "Describe what you want"
+      "zh-CN": "描述你的要求"
+    "request_required":
+      "en": "Describe what you want."
+      "zh-CN": "请描述你的要求。"
+    "save":
+      "en": "Save"
+      "zh-CN": "保存"
+    "save_folder":
+      "en": "Save location"
+      "zh-CN": "保存位置"
+    "source_folder":
+      "en": "Existing project folder"
+      "zh-CN": "已有项目文件夹"
+    "stack_unavailable":
+      "en": "Missing game engines open their setup guide when selected."
+      "zh-CN": "选择尚未就绪的游戏引擎，可前往设置完成安装与配置。"
+    "start":
+      "en": "Start"
+      "zh-CN": "开始"
+    "starting":
+      "en": "Creating…"
+      "zh-CN": "正在创建…"
+    "status_building":
+      "en": "Building"
+      "zh-CN": "构建中"
+    "status_checking":
+      "en": "Checking"
+      "zh-CN": "检查中"
+    "status_inspecting":
+      "en": "Inspecting"
+      "zh-CN": "分析中"
+    "status_needs_you":
+      "en": "Needs you"
+      "zh-CN": "需要你"
+    "status_new":
+      "en": "Ready"
+      "zh-CN": "就绪"
+    "status_ready":
+      "en": "Ready"
+      "zh-CN": "就绪"
+    "status_stopped":
+      "en": "Stopped"
+      "zh-CN": "已停止"
+    "target":
+      "en": "Target URL or file"
+      "zh-CN": "目标地址或文件"
+    "target_required":
+      "en": "Choose a file or enter a target URL."
+      "zh-CN": "请选择文件或填写目标地址。"
+    "title":
+      "en": "Start creating"
+      "zh-CN": "开始创造"
+    "updated_minutes":
+      "en": "Updated %{count} minutes ago"
+      "zh-CN": "%{count} 分钟前更新"
+    "website":
+      "en": "Website"
+      "zh-CN": "网站"
+  "onboarding":
+    "add_provider":
+      "en": "Configure a provider in Model Services…"
+      "zh-CN": "去模型服务配置…"
+    "agents":
+      "en": "Choose a coding agent"
+      "zh-CN": "选择编码搭档"
+    "agents_hint":
+      "en": "No coding agent is installed. Choose pi, OMP, or DSH and install one; you do not need all three."
+      "zh-CN": "尚未安装编码搭档。请选择 pi、OMP 或 DSH 并安装一个，无需全部安装。"
+    "agents_ready":
+      "en": "A coding agent is already installed. Choose the default for new chats; no additional installation is needed. Other agents can be installed later in Settings."
+      "zh-CN": "已有编码搭档，请选择新聊天的默认搭档，无需安装其他 Agent。之后可在设置中安装或管理其他搭档。"
+    "analysis":
+      "en": "Analysis engines"
+      "zh-CN": "分析引擎"
+    "analysis_hint":
+      "en": "Optionally install analysis tools such as Ghidra, or configure them later in Analysis settings."
+      "zh-CN": "可选安装 Ghidra 等分析工具；也可以稍后在分析设置中配置。"
+    "back":
+      "en": "Back"
+      "zh-CN": "上一步"
+    "configure_analysis":
+      "en": "Configure or install analysis engines…"
+      "zh-CN": "配置或安装分析引擎…"
+    "finish":
+      "en": "Go to Home"
+      "zh-CN": "进入首页"
+    "installed":
+      "en": "Installed"
+      "zh-CN": "已安装"
+    "installing":
+      "en": "Installing %{agent} in the background. The first install may take several minutes. You can continue or skip this step."
+      "zh-CN": "正在后台安装 %{agent}，首次安装可能需要几分钟。你可以继续或跳过这一步。"
+    "install_selected_hint":
+      "en": "Install the selected agent to use it. You can skip installation and configure it later in Settings; the saved default is unchanged."
+      "zh-CN": "需安装后才能使用所选搭档。也可以跳过，稍后在设置中配置；已保存的默认项不变。"
+    "models":
+      "en": "Configure models"
+      "zh-CN": "配置模型"
+    "models_hint":
+      "en": "No available default model is selected. Configure a provider in Model Services, then select a default model in Models."
+      "zh-CN": "尚未选择可用的默认模型。请先到模型服务配置服务商，再到模型页选择默认模型。"
+    "models_ready":
+      "en": "A default model is already selected. No additional model setup is needed."
+      "zh-CN": "已选择默认模型，无需重复配置。"
+    "select_model":
+      "en": "Select a default model…"
+      "zh-CN": "选择默认模型…"
+    "next":
+      "en": "Continue"
+      "zh-CN": "继续"
+    "not_installed":
+      "en": "Not installed"
+      "zh-CN": "未安装"
+    "ready":
+      "en": "You're ready"
+      "zh-CN": "准备好了"
+    "ready_hint":
+      "en": "Choose a door on Home or open an existing project. Settings are always available."
+      "zh-CN": "从首页选择一扇门，或打开已有项目。设置始终可用。"
+    "skip":
+      "en": "Skip this step"
+      "zh-CN": "跳过这一步"
+    "step":
+      "en": "Step %{current} of 5"
+      "zh-CN": "第 %{current} 步，共 5 步"
+    "welcome":
+      "en": "Welcome to autocraft"
+      "zh-CN": "欢迎使用 autocraft"
+    "welcome_hint":
+      "en": "Analyze evidence, understand a target, and create your own version. Every step can be skipped and changed later in Settings."
+      "zh-CN": "从目标的证据出发，分析、理解并创造自己的版本。每一步都可跳过，稍后在设置中修改。"
+  "palette":
+    "allow_run":
+      "en": "Allow once and run"
+      "zh-CN": "允许一次并执行"
+    "application":
+      "en": "Application"
+      "zh-CN": "应用命令"
+    "array_hint":
+      "en": "Comma-separated values or a JSON array."
+      "zh-CN": "输入逗号分隔的值或 JSON 数组。"
+    "back":
+      "en": "Back"
+      "zh-CN": "返回"
+    "cancel":
+      "en": "Cancel execution"
+      "zh-CN": "取消执行"
+    "consent":
+      "en": "This action requires consent. Review its declared effects and allow it once."
+      "zh-CN": "此操作需要许可。请查看工具声明的影响，并允许一次。"
+    "export":
+      "en": "Export investigation report…"
+      "zh-CN": "导出调查报告…"
+    "home":
+      "en": "Home"
+      "zh-CN": "首页"
+    "invalid_field":
+      "en": "Invalid value for %{field}."
+      "zh-CN": "%{field} 的值无效。"
+    "missing_engine":
+      "en": "Missing engine: %{engine}"
+      "zh-CN": "缺少引擎：%{engine}"
+    "needs_deep":
+      "en": "Requires Deep mode"
+      "zh-CN": "需要深度模式"
+    "needs_target":
+      "en": "Requires a target"
+      "zh-CN": "需要目标"
+    "open_file":
+      "en": "Open file…"
+      "zh-CN": "打开文件…"
+    "open_folder":
+      "en": "Open folder…"
+      "zh-CN": "打开文件夹…"
+    "os_unavailable":
+      "en": "Unavailable on this OS"
+      "zh-CN": "不支持当前系统"
+    "picker_failed":
+      "en": "The report destination picker could not be opened."
+      "zh-CN": "无法打开报告保存位置选择器。"
+    "project":
+      "en": "Project view"
+      "zh-CN": "项目视图"
+    "report_unavailable":
+      "en": "The report tool is not available in this project."
+      "zh-CN": "此项目当前无法使用报告工具。"
+    "required_field":
+      "en": "%{field} is required."
+      "zh-CN": "%{field} 为必填项。"
+    "run":
+      "en": "Run tool"
+      "zh-CN": "执行工具"
+    "search":
+      "en": "Search commands and analysis tools…"
+      "zh-CN": "搜索命令与分析工具…"
+    "settings":
+      "en": "Settings"
+      "zh-CN": "设置"
+    "title":
+      "en": "Command palette"
+      "zh-CN": "命令面板"
+    "toggle_mode":
+      "en": "Switch analysis mode…"
+      "zh-CN": "切换分析模式…"
+    "workbench":
+      "en": "Reverse-engineering workbench"
+      "zh-CN": "逆向工作台"
+  "project":
+    "activity":
+      "en": "Activity"
+      "zh-CN": "活动记录"
+    "agent":
+      "en": "Builder conversation (read-only)"
+      "zh-CN": "构建方对话（只读）"
+    "allow":
+      "en": "Allow"
+      "zh-CN": "允许"
+    "allow_once":
+      "en": "Allow once"
+      "zh-CN": "允许一次"
+    "always_allow":
+      "en": "Always allow for this project"
+      "zh-CN": "本项目总是允许"
+    "answer_text":
+      "en": "Write an answer"
+      "zh-CN": "输入回答"
+    "answered":
+      "en": "Answered"
+      "zh-CN": "已回答"
+    "approval_commands":
+      "en": "Commands"
+      "zh-CN": "命令执行"
+    "approval_delete_outside":
+      "en": "Delete outside project"
+      "zh-CN": "删除项目外文件"
+    "approval_other_tools":
+      "en": "Other tools"
+      "zh-CN": "其他工具"
+    "approval_outside_files":
+      "en": "Files outside project"
+      "zh-CN": "项目外文件"
+    "approval_publish":
+      "en": "Publishing"
+      "zh-CN": "发布"
+    "approval_system":
+      "en": "System changes"
+      "zh-CN": "系统修改"
+    "approval_web":
+      "en": "Web access"
+      "zh-CN": "网络访问"
+    "approvals":
+      "en": "Approval policy"
+      "zh-CN": "审批策略"
+    "ask":
+      "en": "Ask"
+      "zh-CN": "询问"
+    "ask_me":
+      "en": "Ask me"
+      "zh-CN": "询问我"
+    "assets":
+      "en": "Assets"
+      "zh-CN": "素材"
+    "attach":
+      "en": "Attach pictures"
+      "zh-CN": "附图"
+    "budget":
+      "en": "Asset budget (USD)"
+      "zh-CN": "素材预算（美元）"
+    "budget_invalid":
+      "en": "Enter a finite nonnegative budget"
+      "zh-CN": "请输入非负有限预算"
+    "build":
+      "en": "Build"
+      "zh-CN": "构建"
+    "builder":
+      "en": "Builder and model"
+      "zh-CN": "构建方与模型"
+    "cancel":
+      "en": "Cancel"
+      "zh-CN": "取消"
+    "check":
+      "en": "Check"
+      "zh-CN": "检查"
+    "checks":
+      "en": "Latest checks"
+      "zh-CN": "最新检查"
+    "clean_room":
+      "en": "Clean room"
+      "zh-CN": "净室"
+    "insert_command":
+      "en": "Insert command"
+      "zh-CN": "插入命令"
+    "command_help":
+      "en": "/btw <question> · /stop · /continue · /done · /approvals <web|commands|outside_files|publish|delete_outside|system|other_tools> <allow|ask|refuse|default>"
+      "zh-CN": "/btw <问题> · /stop · /continue · /done · /approvals <web|commands|outside_files|publish|delete_outside|system|other_tools> <allow|ask|refuse|default>"
+    "continue":
+      "en": "Continue"
+      "zh-CN": "继续"
+    "decide":
+      "en": "Decide yourself"
+      "zh-CN": "自己决定"
+    "deep":
+      "en": "Deep analysis"
+      "zh-CN": "深度分析"
+    "default":
+      "en": "Default"
+      "zh-CN": "默认"
+    "delete":
+      "en": "Delete project"
+      "zh-CN": "删除项目"
+    "done":
+      "en": "Done"
+      "zh-CN": "完成"
+    "duplicate":
+      "en": "Duplicate"
+      "zh-CN": "复制"
+    "effective":
+      "en": "Effective default"
+      "zh-CN": "当前默认"
+    "failed":
+      "en": "Failed"
+      "zh-CN": "未通过"
+    "follow_default":
+      "en": "Follow default model"
+      "zh-CN": "跟随默认模型"
+    "just_ask":
+      "en": "Just ask"
+      "zh-CN": "只是问问"
+    "logs":
+      "en": "View logs"
+      "zh-CN": "查看日志"
+    "message_required":
+      "en": "Write a message first"
+      "zh-CN": "请先输入内容"
+    "modify":
+      "en": "Modify"
+      "zh-CN": "修改"
+    "more":
+      "en": "Load more"
+      "zh-CN": "加载更多"
+    "next_run":
+      "en": "Builder, model and effort changes apply on the next run"
+      "zh-CN": "构建方、模型和思考强度修改在下次运行生效"
+    "off":
+      "en": "Off"
+      "zh-CN": "关闭"
+    "on":
+      "en": "On"
+      "zh-CN": "开启"
+    "open_app":
+      "en": "Open app folder"
+      "zh-CN": "打开 app 文件夹"
+    "open_folder":
+      "en": "Open project folder"
+      "zh-CN": "打开项目文件夹"
+    "passed":
+      "en": "Passed"
+      "zh-CN": "通过"
+    "paused":
+      "en": "Paused"
+      "zh-CN": "已暂停"
+    "picker_failed":
+      "en": "Could not select pictures"
+      "zh-CN": "无法选择图片"
+    "plan":
+      "en": "Plan"
+      "zh-CN": "计划"
+    "preview":
+      "en": "Preview website"
+      "zh-CN": "预览网站"
+    "questions":
+      "en": "Questions"
+      "zh-CN": "提问方式"
+    "ready":
+      "en": "Ready"
+      "zh-CN": "就绪"
+    "refuse":
+      "en": "Refuse"
+      "zh-CN": "拒绝"
+    "remove":
+      "en": "Remove"
+      "zh-CN": "移除"
+    "rename":
+      "en": "Rename"
+      "zh-CN": "重命名"
+    "run":
+      "en": "Run app"
+      "zh-CN": "运行应用"
+    "save":
+      "en": "Save"
+      "zh-CN": "保存"
+    "self_check":
+      "en": "Check now"
+      "zh-CN": "立即检查"
+    "send":
+      "en": "Send"
+      "zh-CN": "发送"
+    "similarity":
+      "en": "Similarity"
+      "zh-CN": "相似度"
+    "source_analysis":
+      "en": "Source: analysis tool"
+      "zh-CN": "来源：分析工具"
+    "source_builder":
+      "en": "Source: builder"
+      "zh-CN": "来源：构建方"
+    "spent":
+      "en": "Assets spent: $%{amount}"
+      "zh-CN": "素材已花费：$%{amount}"
+    "stop":
+      "en": "Stop"
+      "zh-CN": "停止"
+    "study":
+      "en": "Research"
+      "zh-CN": "研究"
+    "target":
+      "en": "Target"
+      "zh-CN": "目标"
+    "title":
+      "en": "Project view"
+      "zh-CN": "项目视图"
+    "tools":
+      "en": "Used %{count} tools"
+      "zh-CN": "用了 %{count} 个工具"
+    "unknowns":
+      "en": "Not compared"
+      "zh-CN": "未比较的项"
+    "usage":
+      "en": "%{input} input / %{output} output tokens · $%{amount}"
+      "zh-CN": "%{input} 输入 / %{output} 输出 token · $%{amount}"
+    "user":
+      "en": "You"
+      "zh-CN": "你"
+    "withdraw":
+      "en": "Withdraw"
+      "zh-CN": "撤回"
+  "settings":
+    "analysis":
+      "ask_before_running":
+        "en": "Ask before running"
+        "zh-CN": "执行前询问"
+      "auto_mode":
+        "en": "Auto mode"
+        "zh-CN": "Auto 模式"
+      "build":
+        "en": "Build and comparison"
+        "zh-CN": "构建与对比"
+      "build_description":
+        "en": "Similarity is 0–100%. Enter 1–4 comma-separated widths, each 320–3840. Picture threshold is optional; rounds and extra pages may be zero."
+        "zh-CN": "相似度使用 0–100%；宽度用逗号分隔，1–4 项、每项 320–3840。图片门槛可留空，轮数和额外页数可为 0。"
+      "cancel_install":
+        "en": "Cancel installation"
+        "zh-CN": "取消安装"
+      "compiler_spec":
+        "en": "Ghidra compiler specification"
+        "zh-CN": "Ghidra 编译器规范"
+      "deep_mode":
+        "en": "Deep mode for new projects"
+        "zh-CN": "新项目默认使用深度模式"
+      "defaults":
+        "en": "Defaults"
+        "zh-CN": "默认行为"
+      "defaults_description":
+        "en": "Mode applies to new projects; other settings also update loaded analysis engines."
+        "zh-CN": "模式用于新项目；其他设置也会更新已加载的分析引擎。"
+      "engines":
+        "en": "External engines"
+        "zh-CN": "外部引擎"
+      "ghidra_dir":
+        "en": "Ghidra installation directory"
+        "zh-CN": "Ghidra 安装目录"
+      "good_enough":
+        "en": "Good-enough similarity (%)"
+        "zh-CN": "足够好的相似度（%）"
+      "install_consent":
+        "en": "Clicking Install authorizes downloading and installing that engine; Ghidra includes its Java. Save path changes before installing."
+        "zh-CN": "点击安装即同意下载并安装所选引擎；Ghidra 包含所需 Java。先保存路径修改再安装。"
+      "install_engine":
+        "en": "Install %{engine}"
+        "zh-CN": "安装 %{engine}"
+      "installed":
+        "en": "Installation completed."
+        "zh-CN": "安装已完成。"
+      "invalid":
+        "en": "Check numeric ranges, comma-separated widths, and Ghidra memory."
+        "zh-CN": "请检查数字范围、逗号分隔的宽度及 Ghidra 内存设置。"
+      "java_home":
+        "en": "Ghidra Java home"
+        "zh-CN": "Ghidra Java 目录"
+      "language_id":
+        "en": "Ghidra language ID"
+        "zh-CN": "Ghidra 语言 ID"
+      "max_pages":
+        "en": "Maximum additional pages"
+        "zh-CN": "最多额外页数"
+      "max_rounds":
+        "en": "Maximum refinement rounds"
+        "zh-CN": "最多优化轮数"
+      "memory_gb":
+        "en": "Ghidra memory (4–31 GB)"
+        "zh-CN": "Ghidra 内存（4–31 GB）"
+      "optional_overrides":
+        "en": "Leave blank for detection or managed installs. Tool overrides are executable paths."
+        "zh-CN": "留空使用自动检测或托管安装。工具填写可执行文件路径。"
+      "parallel":
+        "en": "Parallel builds"
+        "zh-CN": "并行构建数"
+      "picture_good_enough":
+        "en": "Picture similarity threshold (%)"
+        "zh-CN": "图片相似度门槛（%）"
+      "questions":
+        "en": "Default question policy"
+        "zh-CN": "默认提问方式"
+      "questions_ask":
+        "en": "Ask me"
+        "zh-CN": "询问我"
+      "questions_decide":
+        "en": "Decide independently"
+        "zh-CN": "自己决定"
+      "questions_default":
+        "en": "Default"
+        "zh-CN": "默认"
+      "reload":
+        "en": "Reload"
+        "zh-CN": "重新加载"
+      "runtime_study":
+        "en": "Runtime study"
+        "zh-CN": "运行时研究"
+      "save":
+        "en": "Save engine and build settings"
+        "zh-CN": "保存引擎与构建设置"
+      "startup_timeout":
+        "en": "Ghidra startup timeout (seconds)"
+        "zh-CN": "Ghidra 启动超时（秒）"
+      "store_dir":
+        "en": "Managed engine storage directory"
+        "zh-CN": "引擎存储目录"
+      "title":
+        "en": "Analysis engines"
+        "zh-CN": "分析引擎"
+      "web_widths":
+        "en": "Website comparison widths"
+        "zh-CN": "网页对比宽度"
+      "game_engines":
+        "en": "Game builders"
+        "zh-CN": "游戏构建引擎"
+      "game_engines_description":
+        "en": "Detected using the same inventory as the runtime. Nothing is downloaded automatically."
+        "zh-CN": "与运行时使用同一套检测；不会自动下载。"
+      "engine_ready":
+        "en": "Ready"
+        "zh-CN": "就绪"
+      "engine_missing":
+        "en": "Not installed"
+        "zh-CN": "未安装"
+      "engine_cpp_missing":
+        "en": "C++ tools missing"
+        "zh-CN": "缺少 C++ 工具"
+      "engine_install":
+        "en": "Install"
+        "zh-CN": "安装"
+      "engine_refresh":
+        "en": "Refresh"
+        "zh-CN": "刷新"
+      "refresh_engines":
+        "en": "Refresh engine inventory"
+        "zh-CN": "重新检测引擎"
+      "engine_open_guide":
+        "en": "Open install guide"
+        "zh-CN": "打开安装指南"
+      "engine_selected":
+        "en": "Selected from Home"
+        "zh-CN": "首页所选引擎"
+    "appearance":
+      "add_fallback":
+        "en": "Add fallback font"
+        "zh-CN": "添加备用字体"
+      "advanced":
+        "en": "Advanced"
+        "zh-CN": "高级"
+      "advanced_summary":
+        "en": "Fallback fonts"
+        "zh-CN": "备用字体"
+      "bundled":
+        "dark":
+          "en": "Dark"
+          "zh-CN": "深色"
+        "high-contrast-dark":
+          "en": "High Contrast Dark"
+          "zh-CN": "高对比度深色"
+        "high-contrast-light":
+          "en": "High Contrast Light"
+          "zh-CN": "高对比度浅色"
+        "light":
+          "en": "Light"
+          "zh-CN": "浅色"
+        "minimal-dark":
+          "en": "Minimal Dark"
+          "zh-CN": "极简深色"
+        "minimal-light":
+          "en": "Minimal Light"
+          "zh-CN": "极简浅色"
+      "change_failed":
+        "en": "Unable to change theme"
+        "zh-CN": "无法更改主题"
+      "code_description":
+        "en": "Editors, diffs, code blocks, and terminals."
+        "zh-CN": "编辑器、diff、代码块和终端。"
+      "code_fallbacks":
+        "en": "Code fallback fonts"
+        "zh-CN": "代码备用字体"
+      "code_fallbacks_description":
+        "en": "For symbols missing from the code font, such as terminal prompt icons."
+        "zh-CN": "用于代码字体没有的符号，例如终端提示符图标。"
+      "code_title":
+        "en": "Code"
+        "zh-CN": "代码"
+      "contrast":
+        "en": "Contrast"
+        "zh-CN": "对比度"
+      "contrast_default":
+        "en": "Default"
+        "zh-CN": "默认"
+      "contrast_high":
+        "en": "High"
+        "zh-CN": "高"
+      "copy_path":
+        "en": "Copy path"
+        "zh-CN": "复制路径"
+      "current_on_device":
+        "en": "Current on this device"
+        "zh-CN": "本设备当前值"
+      "custom_fonts_added":
+        "en": "Added %{families}."
+        "zh-CN": "已添加 %{families}。"
+      "custom_fonts_choose":
+        "en": "Choose files…"
+        "zh-CN": "选择文件…"
+      "custom_fonts_description":
+        "en": "Fonts in this folder are available in autocraft without installing them."
+        "zh-CN": "这个文件夹里的字体不用安装就能在 autocraft 中使用。"
+      "custom_fonts_folder":
+        "en": "Fonts folder"
+        "zh-CN": "字体文件夹"
+      "custom_fonts_hint":
+        "en": ".ttf or .otf. Files with the same name replace existing files."
+        "zh-CN": ".ttf 或 .otf。同名文件会替换旧文件。"
+      "custom_fonts_in_use":
+        "en": "In use"
+        "zh-CN": "使用中"
+      "custom_fonts_remove_hint":
+        "en": "To remove a font, delete its file from this folder. Loaded fonts remain available until restart."
+        "zh-CN": "要移除字体，删除这个文件夹里的文件；已加载的字体在重启前仍可使用。"
+      "custom_fonts_title":
+        "en": "Custom fonts"
+        "zh-CN": "自定义字体"
+      "custom_themes_folder":
+        "en": "Themes folder"
+        "zh-CN": "主题文件夹"
+      "custom_themes_steps":
+        "en": "Copy the bundled dark.theme.json, give it a new id and label, edit its colors, and save it with a filename ending in .theme.json (for example, ocean.theme.json) in the folder below. Your theme will appear in the list immediately after saving."
+        "zh-CN": "复制内置的 dark.theme.json，改一个新的 id 和 label，修改颜色，然后以 .theme.json 结尾的文件名（例如 ocean.theme.json）保存到下面的文件夹。保存后，你的主题会立即出现在上面的列表里。"
+      "custom_themes_title":
+        "en": "Custom themes"
+        "zh-CN": "自定义主题"
+      "dark_theme":
+        "en": "Dark theme"
+        "zh-CN": "深色主题"
+      "editor_title":
+        "en": "Editor"
+        "zh-CN": "编辑器"
+      "fallback_dark":
+        "en": "The configured dark theme is unavailable. Using %{theme}."
+        "zh-CN": "所配置的深色主题不可用。正在使用 %{theme}。"
+      "fallback_fixed":
+        "en": "The configured theme is unavailable. Using %{theme} instead."
+        "zh-CN": "所配置的主题不可用，已改用 %{theme}。"
+      "fallback_light":
+        "en": "The configured light theme is unavailable. Using %{theme}."
+        "zh-CN": "所配置的浅色主题不可用。正在使用 %{theme}。"
+      "file_problem":
+        "en": "%{file}: %{problem}"
+        "zh-CN": "%{file}：%{problem}"
+      "fit_to_pane":
+        "en": "Fit to pane"
+        "zh-CN": "适应面板"
+      "fit_to_pane_description":
+        "en": "Wrap at a shorter line width when the pane is narrow."
+        "zh-CN": "面板较窄时用更短的行宽折行。"
+      "fit_to_pane_switch":
+        "en": "Fit file line width to pane"
+        "zh-CN": "文件行宽适应面板"
+      "font":
+        "en": "Font"
+        "zh-CN": "字体"
+      "font_collection":
+        "en": "Font collections (.ttc) are not supported. Use individual .otf or .ttf files instead."
+        "zh-CN": "不支持字体集合（.ttc），请改用单独的 .otf 或 .ttf 文件。"
+      "font_invalid":
+        "en": "This file is not a valid font."
+        "zh-CN": "这个文件不是有效的字体。"
+      "font_too_large":
+        "en": "The file exceeds 50 MB."
+        "zh-CN": "文件大于 50 MB。"
+      "font_too_many":
+        "en": "Only the first 128 font files are read."
+        "zh-CN": "只读取前 128 个字体文件。"
+      "font_unreadable":
+        "en": "Unable to read this file."
+        "zh-CN": "无法读取这个文件。"
+      "font_unsupported":
+        "en": ".woff and .woff2 are not supported. Use .otf or .ttf instead."
+        "zh-CN": "不支持 .woff 和 .woff2，请改用 .otf 或 .ttf 文件。"
+      "fonts_change_failed":
+        "en": "Unable to change font settings"
+        "zh-CN": "无法更改字体设置"
+      "fonts_description":
+        "en": "Changes apply immediately to all autocraft windows."
+        "zh-CN": "改动立即应用到 autocraft 的所有窗口。"
+      "fonts_title":
+        "en": "Fonts"
+        "zh-CN": "字体"
+      "interface_description":
+        "en": "Menus, conversations, and documents."
+        "zh-CN": "菜单、会话和文档。"
+      "interface_fallbacks":
+        "en": "Interface fallback fonts"
+        "zh-CN": "界面备用字体"
+      "interface_fallbacks_description":
+        "en": "For characters missing from the interface font."
+        "zh-CN": "用于界面字体没有的字符。"
+      "interface_title":
+        "en": "Interface"
+        "zh-CN": "界面"
+      "larger":
+        "en": "Increase"
+        "zh-CN": "增大"
+      "ligatures":
+        "en": "Ligatures"
+        "zh-CN": "连字"
+      "ligatures_description":
+        "en": "Render => and != as single symbols when supported by the code font. Terminals never render ligatures."
+        "zh-CN": "代码字体支持时，把 => 和 != 画成一个符号。终端从不绘制连字。"
+      "light_theme":
+        "en": "Light theme"
+        "zh-CN": "浅色主题"
+      "line_width":
+        "en": "Line width"
+        "zh-CN": "行宽"
+      "line_width_description":
+        "en": "Maximum characters per line in files and diffs."
+        "zh-CN": "文件与 diff 中每行的最大字符数。"
+      "line_width_failed":
+        "en": "Unable to change file line width"
+        "zh-CN": "无法更改文件行宽"
+      "line_width_input":
+        "en": "File line width"
+        "zh-CN": "文件行宽"
+      "line_width_invalid":
+        "en": "Enter a whole number between %{min} and %{max}."
+        "zh-CN": "请输入 %{min} 到 %{max} 之间的整数。"
+      "mode_dark":
+        "en": "Dark"
+        "zh-CN": "深色"
+      "mode_light":
+        "en": "Light"
+        "zh-CN": "浅色"
+      "mode_system":
+        "en": "System"
+        "zh-CN": "系统"
+      "open_folder":
+        "en": "Open folder"
+        "zh-CN": "打开文件夹"
+      "path_copied":
+        "en": "Folder path copied"
+        "zh-CN": "已复制文件夹路径"
+      "picker_builtin":
+        "en": "Bundled"
+        "zh-CN": "内置"
+      "picker_custom":
+        "en": "Custom"
+        "zh-CN": "自定义"
+      "picker_empty":
+        "en": "No matching fonts."
+        "zh-CN": "没有匹配的字体。"
+      "picker_failed":
+        "en": "Unable to choose fonts [FONT_PICKER_FAILED]"
+        "zh-CN": "字体选择失败 [FONT_PICKER_FAILED]"
+      "picker_installed":
+        "en": "Installed"
+        "zh-CN": "已安装"
+      "picker_mono":
+        "en": "Monospace"
+        "zh-CN": "等宽"
+      "picker_mono_only":
+        "en": "Only monospaced fonts are listed for code."
+        "zh-CN": "代码字体只列出等宽字体。"
+      "picker_search":
+        "en": "Search or enter any font name"
+        "zh-CN": "搜索，或输入任意字体名"
+      "picker_use":
+        "en": "Use “%{family}”"
+        "zh-CN": "使用“%{family}”"
+      "preview_after_code":
+        "en": " — all checks passed."
+        "zh-CN": " 检查——全部通过。"
+      "preview_before_bold":
+        "en": "I centralized the font tokens and updated "
+        "zh-CN": "我把字体令牌集中到了一处，并更新了"
+      "preview_before_code":
+        "en": ". Ran "
+        "zh-CN": "。运行 "
+      "preview_body":
+        "en": "I centralized the font tokens and updated three files. Ran bun run test — all checks passed."
+        "zh-CN": "我把字体令牌集中到了一处，并更新了三个文件。运行 bun run test 检查——全部通过。"
+      "preview_bold":
+        "en": "three files"
+        "zh-CN": "三个文件"
+      "preview_code":
+        "en": "bun run test"
+        "zh-CN": "bun run test"
+      "preview_editor":
+        "en": "Editor and diff · %{size} px"
+        "zh-CN": "编辑器和 diff · %{size} px"
+      "preview_meta":
+        "en": "main · 3 files · 2 minutes ago"
+        "zh-CN": "main · 3 个文件 · 2 分钟前"
+      "preview_open_pr":
+        "en": "Open pull request"
+        "zh-CN": "打开拉取请求"
+      "preview_review":
+        "en": "Review changes"
+        "zh-CN": "审查改动"
+      "preview_terminal":
+        "en": "Terminal · %{size} px"
+        "zh-CN": "终端 · %{size} px"
+      "preview_title":
+        "en": "Refactor settings dialog"
+        "zh-CN": "重构设置对话框"
+      "problem_detail":
+        "en": "%{message} (%{detail})"
+        "zh-CN": "%{message}（%{detail}）"
+      "reset_code_font":
+        "en": "Reset code font to default"
+        "zh-CN": "把代码字体恢复为默认"
+      "reset_fit_to_pane":
+        "en": "Reset fit to pane to default"
+        "zh-CN": "把适应面板恢复为默认"
+      "reset_interface_font":
+        "en": "Reset interface font to default"
+        "zh-CN": "把界面字体恢复为默认"
+      "reset_ligatures":
+        "en": "Reset ligatures to default"
+        "zh-CN": "把连字恢复为默认"
+      "reset_line_width":
+        "en": "Reset line width to default"
+        "zh-CN": "把行宽恢复为默认"
+      "reset_size":
+        "en": "Reset code font size to default"
+        "zh-CN": "把代码字号恢复为默认"
+      "reset_weight":
+        "en": "Reset font weight to default"
+        "zh-CN": "把字重恢复为默认"
+      "size":
+        "en": "Font size"
+        "zh-CN": "字号"
+      "size_description":
+        "en": "Terminals and code blocks. Editors and diffs are %{delta} px smaller."
+        "zh-CN": "终端和代码块。编辑器和 diff 比它小 %{delta} px。"
+      "smaller":
+        "en": "Decrease"
+        "zh-CN": "减小"
+      "theme":
+        "en": "Theme"
+        "zh-CN": "主题"
+      "theme_duplicate_id":
+        "en": "Another theme file already uses this id."
+        "zh-CN": "另一个主题文件已经用了这个 id。"
+      "theme_group":
+        "en": "Theme"
+        "zh-CN": "主题"
+      "theme_id_too_long":
+        "en": "Theme ids may contain at most 59 characters."
+        "zh-CN": "主题 id 太长，最多 59 个字符。"
+      "theme_invalid":
+        "en": "This file is not a complete theme."
+        "zh-CN": "这个文件不是完整的主题。"
+      "theme_invalid_json":
+        "en": "This file is not valid JSON."
+        "zh-CN": "这个文件不是有效的 JSON。"
+      "theme_mode":
+        "en": "Theme mode"
+        "zh-CN": "主题模式"
+      "theme_pair":
+        "en": "Theme pair"
+        "zh-CN": "主题组合"
+      "theme_too_large":
+        "en": "The file exceeds 256 KB."
+        "zh-CN": "文件大于 256 KB。"
+      "theme_too_many":
+        "en": "Only the first 64 theme files are read."
+        "zh-CN": "只读取前 64 个主题文件。"
+      "theme_unreadable":
+        "en": "Unable to read this file."
+        "zh-CN": "无法读取这个文件。"
+      "title":
+        "en": "Appearance"
+        "zh-CN": "外观"
+      "unavailable":
+        "en": "%{family} is unavailable on this device. Using %{fallback}. Your choice is preserved and will be restored when the font becomes available."
+        "zh-CN": "%{family} 在这台设备上不可用，正在使用 %{fallback}。你的选择会保留，字体可用时自动恢复。"
+      "weight":
+        "en": "Font weight"
+        "zh-CN": "字重"
+      "weight_description":
+        "en": "Adjust all interface and code font weights together. Headings remain heavier than body text."
+        "zh-CN": "同时调整界面和代码中的所有字重，标题仍然比正文粗。"
+      "weight_heavier":
+        "en": "Heavier"
+        "zh-CN": "更粗"
+      "weight_lighter":
+        "en": "Lighter"
+        "zh-CN": "更细"
+      "weight_steps":
+        "en": "%{family} has only a few fixed weights, so this slider changes it in steps."
+        "zh-CN": "%{family} 只有几个固定字重，这个滑块会分档改变它。"
+    "assets":
+      "budget":
+        "en": "Default budget (USD)"
+        "zh-CN": "默认预算（美元）"
+      "copy_key":
+        "en": "Copy key"
+        "zh-CN": "复制密钥"
+      "description":
+        "en": "Budget defaults apply to new projects. Keys are masked and read as plaintext only for copying; FAL_KEY environment fallback is not used."
+        "zh-CN": "默认预算用于新项目。密钥仅显示掩码；复制时才读取明文，不使用环境变量中的 FAL_KEY。"
+      "fal_key":
+        "en": "fal.ai key"
+        "zh-CN": "fal.ai 密钥"
+      "image_model":
+        "en": "Image model (blank for default)"
+        "zh-CN": "图片模型（留空使用默认）"
+      "invalid_budget":
+        "en": "Budget must be a finite number greater than or equal to zero."
+        "zh-CN": "预算必须是大于或等于 0 的有限数字。"
+      "key_empty":
+        "en": "Enter a new fal.ai key."
+        "zh-CN": "请输入新的 fal.ai 密钥。"
+      "not_configured":
+        "en": "Not configured"
+        "zh-CN": "未配置"
+      "remove_key":
+        "en": "Remove key"
+        "zh-CN": "删除密钥"
+      "save_defaults":
+        "en": "Save asset defaults"
+        "zh-CN": "保存素材默认值"
+      "save_key":
+        "en": "Save key"
+        "zh-CN": "保存密钥"
+      "title":
+        "en": "Asset generation"
+        "zh-CN": "素材生成"
+    "coding":
+      "add_provider":
+        "en": "Add a provider in Settings → Providers"
+        "zh-CN": "在 设置 → 模型服务 添加服务商"
+      "all_providers":
+        "en": "No selection: use all enabled providers with their configured access modes"
+        "zh-CN": "未选择：使用全部已启用的服务商，各按自己的接入方式"
+      "enable":
+        "en": "Enable"
+        "zh-CN": "启用"
+      "enabled":
+        "en": "Enabled"
+        "zh-CN": "已启用"
+      "gateway":
+        "en": "Unified gateway"
+        "zh-CN": "统一网关"
+      "gateway_desc":
+        "en": "Connect all providers through the local gateway; real API keys never enter engine processes"
+        "zh-CN": "全部服务商经本机网关接入，真实密钥不进入引擎进程"
+      "install":
+        "en": "Install"
+        "zh-CN": "安装"
+      "installing":
+        "en": "Installing…"
+        "zh-CN": "安装中…"
+      "installing_hint":
+        "en": "The first installation downloads the runtime and may take several minutes"
+        "zh-CN": "首次安装需要下载运行时，耗时数分钟"
+      "is_default":
+        "en": "Default"
+        "zh-CN": "默认"
+      "managed":
+        "en": "Bundled"
+        "zh-CN": "内置"
+      "no_matches":
+        "en": "No matching providers"
+        "zh-CN": "没有匹配的服务商"
+      "not_installed":
+        "en": "Not installed"
+        "zh-CN": "未安装"
+      "official":
+        "en": "%{engine} official"
+        "zh-CN": "%{engine} 官方"
+      "official_desc":
+        "en": "Use the models and sign-in from the engine’s own configuration directory"
+        "zh-CN": "使用引擎自己配置目录里的模型与登录"
+      "providers":
+        "en": "Model providers"
+        "zh-CN": "模型服务商"
+      "retry":
+        "en": "Retry"
+        "zh-CN": "重试"
+      "search":
+        "en": "Search providers…"
+        "zh-CN": "搜索服务商…"
+      "set_default":
+        "en": "Set as default"
+        "zh-CN": "设为默认"
+      "system":
+        "en": "System"
+        "zh-CN": "系统"
+      "title":
+        "en": "Coding agents"
+        "zh-CN": "编码搭档"
+      "version":
+        "en": "Version %{version}"
+        "zh-CN": "版本 %{version}"
+      "uninstall":
+        "en": "Uninstall"
+        "zh-CN": "卸载"
+      "uninstalling":
+        "en": "Uninstalling…"
+        "zh-CN": "卸载中…"
+      "uninstall_confirm":
+        "en": "Uninstall %{name}? Downloaded runtimes are kept for the other agents."
+        "zh-CN": "要卸载 %{name} 吗？运行时会保留给其他搭档使用。"
+    "language":
+      "chinese":
+        "en": "Simplified Chinese"
+        "zh-CN": "简体中文"
+      "description":
+        "en": "Applies to all windows immediately and is remembered next time."
+        "zh-CN": "立即应用到所有窗口；语言偏好会保留到下次启动。"
+      "english":
+        "en": "English"
+        "zh-CN": "English"
+      "saving":
+        "en": "Saving…"
+        "zh-CN": "正在保存…"
+      "system":
+        "en": "System"
+        "zh-CN": "跟随系统"
+      "title":
+        "en": "Language"
+        "zh-CN": "语言"
+    "groups":
+      "analysis":
+        "en": "Analysis"
+        "zh-CN": "分析"
+      "interface":
+        "en": "Interface"
+        "zh-CN": "界面"
+      "system":
+        "en": "System"
+        "zh-CN": "系统"
+    "locations":
+      "absolute_required":
+        "en": "Every project directory must be a non-empty absolute path."
+        "zh-CN": "每个项目目录都必须是非空的绝对路径。"
+      "add":
+        "en": "Add project directory"
+        "zh-CN": "添加项目目录"
+      "choose":
+        "en": "Choose…"
+        "zh-CN": "选择…"
+      "default":
+        "en": "Default directory for new projects"
+        "zh-CN": "新项目默认目录"
+      "description":
+        "en": "Set the default directory for new projects and additional project folders to discover. Save to apply changes."
+        "zh-CN": "设置新项目默认目录及需要扫描的额外项目目录。修改后点击保存。"
+      "duplicate":
+        "en": "Project directories must be distinct and must not repeat the default directory."
+        "zh-CN": "项目目录不能重复，也不能与默认目录相同。"
+      "extra":
+        "en": "Additional project directory"
+        "zh-CN": "额外项目目录"
+      "picker_failed":
+        "en": "Could not open the directory picker. Enter the path directly."
+        "zh-CN": "无法打开目录选择器，请直接输入目录。"
+      "remove":
+        "en": "Remove"
+        "zh-CN": "移除"
+      "save":
+        "en": "Save project locations"
+        "zh-CN": "保存项目位置"
+      "title":
+        "en": "Project locations"
+        "zh-CN": "项目位置"
+    "logs":
+      "all_events":
+        "en": "All events"
+        "zh-CN": "全部事件"
+      "all_layers":
+        "en": "All layers"
+        "zh-CN": "全部层级"
+      "copied":
+        "en": "Displayed logs copied"
+        "zh-CN": "已复制当前显示的日志"
+      "copy":
+        "en": "Copy current logs"
+        "zh-CN": "复制当前日志"
+      "copy_trace":
+        "en": "Copy"
+        "zh-CN": "复制"
+      "debug":
+        "en": "Debug"
+        "zh-CN": "调试"
+      "empty":
+        "en": "No logs yet."
+        "zh-CN": "还没有日志。"
+      "event":
+        "cancel":
+          "en": "Cancel"
+          "zh-CN": "取消"
+        "entry":
+          "en": "Entry"
+          "zh-CN": "开始"
+        "error":
+          "en": "Error"
+          "zh-CN": "失败"
+        "exit":
+          "en": "Exit"
+          "zh-CN": "完成"
+        "other":
+          "en": "Other"
+          "zh-CN": "其他"
+        "timeout":
+          "en": "Timeout"
+          "zh-CN": "超时"
+        "unfinished":
+          "en": "Unfinished"
+          "zh-CN": "未结束"
+      "event_menu":
+        "en": "Filter by event"
+        "zh-CN": "按事件筛选"
+      "filter":
+        "en": "Filter: Trace ID, op, chat, module"
+        "zh-CN": "筛选：Trace ID、op、chat、模块名"
+      "filter_trace":
+        "en": "Show only logs for Trace %{short}…; click again to clear"
+        "zh-CN": "只看 Trace %{short}… 的日志；再点一次取消筛选"
+      "info":
+        "en": "Info"
+        "zh-CN": "信息"
+      "layer_menu":
+        "en": "Filter by layer"
+        "zh-CN": "按层级筛选"
+      "level":
+        "en": "Log level"
+        "zh-CN": "日志级别"
+      "level_apply_failed":
+        "en": "Unable to apply log level [LOG_LEVEL_APPLY_FAILED]"
+        "zh-CN": "日志级别切换失败 [LOG_LEVEL_APPLY_FAILED]"
+      "level_hint":
+        "en": "Debug records the full call chain for every operation. Enable it for troubleshooting; changes apply immediately."
+        "zh-CN": "调试级别记录每次操作的完整调用链，排查问题时打开；立即生效。"
+      "level_pinned":
+        "en": "AUTOCRAFT_LOG overrides this setting."
+        "zh-CN": "已由环境变量 AUTOCRAFT_LOG 指定，此处设置不生效。"
+      "no_matches":
+        "en": "No logs match the filters."
+        "zh-CN": "没有符合筛选的日志。"
+      "no_problems":
+        "en": "No warnings or errors."
+        "zh-CN": "没有警告或错误。"
+      "only_problems":
+        "en": "Problems only"
+        "zh-CN": "只看问题"
+      "open_dir":
+        "en": "Open logs folder"
+        "zh-CN": "打开日志目录"
+      "read_error":
+        "en": "Unable to read logs [LOG_READ_FAILED]"
+        "zh-CN": "日志读取失败 [LOG_READ_FAILED]"
+      "read_failed":
+        "en": "Unable to read logs: "
+        "zh-CN": "日志读取失败："
+      "read_failed_detail":
+        "en": "Unable to read logs: %{error}"
+        "zh-CN": "日志读取失败：%{error}"
+      "recent":
+        "en": "Latest %{count} entries · refreshes every 2 seconds"
+        "zh-CN": "最近 %{count} 条 · 每 2 秒刷新"
+      "refresh":
+        "en": "Refresh"
+        "zh-CN": "刷新"
+      "show":
+        "en": "Show background logs"
+        "zh-CN": "显示后台日志"
+      "show_hint":
+        "en": "Logs are read only while this page is open. Background logging is unaffected."
+        "zh-CN": "日志只在此页打开时读取，不影响后台写入。"
+      "title":
+        "en": "Background logs"
+        "zh-CN": "后台日志"
+    "mcp":
+      "add":
+        "en": "Add server"
+        "zh-CN": "添加服务器"
+      "add_env":
+        "en": "Add environment variable"
+        "zh-CN": "添加环境变量"
+      "add_header":
+        "en": "Add header"
+        "zh-CN": "添加请求头"
+      "args":
+        "en": "Arguments (one per line)"
+        "zh-CN": "参数（每行一个）"
+      "cancel":
+        "en": "Cancel"
+        "zh-CN": "取消"
+      "command":
+        "en": "Command"
+        "zh-CN": "命令"
+      "command_required":
+        "en": "Enter a stdio command."
+        "zh-CN": "请填写 stdio 命令。"
+      "confirm_delete":
+        "en": "Confirm deletion"
+        "zh-CN": "确认删除"
+      "context7":
+        "en": "Context7"
+        "zh-CN": "Context7"
+      "deepwiki":
+        "en": "DeepWiki"
+        "zh-CN": "DeepWiki"
+      "delete":
+        "en": "Delete"
+        "zh-CN": "删除"
+      "description":
+        "en": "Servers run on the same machine as autocraft and inherit its environment."
+        "zh-CN": "服务器在运行 autocraft 的这台机器上运行，并继承其环境。"
+      "details":
+        "en": "Description (optional)"
+        "zh-CN": "描述（可选）"
+      "disabled":
+        "en": "Disabled"
+        "zh-CN": "已停用"
+      "edit":
+        "en": "Edit server"
+        "zh-CN": "编辑服务器"
+      "empty":
+        "en": "No MCP servers yet."
+        "zh-CN": "还没有 MCP 服务器。"
+      "enabled":
+        "en": "Enabled"
+        "zh-CN": "已启用"
+      "env":
+        "en": "Environment variables"
+        "zh-CN": "环境变量"
+      "env_invalid":
+        "en": "Invalid environment variable format."
+        "zh-CN": "环境变量格式无效。"
+      "global":
+        "en": "Global"
+        "zh-CN": "全局"
+      "headers":
+        "en": "Headers"
+        "zh-CN": "请求头"
+      "headers_invalid":
+        "en": "Invalid header format."
+        "zh-CN": "请求头格式无效。"
+      "http":
+        "en": "HTTP"
+        "zh-CN": "HTTP"
+      "import":
+        "en": "Import"
+        "zh-CN": "导入"
+      "import_empty":
+        "en": "No servers to import."
+        "zh-CN": "没有可导入的服务器。"
+      "import_invalid":
+        "en": "Invalid JSON."
+        "zh-CN": "JSON 格式无效。"
+      "import_item_invalid":
+        "en": "Invalid server entry."
+        "zh-CN": "服务器条目无效。"
+      "import_json":
+        "en": "Paste JSON"
+        "zh-CN": "粘贴 JSON"
+      "import_summary":
+        "en": "Preview: %{valid} / %{invalid}"
+        "zh-CN": "预览：%{valid} / %{invalid}"
+      "name":
+        "en": "Name"
+        "zh-CN": "名称"
+      "name_hint":
+        "en": "Letters, digits, - and _."
+        "zh-CN": "字母、数字、- 和 _。"
+      "name_invalid":
+        "en": "Names may contain only letters, digits, - and _."
+        "zh-CN": "名称只能包含字母、数字、- 和 _。"
+      "name_required":
+        "en": "Enter a server name."
+        "zh-CN": "请填写服务器名称。"
+      "preview":
+        "en": "Preview"
+        "zh-CN": "预览"
+      "remove_server_warning":
+        "en": "%{name} will be removed and will not load the next time a chat restarts its engine."
+        "zh-CN": "%{name} 将被移除，使用它的聊天下次重启引擎后不再加载它。"
+      "remove_warning":
+        "en": "will be removed and will not load the next time a chat restarts its engine."
+        "zh-CN": "将被移除，使用它的聊天下次重启引擎后不再加载它。"
+      "save":
+        "en": "Save"
+        "zh-CN": "保存"
+      "stdio":
+        "en": "stdio"
+        "zh-CN": "stdio"
+      "title":
+        "en": "MCP servers"
+        "zh-CN": "MCP 服务器"
+      "url":
+        "en": "URL"
+        "zh-CN": "URL"
+      "url_hint":
+        "en": "The server’s streamable HTTP endpoint."
+        "zh-CN": "服务器的 streamable HTTP 端点。"
+      "url_required":
+        "en": "Enter an HTTP URL."
+        "zh-CN": "请填写 HTTP URL。"
+      "value_hint":
+        "en": "Use $VAR to reference a local environment variable."
+        "zh-CN": "可以写 $VAR 引用本机环境变量。"
+    "models":
+      "context_all":
+        "en": "Global"
+        "zh-CN": "全局"
+      "context_available":
+        "en": "%{count} available models"
+        "zh-CN": "%{count} 个可用模型"
+      "context_choice_custom":
+        "en": "Custom"
+        "zh-CN": "自定义"
+      "context_choice_default":
+        "en": "Default"
+        "zh-CN": "默认"
+      "context_choice_million":
+        "en": "1M"
+        "zh-CN": "1M"
+      "context_each":
+        "en": "Configure each model"
+        "zh-CN": "按模型分别设置"
+      "context_input":
+        "en": "Custom context window (tokens)"
+        "zh-CN": "自定义上下文窗口（token）"
+      "context_invalid":
+        "en": "Enter a token count between 272,000 and 1,000,000."
+        "zh-CN": "请输入 272,000–1,000,000 之间的 token 数。"
+      "context_mixed":
+        "en": "Configure each model"
+        "zh-CN": "按模型分别设置"
+      "context_model":
+        "en": "%{provider} · %{context} tokens (provider setting)"
+        "zh-CN": "%{provider} · %{context} token（提供方设置）"
+      "context_none":
+        "en": "No eligible models"
+        "zh-CN": "没有符合条件的模型"
+      "context_note":
+        "en": "Applies only to new conversations. Running conversations keep their original context window."
+        "zh-CN": "只对新会话生效；运行中的会话保持原来的上下文。"
+      "context_placeholder":
+        "en": "272,000–1,000,000"
+        "zh-CN": "272,000–1,000,000"
+      "context_title":
+        "en": "GPT context window"
+        "zh-CN": "GPT 上下文窗口"
+      "default":
+        "en": "Default model"
+        "zh-CN": "默认模型"
+      "default_context":
+        "en": "Default context"
+        "zh-CN": "默认上下文"
+      "effort":
+        "high":
+          "en": "High"
+          "zh-CN": "高"
+        "low":
+          "en": "Low"
+          "zh-CN": "低"
+        "max":
+          "en": "Max"
+          "zh-CN": "最高"
+        "medium":
+          "en": "Medium"
+          "zh-CN": "中"
+        "minimal":
+          "en": "Minimal"
+          "zh-CN": "最低"
+        "off":
+          "en": "Off"
+          "zh-CN": "关闭"
+        "xhigh":
+          "en": "Xhigh"
+          "zh-CN": "极高"
+      "effort_clear":
+        "en": "Default"
+        "zh-CN": "默认"
+      "effort_default":
+        "en": "Effort: default"
+        "zh-CN": "力度 默认"
+      "effort_none":
+        "en": "Effort: —"
+        "zh-CN": "力度 —"
+      "effort_prefix":
+        "en": "Effort: "
+        "zh-CN": "力度 "
+      "empty":
+        "en": "No models available. Add and enable models in Providers first."
+        "zh-CN": "没有可用模型。请先在“提供方”中添加并启用模型。"
+      "engine_official":
+        "en": "%{engine} uses its own configuration, not the default model or effort configured here."
+        "zh-CN": "%{engine} 使用自己的配置，不使用这里的默认模型和力度。"
+      "engine_provider":
+        "en": "%{engine} uses only models from provider “%{provider}”."
+        "zh-CN": "%{engine} 只使用提供方「%{provider}」的模型。"
+      "engine_unavailable":
+        "en": "The provider selected for %{engine} in Coding agents was removed or disabled. The engine will fail to start."
+        "zh-CN": "%{engine} 在编码搭档中选择的提供方已删除或停用，启动会失败。"
+      "load_error":
+        "en": "Unable to load model settings: %{error}"
+        "zh-CN": "无法加载模型设置：%{error}"
+      "metadata":
+        "en": "%{provider} · %{context}"
+        "zh-CN": "%{provider} · %{context}"
+      "metadata_reasoning":
+        "en": "%{provider} · %{context} · reasoning"
+        "zh-CN": "%{provider} · %{context} · 推理"
+      "model_missing":
+        "en": "The default model was removed from its provider. New conversations will use each engine’s own default model."
+        "zh-CN": "默认模型已从提供方中删除，新会话将使用各引擎自己的默认模型。"
+      "model_unusable":
+        "en": "The default model “%{model}” is disabled or is not a chat model. New conversations will use each engine’s own default model."
+        "zh-CN": "默认模型「%{model}」已停用或不是聊天模型，新会话将使用各引擎自己的默认模型。"
+      "new_models_visible":
+        "en": "New models are shown automatically."
+        "zh-CN": "新模型会自动显示。"
+      "no_matches":
+        "en": "No matching models."
+        "zh-CN": "没有匹配的模型。"
+      "none":
+        "en": "Engine default"
+        "zh-CN": "引擎默认"
+      "provider_disabled":
+        "en": "The default model’s provider “%{provider}” is disabled. New conversations will use each engine’s own default model."
+        "zh-CN": "默认模型所属的提供方「%{provider}」已停用，新会话将使用各引擎自己的默认模型。"
+      "provider_missing":
+        "en": "The default model’s provider was removed. New conversations will use each engine’s own default model."
+        "zh-CN": "默认模型所属的提供方已删除，新会话将使用各引擎自己的默认模型。"
+      "retry":
+        "en": "Retry"
+        "zh-CN": "重试"
+      "save_error":
+        "en": "Unable to save model settings: %{error}"
+        "zh-CN": "无法保存模型设置：%{error}"
+      "saving":
+        "en": "Saving model settings…"
+        "zh-CN": "正在保存模型设置…"
+      "search":
+        "en": "Search models"
+        "zh-CN": "搜索模型"
+      "session_model":
+        "en": "Conversation model"
+        "zh-CN": "会话模型"
+      "title":
+        "en": "Models"
+        "zh-CN": "模型"
+      "visibility_summary":
+        "en": "%{hidden} models hidden. New models are shown automatically."
+        "zh-CN": "已隐藏 %{hidden} 个模型。新模型会自动显示。"
+      "visible":
+        "en": "Visible models"
+        "zh-CN": "可见模型"
+    "providers":
+      "access":
+        "en": "Access mode"
+        "zh-CN": "接入方式"
+      "add":
+        "en": "New provider"
+        "zh-CN": "新建服务商"
+      "add_all":
+        "en": "Add all"
+        "zh-CN": "全部添加"
+      "add_line":
+        "en": "Add connection"
+        "zh-CN": "添加线路"
+      "add_model":
+        "en": "Add model"
+        "zh-CN": "添加模型"
+      "all_types":
+        "en": "All"
+        "zh-CN": "全部"
+      "api_key":
+        "en": "API key"
+        "zh-CN": "API 密钥"
+      "applies_next":
+        "en": "Changes apply from the next message. Replies currently being generated are unaffected."
+        "zh-CN": "保存后从下一条消息开始生效；正在生成的回复不受影响。"
+      "base_url":
+        "en": "API URL"
+        "zh-CN": "API 地址"
+      "can_vision":
+        "en": "Vision"
+        "zh-CN": "可看图"
+      "cancel":
+        "en": "Cancel"
+        "zh-CN": "取消"
+      "cap_reasoning":
+        "en": "Reasoning"
+        "zh-CN": "推理"
+      "cap_tools":
+        "en": "Tools"
+        "zh-CN": "工具"
+      "cap_vision":
+        "en": "Vision"
+        "zh-CN": "视觉"
+      "capabilities":
+        "en": "Capabilities"
+        "zh-CN": "能力"
+      "check":
+        "en": "Test"
+        "zh-CN": "检测"
+      "check_ok":
+        "en": "Connected · %{count} models available"
+        "zh-CN": "连接正常 · 可用 %{count} 个模型"
+      "check_no_key":
+        "en": "No API key to test. Add one above."
+        "zh-CN": "还没有可用的 API 密钥，请先在上方添加。"
+      "checking":
+        "en": "Testing…"
+        "zh-CN": "检测中…"
+      "close":
+        "en": "Close"
+        "zh-CN": "关闭"
+      "collapse_all":
+        "en": "Collapse all"
+        "zh-CN": "全部折叠"
+      "confirm":
+        "en": "OK"
+        "zh-CN": "确定"
+      "context_window":
+        "en": "Context window"
+        "zh-CN": "上下文窗口"
+      "default_badge":
+        "en": "Default"
+        "zh-CN": "默认"
+      "delete":
+        "en": "Delete"
+        "zh-CN": "删除"
+      "delete_confirm":
+        "en": "Delete %{name}? Its models will be removed from the model picker. Existing conversations keep their history."
+        "zh-CN": "删除 %{name}？其模型将从模型选择器中移除，使用过它们的聊天会保留历史记录。"
+      "delete_provider":
+        "en": "Delete provider"
+        "zh-CN": "删除服务商"
+      "direct":
+        "en": "Direct"
+        "zh-CN": "直连"
+      "edit":
+        "en": "Edit"
+        "zh-CN": "编辑"
+      "edit_model":
+        "en": "Edit model"
+        "zh-CN": "编辑模型"
+      "efforts":
+        "en": "Reasoning levels"
+        "zh-CN": "推理档位"
+      "efforts_required":
+        "en": "Select at least one level when reasoning is enabled."
+        "zh-CN": "开启推理时至少选择一个档位。"
+      "empty":
+        "en": "No providers yet"
+        "zh-CN": "还没有服务商"
+      "empty_hint":
+        "en": "Create a provider, then sync its models."
+        "zh-CN": "新建一个服务商，然后同步模型。"
+      "expand_all":
+        "en": "Expand all"
+        "zh-CN": "全部展开"
+      "filter":
+        "en": "Filter providers"
+        "zh-CN": "筛选服务商"
+      "filter_all":
+        "en": "All"
+        "zh-CN": "全部"
+      "filter_disabled":
+        "en": "Disabled"
+        "zh-CN": "停用"
+      "filter_enabled":
+        "en": "Enabled"
+        "zh-CN": "启用"
+      "gateway":
+        "en": "Gateway"
+        "zh-CN": "网关"
+      "gateway_help":
+        "en": "Gateway: engines connect only to this machine. Real API keys never enter engine processes."
+        "zh-CN": "网关：引擎只连本机，真实密钥不进入引擎进程。"
+      "get_key":
+        "en": "Get API key"
+        "zh-CN": "获取密钥"
+      "header_invalid":
+        "en": "Header names and values cannot be empty."
+        "zh-CN": "请求头名称和取值不能为空。"
+      "header_name":
+        "en": "Header name"
+        "zh-CN": "请求头名称"
+      "header_value":
+        "en": "Header value"
+        "zh-CN": "请求头取值"
+      "headers":
+        "en": "Custom headers"
+        "zh-CN": "自定义请求头"
+      "headers_add":
+        "en": "Add header"
+        "zh-CN": "添加请求头"
+      "headers_shared":
+        "en": "Headers apply to every connection for this provider."
+        "zh-CN": "请求头对该服务商的所有线路生效。"
+      "key_default_label":
+        "en": "API key"
+        "zh-CN": "API Key"
+      "key_empty":
+        "en": "API key cannot be empty"
+        "zh-CN": "API 密钥不能为空"
+      "key_placeholder":
+        "en": "Enter a new API key (leave blank to keep unchanged)"
+        "zh-CN": "输入新的 API 密钥（留空不修改）"
+      "key_strategy_round_robin":
+        "en": "Round robin"
+        "zh-CN": "轮流使用"
+      "key_strategy_round_robin_desc":
+        "en": "Start each request with the next key to distribute rate limits across keys"
+        "zh-CN": "每次请求从下一个密钥开始，把限流分摊到各个密钥"
+      "keys_add":
+        "en": "Add API key"
+        "zh-CN": "添加 API 密钥"
+      "keys_desc":
+        "en": "Manage multiple API keys for this provider and use them in round-robin order."
+        "zh-CN": "管理当前服务商的多个 API 密钥，按顺序轮流使用。"
+      "keys_empty":
+        "en": "No API keys"
+        "zh-CN": "暂无 API 密钥"
+      "keys_enabled":
+        "en": "%{enabled} / %{total} enabled"
+        "zh-CN": "%{enabled} / %{total} 已启用"
+      "keys_keep":
+        "en": "To change a key, enter a new value and save. Leave it blank to keep the existing key."
+        "zh-CN": "编辑密钥：输入新值后保存；留空则不修改原密钥。"
+      "keys_label":
+        "en": "Label"
+        "zh-CN": "标签"
+      "keys_manage":
+        "en": "API key management"
+        "zh-CN": "API 密钥管理"
+      "last_line":
+        "en": "Keep at least one connection."
+        "zh-CN": "至少保留一条线路。"
+      "line_settings":
+        "en": "Connection settings"
+        "zh-CN": "线路设置"
+      "line_settings_tip":
+        "en": "Configure protocol, API URL, and custom headers"
+        "zh-CN": "配置协议、API 地址与自定义请求头"
+      "loading":
+        "en": "Loading…"
+        "zh-CN": "加载中…"
+      "max_output":
+        "en": "Maximum output"
+        "zh-CN": "最大输出"
+      "model_id":
+        "en": "Model ID"
+        "zh-CN": "模型 ID"
+      "model_line_required":
+        "en": "Select at least one connection."
+        "zh-CN": "至少选择一条线路。"
+      "model_name":
+        "en": "Display name"
+        "zh-CN": "显示名称"
+      "model_protocols":
+        "en": "Connections (first is default)"
+        "zh-CN": "线路（首项为默认）"
+      "model_removed":
+        "en": "Model removed"
+        "zh-CN": "模型已移除"
+      "model_search":
+        "en": "Search models…"
+        "zh-CN": "搜索模型…"
+      "model_settings":
+        "en": "Model settings"
+        "zh-CN": "模型设置"
+      "model_type":
+        "en": "Type"
+        "zh-CN": "类型"
+      "name":
+        "en": "Name"
+        "zh-CN": "名称"
+      "name_required":
+        "en": "Enter a name"
+        "zh-CN": "请填写名称"
+      "no_group":
+        "en": "Other"
+        "zh-CN": "其他"
+      "no_matches":
+        "en": "No matching providers"
+        "zh-CN": "没有匹配的服务商"
+      "no_model_matches":
+        "en": "No matching models"
+        "zh-CN": "没有匹配的模型"
+      "no_models":
+        "en": "No models selected"
+        "zh-CN": "未选择模型"
+      "number_invalid":
+        "en": "Enter a positive whole number"
+        "zh-CN": "请输入正整数"
+      "picked":
+        "en": "Selected"
+        "zh-CN": "已选"
+      "picked_count":
+        "en": "%{count} selected"
+        "zh-CN": "已选 %{count} 个"
+      "picker_hint":
+        "en": "Click + to add a model and − to remove it."
+        "zh-CN": "点 + 添加模型，点 − 移除。"
+      "picker_title":
+        "en": "Select models"
+        "zh-CN": "挑选模型"
+      "probe_get":
+        "en": "GET %{url}"
+        "zh-CN": "GET %{url}"
+      "protocol":
+        "en": "Protocol"
+        "zh-CN": "协议"
+      "protocols":
+        "anthropic_messages":
+          "en": "Anthropic-compatible (Messages)"
+          "zh-CN": "Anthropic 兼容（Messages）"
+        "openai_chat":
+          "en": "OpenAI-compatible (Chat Completions)"
+          "zh-CN": "OpenAI 兼容（Chat Completions）"
+        "openai_responses":
+          "en": "OpenAI Responses"
+          "zh-CN": "OpenAI Responses"
+      "remove_all":
+        "en": "Remove all"
+        "zh-CN": "全部移除"
+      "remove_group":
+        "en": "Remove entire group"
+        "zh-CN": "移除整组"
+      "remove_line":
+        "en": "Delete connection"
+        "zh-CN": "删除线路"
+      "remove_line_confirm":
+        "en": "Delete the %{protocol} connection? Models available only through this connection will also be deleted."
+        "zh-CN": "删除 %{protocol} 线路？只在这条线路上的模型会一起删除。"
+      "remove_model":
+        "en": "Remove model"
+        "zh-CN": "移除模型"
+      "request_post":
+        "en": "Request URL: POST %{url}"
+        "zh-CN": "请求地址：POST %{url}"
+      "retry":
+        "en": "Retry"
+        "zh-CN": "重试"
+      "row_menu":
+        "en": "More actions"
+        "zh-CN": "更多操作"
+      "save":
+        "en": "Save"
+        "zh-CN": "保存"
+      "save_failed":
+        "en": "Save failed; your changes are preserved."
+        "zh-CN": "保存失败，修改已保留。"
+      "save_failed_detail":
+        "en": "Save failed; your changes are preserved. %{error}"
+        "zh-CN": "保存失败，修改已保留。%{error}"
+      "search":
+        "en": "Search model platforms…"
+        "zh-CN": "搜索模型平台…"
+      "search_models":
+        "en": "Search model IDs"
+        "zh-CN": "搜索模型 id"
+      "set_default_line":
+        "en": "Set as default connection"
+        "zh-CN": "设为默认线路"
+      "settings":
+        "en": "Provider settings"
+        "zh-CN": "服务商设置"
+      "sync_models":
+        "en": "Sync models"
+        "zh-CN": "同步模型"
+      "title":
+        "en": "Providers"
+        "zh-CN": "模型服务"
+      "types":
+        "chat":
+          "en": "Chat"
+          "zh-CN": "对话"
+        "embedding":
+          "en": "Embedding"
+          "zh-CN": "向量"
+        "image":
+          "en": "Image"
+          "zh-CN": "图像"
+        "rerank":
+          "en": "Rerank"
+          "zh-CN": "重排"
+        "stt":
+          "en": "STT"
+          "zh-CN": "语音识别"
+        "tts":
+          "en": "TTS"
+          "zh-CN": "语音合成"
+        "unknown":
+          "en": "Unknown"
+          "zh-CN": "未知"
+        "video":
+          "en": "Video"
+          "zh-CN": "视频"
+      "url_hint":
+        "en": "Append # to disable automatic API-version suffixes."
+        "zh-CN": "末尾添加 # 可禁用自动附加的 API 版本。"
+      "url_invalid":
+        "en": "Enter a URL starting with http:// or https://"
+        "zh-CN": "请输入以 http:// 或 https:// 开头的地址"
+      "url_placeholder":
+        "en": "https://api.example.com/v1"
+        "zh-CN": "https://api.example.com/v1"
+    "title":
+      "en": "Settings"
+      "zh-CN": "设置"
+  "shell":
+    "controls_menu":
+      "en": "Project controls"
+      "zh-CN": "项目控制"
+    "view":
+      "en": "View"
+      "zh-CN": "视图"
+    "usage":
+      "en": "Usage"
+      "zh-CN": "用量"
+    "recent_projects":
+      "en": "Recent projects"
+      "zh-CN": "最近项目"
+    "all_projects":
+      "en": "All projects"
+      "zh-CN": "全部项目"
+    "new_project":
+      "en": "New project…"
+      "zh-CN": "新建项目…"
+    "usage_unknown":
+      "en": "Usage unavailable"
+      "zh-CN": "暂无用量数据"
+    "mode_busy":
+      "en": "Mode cannot change while building or checking"
+      "zh-CN": "构建或检查期间无法切换模式"
+    "mode_hint":
+      "en": "Switch analysis mode"
+      "zh-CN": "切换分析模式"
+    "confirm_deep":
+      "en": "Enable Deep mode"
+      "zh-CN": "启用深度模式"
+    "follow_default":
+      "en": "Follow default"
+      "zh-CN": "跟随默认"
+    "checks":
+      "en": "Checks %{passed}/%{total}"
+      "zh-CN": "检查 %{passed}/%{total}"
+    "queue":
+      "en": "Queue #%{position}"
+      "zh-CN": "排队第 %{position} 位"
+    "pending":
+      "en": "Needs you: %{count}"
+      "zh-CN": "需要你：%{count}"
+    "brand":
+      "en": "autocraft"
+      "zh-CN": "autocraft"
+    "copy_trace":
+      "en": "Copy diagnostic ID"
+      "zh-CN": "复制诊断 ID"
+    "copy_trace_hint":
+      "en": "Copy the full Trace ID, then paste it into Settings › Background logs to inspect this operation."
+      "zh-CN": "复制完整 Trace ID，到 设置 › 后台日志 粘贴到筛选框即可查看这次操作的全部日志"
+    "dismiss":
+      "en": "Dismiss notice"
+      "zh-CN": "关闭提示"
+    "error_code":
+      "en": "Error code"
+      "zh-CN": "错误代码"
+    "ready":
+      "en": "Local services ready"
+      "zh-CN": "本地服务就绪"
+    "settings":
+      "en": "Settings"
+      "zh-CN": "设置"
+    "trace_id":
+      "en": "Diagnostic ID"
+      "zh-CN": "诊断 ID"
+    "window_title":
+      "en": "autocraft"
+      "zh-CN": "autocraft"
+  "workbench":
+    "list_kind":
+      "en": "Data category"
+      "zh-CN": "数据类别"
+    "address":
+      "en": "Address"
+      "zh-CN": "地址"
+    "agent":
+      "en": "Agent"
+      "zh-CN": "Agent"
+    "allow_once":
+      "en": "Allow once"
+      "zh-CN": "允许一次"
+    "blocked":
+      "en": "Blocked"
+      "zh-CN": "受阻"
+    "cancel":
+      "en": "Cancel"
+      "zh-CN": "取消"
+    "classes":
+      "en": "Classes"
+      "zh-CN": "类"
+    "close_terminal":
+      "en": "Close terminal"
+      "zh-CN": "关闭终端"
+    "complete":
+      "en": "Completed"
+      "zh-CN": "已完成"
+    "consent":
+      "en": "This tool requires your permission. Review its effects before running."
+      "zh-CN": "此工具需要你的许可。请先查看工具影响。"
+    "contradicted":
+      "en": "Contradicted"
+      "zh-CN": "已反驳"
+    "copy":
+      "en": "Copy"
+      "zh-CN": "复制"
+    "coverage":
+      "en": "Coverage"
+      "zh-CN": "覆盖范围"
+    "critical":
+      "en": "Critical"
+      "zh-CN": "严重"
+    "deep_needed":
+      "en": "This view requires Deep mode."
+      "zh-CN": "这个视图需要深度模式。"
+    "deep_warning":
+      "en": "Deep mode examines the original target's implementation. This changes the project's clean-room boundary. Continue?"
+      "zh-CN": "深度模式会检查原目标的内部实现，并改变此项目的净室边界。是否继续？"
+    "derived":
+      "en": "Derived"
+      "zh-CN": "已推导"
+    "disassembly":
+      "en": "Disassembly"
+      "zh-CN": "反汇编"
+    "engine_fix":
+      "en": "Install or configure the analysis engine in Settings → Analysis engines."
+      "zh-CN": "请在设置 → 分析引擎中安装或配置所需引擎。"
+    "environment":
+      "en": "Engine and mode"
+      "zh-CN": "引擎与模式"
+    "evidence":
+      "en": "Evidence"
+      "zh-CN": "证据"
+    "filter":
+      "en": "Filter name or address…"
+      "zh-CN": "按名称或地址过滤…"
+    "functions":
+      "en": "Functions"
+      "zh-CN": "函数"
+    "graph":
+      "en": "Call graph"
+      "zh-CN": "调用图"
+    "graph_large":
+      "en": "The graph exceeds the display limit."
+      "zh-CN": "调用图超过显示上限。"
+    "graph_missing":
+      "en": "The graph has no center function."
+      "zh-CN": "调用图缺少中心函数。"
+    "graph_more":
+      "en": "%{count} more"
+      "zh-CN": "另有 %{count} 项"
+    "hex":
+      "en": "Hex"
+      "zh-CN": "Hex"
+    "high":
+      "en": "High"
+      "zh-CN": "高"
+    "imports":
+      "en": "Imports / exports"
+      "zh-CN": "导入／导出"
+    "inferred":
+      "en": "Inferred"
+      "zh-CN": "推测"
+    "inspector":
+      "en": "Inspector"
+      "zh-CN": "检查器"
+    "investigating":
+      "en": "Investigating"
+      "zh-CN": "调查中"
+    "json":
+      "en": "Full evidence JSON"
+      "zh-CN": "完整证据 JSON"
+    "limitations":
+      "en": "Limitations"
+      "zh-CN": "限制"
+    "loading":
+      "en": "Loading…"
+      "zh-CN": "正在加载…"
+    "locations":
+      "en": "Locations"
+      "zh-CN": "位置"
+    "logs":
+      "en": "Logs"
+      "zh-CN": "日志"
+    "low":
+      "en": "Low"
+      "zh-CN": "低"
+    "medium":
+      "en": "Medium"
+      "zh-CN": "中"
+    "method":
+      "en": "Method"
+      "zh-CN": "方法"
+    "modules":
+      "en": "Modules"
+      "zh-CN": "模块"
+    "name":
+      "en": "Name"
+      "zh-CN": "名称"
+    "network":
+      "en": "Network"
+      "zh-CN": "网络"
+    "new_terminal":
+      "en": "New PowerShell"
+      "zh-CN": "新建 PowerShell"
+    "observed":
+      "en": "Observed"
+      "zh-CN": "已观察"
+    "open":
+      "en": "Open"
+      "zh-CN": "待调查"
+    "open_target":
+      "en": "Open target"
+      "zh-CN": "打开目标"
+    "operation":
+      "en": "Source tool"
+      "zh-CN": "来源工具"
+    "os_unavailable":
+      "en": "This tool is unavailable on this operating system."
+      "zh-CN": "此工具不支持当前操作系统。"
+    "pseudocode":
+      "en": "Pseudo-C"
+      "zh-CN": "伪 C"
+    "refresh":
+      "en": "Refresh"
+      "zh-CN": "刷新"
+    "resolved":
+      "en": "Resolved"
+      "zh-CN": "已解决"
+    "resources":
+      "en": "Resources"
+      "zh-CN": "资源"
+    "results":
+      "en": "Results"
+      "zh-CN": "结果"
+    "retry":
+      "en": "Retry"
+      "zh-CN": "重试"
+    "sections":
+      "en": "Sections"
+      "zh-CN": "节"
+    "select_item":
+      "en": "Select a row to inspect it."
+      "zh-CN": "选择一行查看内容。"
+    "size":
+      "en": "Size"
+      "zh-CN": "大小"
+    "source":
+      "en": "Source"
+      "zh-CN": "源码"
+    "source_large":
+      "en": "This source exceeds the 8 MiB viewer limit."
+      "zh-CN": "此源文件超过查看器的 8 MiB 上限。"
+    "source_unreadable":
+      "en": "The restored source file could not be read safely."
+      "zh-CN": "无法安全读取已恢复的源文件。"
+    "status":
+      "en": "Status"
+      "zh-CN": "状态"
+    "strings":
+      "en": "Strings"
+      "zh-CN": "字符串"
+    "switch_deep":
+      "en": "Switch to Deep mode"
+      "zh-CN": "切换到深度"
+    "target_needed":
+      "en": "Open a target first."
+      "zh-CN": "请先打开目标。"
+    "tasks":
+      "en": "Tasks"
+      "zh-CN": "任务"
+    "terminal":
+      "en": "Terminal"
+      "zh-CN": "终端"
+    "terminal_cwd":
+      "en": "Open the project terminal directory"
+      "zh-CN": "打开项目终端目录"
+    "terminal_exited":
+      "en": "Shell exited. Select its tab to restart."
+      "zh-CN": "终端已退出。点击页签可重新启动。"
+    "title":
+      "en": "Reverse-engineering workbench"
+      "zh-CN": "逆向工作台"
+    "toggle_bottom":
+      "en": "Tasks / logs / terminal"
+      "zh-CN": "任务／日志／终端"
+    "unavailable":
+      "en": "No registered tool can produce this view."
+      "zh-CN": "没有已注册工具可以提供此视图。"
+    "unknown":
+      "en": "Unknown"
+      "zh-CN": "未知"
+    "unknowns":
+      "en": "Unknowns"
+      "zh-CN": "未知项"
+    "url":
+      "en": "URL"
+      "zh-CN": "地址"
+  "ask":
+    "title":
+      "en": "Ask about this target"
+      "zh-CN": "问问这个目标"
+    "back":
+      "en": "Back"
+      "zh-CN": "返回"
+    "workbench":
+      "en": "Workbench"
+      "zh-CN": "工作台"
+    "target":
+      "en": "What's open"
+      "zh-CN": "当前目标"
+    "bytes":
+      "en": "%{count} bytes"
+      "zh-CN": "%{count} 字节"
+    "no_target":
+      "en": "No target open"
+      "zh-CN": "尚未打开目标"
+    "no_target_hint":
+      "en": "Open an app or file from Home to ask about it."
+      "zh-CN": "从首页打开应用或文件，即可针对它提问。"
+    "clean_hint":
+      "en": "Clean room: nothing inside the target is read."
+      "zh-CN": "净室模式：不读取目标内部内容。"
+    "deep_hint":
+      "en": "Deep analysis can read the target. Actions still follow project permissions."
+      "zh-CN": "深度分析可读取目标内容；各项操作仍遵循项目权限。"
+    "findings":
+      "en": "%{count} project findings"
+      "zh-CN": "项目已有 %{count} 条发现"
+    "stale":
+      "en": "The target has changed; existing findings may be out of date."
+      "zh-CN": "目标已变化，现有发现可能过时。"
+    "snapshot_pending":
+      "en": "Target context is not available yet."
+      "zh-CN": "目标信息尚未就绪。"
+    "operation_failed":
+      "en": "An operation failed (%{code}). See the application notice for details."
+      "zh-CN": "操作失败（%{code}），请查看应用通知了解详情。"
+    "try_asking":
+      "en": "Try asking"
+      "zh-CN": "试着问问"
+    "draft_hint":
+      "en": "Suggestions are added to your draft. Review it, then send."
+      "zh-CN": "建议问题会加入草稿，请确认后发送。"
+    "novice":
+      "en": "Explain like I'm new"
+      "zh-CN": "用新手能懂的话解释"
+    "novice_hint":
+      "en": "Plain words, short sentences, and technical terms explained."
+      "zh-CN": "使用简单用语和短句，并解释技术术语。"
+    "novice_instruction":
+      "en": "Explain like I'm new to this: use plain words and short sentences, and explain every technical term. Ground conclusions in evidence and say when something is uncertain."
+      "zh-CN": "请按新手来解释：使用简单用语和短句，解释每个技术术语。结论应有证据支持，不确定时请明确说明。"
+    "export":
+      "en": "Export report"
+      "zh-CN": "导出报告"
+    "chat_unavailable":
+      "en": "No analysis chat is ready. Use the conversation's new-chat control or configure an Agent in Settings."
+      "zh-CN": "分析会话尚未就绪，请新建聊天或在设置中配置 Agent。"
+    "kind":
+      "linux":
+        "en": "A Linux or Unix program"
+        "zh-CN": "Linux 或 Unix 程序"
+      "windows":
+        "en": "A Windows program"
+        "zh-CN": "Windows 程序"
+      "apple":
+        "en": "A Mac or iPhone program"
+        "zh-CN": "Mac 或 iPhone 程序"
+      "managed":
+        "en": "A .NET program"
+        "zh-CN": ".NET 程序"
+      "java":
+        "en": "A Java program"
+        "zh-CN": "Java 程序"
+      "android":
+        "en": "An Android app or app code"
+        "zh-CN": "Android 应用或应用代码"
+      "wasm":
+        "en": "A WebAssembly module"
+        "zh-CN": "WebAssembly 模块"
+      "archive":
+        "en": "A ZIP archive"
+        "zh-CN": "ZIP 压缩包"
+      "electron":
+        "en": "The packed contents of an Electron app"
+        "zh-CN": "Electron 应用的打包内容"
+      "script":
+        "en": "A script or web page"
+        "zh-CN": "脚本或网页"
+      "folder":
+        "en": "A folder"
+        "zh-CN": "文件夹"
+      "network":
+        "en": "A recording of network traffic"
+        "zh-CN": "网络流量记录"
+      "settings":
+        "en": "An Apple settings file"
+        "zh-CN": "Apple 设置文件"
+      "contract":
+        "en": "An EVM smart contract"
+        "zh-CN": "EVM 智能合约"
+      "database":
+        "en": "A SQLite database"
+        "zh-CN": "SQLite 数据库"
+      "dos":
+        "en": "A DOS program"
+        "zh-CN": "DOS 程序"
+      "machine":
+        "en": "Raw machine code"
+        "zh-CN": "原始机器码"
+      "unknown":
+        "en": "A file not recognised yet"
+        "zh-CN": "尚未识别的文件"
+    "question":
+      "capabilities":
+        "en": "What can AutoCraft do?"
+        "zh-CN": "AutoCraft 能做什么？"
+      "open":
+        "en": "How do I open an app?"
+        "zh-CN": "如何打开一个应用？"
+      "safe_inspect":
+        "en": "Is it safe to look inside programs?"
+        "zh-CN": "查看程序内部安全吗？"
+      "program":
+        "en": "What does this program do?"
+        "zh-CN": "这个程序是做什么的？"
+      "network_data":
+        "en": "What data does it send over the internet?"
+        "zh-CN": "它向网络发送了什么数据？"
+      "safe_run":
+        "en": "Is it safe to run?"
+        "zh-CN": "运行它安全吗？"
+      "files":
+        "en": "Which files does it read or write?"
+        "zh-CN": "它会读写哪些文件？"
+      "parts":
+        "en": "What are its main parts?"
+        "zh-CN": "它主要由哪些部分组成？"
+      "network":
+        "en": "Does it talk to the internet?"
+        "zh-CN": "它会连接互联网吗？"
+      "stored":
+        "en": "What does this app store?"
+        "zh-CN": "这个应用保存了什么？"
+      "tables":
+        "en": "What tables are in here?"
+        "zh-CN": "这里有哪些数据表？"
+      "sensitive":
+        "en": "Is anything sensitive saved in plain text?"
+        "zh-CN": "是否有敏感信息以明文保存？"
+      "app":
+        "en": "What does this app do?"
+        "zh-CN": "这个应用是做什么的？"
+      "permissions":
+        "en": "What permissions does it ask for?"
+        "zh-CN": "它申请了哪些权限？"
+      "servers":
+        "en": "Which servers does it talk to?"
+        "zh-CN": "它会连接哪些服务器？"
+      "tracking":
+        "en": "Does it track me?"
+        "zh-CN": "它会跟踪我吗？"
+      "built":
+        "en": "How is this app built?"
+        "zh-CN": "这个应用是如何构建的？"
+      "websites":
+        "en": "Which websites does it load?"
+        "zh-CN": "它会加载哪些网站？"
+      "window_page":
+        "en": "How do the window and the page talk to each other?"
+        "zh-CN": "窗口和网页如何通信？"
+      "module":
+        "en": "What does this module do?"
+        "zh-CN": "这个模块有什么作用？"
+      "page_needs":
+        "en": "What does it need from the page?"
+        "zh-CN": "它需要网页提供什么？"
+      "folder":
+        "en": "What's in this folder?"
+        "zh-CN": "这个文件夹里有什么？"
+      "main_file":
+        "en": "Which file is the main program?"
+        "zh-CN": "哪个文件是主程序？"
+      "archive":
+        "en": "What's inside this archive?"
+        "zh-CN": "这个压缩包里有什么？"
+      "archive_program":
+        "en": "Is anything in here a program?"
+        "zh-CN": "里面有可执行程序吗？"
+      "contacted":
+        "en": "Which servers were contacted?"
+        "zh-CN": "连接过哪些服务器？"
+      "settings":
+        "en": "What settings are in here?"
+        "zh-CN": "这里有哪些设置？"
+      "contract":
+        "en": "What does this contract do?"
+        "zh-CN": "这个合约有什么作用？"
+      "funds":
+        "en": "Who can move funds?"
+        "zh-CN": "谁能够转移资金？"
+      "file_kind":
+        "en": "What kind of file is this?"
+        "zh-CN": "这是什么类型的文件？"
+      "readable":
+        "en": "Is there any readable text inside?"
+        "zh-CN": "里面有可读文本吗？"
+  "pins":
+    "title":
+      "zh-CN": "固定版本"
+      "en": "Pinned builds"
+    "refresh":
+      "zh-CN": "刷新"
+      "en": "Refresh"
+    "project_needed":
+      "zh-CN": "请先选择项目。"
+      "en": "Select a project first."
+    "intro":
+      "zh-CN": "保存当前构建，后续构建不会替换此固定版本。"
+      "en": "Keep the current build independently of later builds."
+    "website_note":
+      "zh-CN": "网站暂不支持固定；没有可运行构建时也无法创建。"
+      "en": "Websites cannot be pinned yet; a runnable build is required."
+    "frozen":
+      "zh-CN": "冻结副本"
+      "en": "Frozen copy"
+    "light":
+      "zh-CN": "轻量副本"
+      "en": "Light copy"
+    "live":
+      "zh-CN": "旧版实时引用"
+      "en": "Legacy live reference"
+    "frozen_note":
+      "zh-CN": "复制程序及所需文件。后续构建不会改变此副本，程序保存在副本中的数据也随副本保留。"
+      "en": "Copies the program and required files. Later builds cannot change it; data saved beside it stays with the copy."
+    "light_note":
+      "zh-CN": "复制程序和代码，硬链接共享依赖及媒体。替换或删除源文件不影响副本，但原地改写共享文件会同时改变两者；无法硬链接时会复制。"
+      "en": "Copies program and code; hard-links dependencies and media. Replacing or deleting originals preserves the pin, but in-place writes affect both. Files are copied when linking is unavailable."
+    "live_note":
+      "zh-CN": "旧版实时引用打开项目当前程序，不是独立冻结副本。"
+      "en": "This legacy reference opens the project's current app, not an independent frozen copy."
+    "estimate":
+      "zh-CN": "冻结 %{frozen} · 轻量预计 %{light} · %{files} 个文件"
+      "en": "Frozen %{frozen} · Light estimate %{light} · %{files} files"
+    "name_placeholder":
+      "zh-CN": "名称可留空，默认使用项目名称及轮次"
+      "en": "Optional name; defaults to project name and round"
+    "name":
+      "zh-CN": "固定版本名称"
+      "en": "Pin name"
+    "create":
+      "zh-CN": "固定构建"
+      "en": "Pin build"
+    "total":
+      "zh-CN": "%{count} 个固定版本 · 已复制 %{size}"
+      "en": "%{count} pins · %{size} copied"
+    "empty":
+      "zh-CN": "尚无固定版本。"
+      "en": "No pinned builds yet."
+    "metadata":
+      "zh-CN": "%{kind} · 第 %{round} 轮 · %{size} · %{status}"
+      "en": "%{kind} · Round %{round} · %{size} · %{status}"
+    "shared":
+      "zh-CN": "共享文件 %{size}"
+      "en": "Shared files %{size}"
+    "running":
+      "zh-CN": "本次会话运行中"
+      "en": "Running in this session"
+    "not_running":
+      "zh-CN": "本次会话未运行"
+      "en": "Not running in this session"
+    "open":
+      "zh-CN": "打开"
+      "en": "Open"
+    "stop":
+      "zh-CN": "停止"
+      "en": "Stop"
+    "more":
+      "zh-CN": "更多"
+      "en": "More"
+    "another":
+      "zh-CN": "再开一份"
+      "en": "Open another copy"
+    "folder":
+      "zh-CN": "打开文件夹"
+      "en": "Open folder"
+    "rename":
+      "zh-CN": "重命名"
+      "en": "Rename"
+    "delete":
+      "zh-CN": "删除"
+      "en": "Delete"
+    "working":
+      "zh-CN": "正在处理…"
+      "en": "Working…"
+    "cancel":
+      "zh-CN": "取消操作"
+      "en": "Cancel operation"
+    "confirm_title":
+      "zh-CN": "确认固定版本操作"
+      "en": "Confirm pin operation"
+    "confirm":
+      "zh-CN": "确认"
+      "en": "Confirm"
+    "target":
+      "zh-CN": "固定版本：%{name}"
+      "en": "Pinned build: %{name}"
+    "create_confirm":
+      "zh-CN": "将按所选模式复制当前构建，占用磁盘空间。继续创建？"
+      "en": "Copy the current build using the selected mode, consuming disk space?"
+    "open_confirm":
+      "zh-CN": "即将运行构建生成的程序，程序可能读写文件或访问网络。仅在信任此程序时继续。"
+      "en": "Run code produced by the build? It may read or write files or access the network. Continue only if trusted."
+    "another_confirm":
+      "zh-CN": "再启动同一固定版本的一份程序。多个实例共享副本中的保存文件，可能发生冲突。仅在信任程序时继续。"
+      "en": "Run another instance of this pin? Instances share saved files and may conflict. Continue only if trusted."
+    "stop_confirm":
+      "zh-CN": "停止此固定版本在本次会话启动的所有实例，未保存的数据可能丢失。"
+      "en": "Stop every instance of this pin started in this session? Unsaved data may be lost."
+    "rename_confirm":
+      "zh-CN": "保存此固定版本的新名称？"
+      "en": "Save the new pin name?"
+    "delete_confirm":
+      "zh-CN": "永久删除此固定版本及副本中保存的数据，无法撤销。项目本身保持不变。运行中的固定版本必须先停止；旧版实时引用只删除引用。"
+      "en": "Permanently delete this pin and data saved in its copy? This cannot be undone; the project is unchanged. Stop running pins first. Legacy live pins remove only the reference."
+    "folder_confirm":
+      "zh-CN": "使用系统文件管理器打开此固定版本的文件夹？此操作不会运行固定版本程序。"
+      "en": "Open this pin's folder in the system file manager? This does not run the pinned program."
+    "created":
+      "zh-CN": "固定版本已创建。"
+      "en": "Pinned build created."
+    "started":
+      "zh-CN": "程序已启动，将在独立窗口运行。"
+      "en": "Program started in its own window."
+    "already_running":
+      "zh-CN": "此版本已运行，未启动重复实例。可通过“更多”再开一份。"
+      "en": "Already running; no duplicate was started. Use More to open another copy."
+    "closed":
+      "zh-CN": "程序启动后立即正常退出，目前未运行。"
+      "en": "The program exited successfully immediately after launch and is not running."
+    "stopped":
+      "zh-CN": "已停止 %{count} 个实例。"
+      "en": "Stopped %{count} instances."
+    "renamed":
+      "zh-CN": "固定版本已重命名。"
+      "en": "Pin renamed."
+    "deleted":
+      "zh-CN": "固定版本已删除。"
+      "en": "Pin deleted."
+    "folder_opened":
+      "zh-CN": "已请求系统打开文件夹。"
+      "en": "Requested the system to open the folder."
+  "game_files":
+    "title":
+      "zh-CN": "游戏文件"
+      "en": "Game files"
+    "description":
+      "zh-CN": "浏览游戏归档，将有权使用的纹理导出为 PNG 并预览。"
+      "en": "Browse game archives and export permitted textures as PNG for preview."
+    "project_required":
+      "zh-CN": "请先打开项目。"
+      "en": "Open a project first."
+    "deep_required":
+      "zh-CN": "读取游戏文件需要深入模式。"
+      "en": "Reading game files requires Deep mode."
+    "enable_deep":
+      "zh-CN": "启用深入模式"
+      "en": "Enable Deep"
+    "deep_confirm":
+      "zh-CN": "深入模式会读取原始游戏文件。确认启用？"
+      "en": "Deep mode reads the original game's files. Enable it?"
+    "confirm":
+      "zh-CN": "确认"
+      "en": "Confirm"
+    "cancel":
+      "zh-CN": "取消"
+      "en": "Cancel"
+    "pick_folder":
+      "zh-CN": "选择文件夹"
+      "en": "Choose folder"
+    "pick_archive":
+      "zh-CN": "选择归档"
+      "en": "Choose archive"
+    "use_target":
+      "zh-CN": "使用当前目标"
+      "en": "Use current target"
+    "filter":
+      "zh-CN": "按名称筛选"
+      "en": "Filter by name"
+    "search":
+      "zh-CN": "筛选"
+      "en": "Filter"
+    "archives":
+      "zh-CN": "归档"
+      "en": "Archives"
+    "open":
+      "zh-CN": "打开"
+      "en": "Open"
+    "bytes":
+      "zh-CN": "%{count} 字节"
+      "en": "%{count} bytes"
+    "no_archives":
+      "zh-CN": "未发现支持的游戏归档，请选择游戏安装文件夹。"
+      "en": "No supported game archives found. Choose the game's installation folder."
+    "choose_archive":
+      "zh-CN": "选择归档以查看内容。"
+      "en": "Choose an archive to see its contents."
+    "truncated":
+      "zh-CN": "搜索已达到文件数量上限，结果可能不完整。"
+      "en": "Discovery reached its entry limit; results may be incomplete."
+    "picture_hint":
+      "zh-CN": "仅 Texture2D 和 .uasset 候选可尝试导出；并非所有游戏版本或纹理格式都受支持。导出成功后显示预览。"
+      "en": "Texture2D objects and .uasset candidates can be exported where supported. Not every game version or texture format is supported. Preview appears after export."
+    "browse_only":
+      "zh-CN": "此归档仅支持浏览，无法导出或预览图片。加密或未索引的容器可能无法显示文件名。"
+      "en": "This archive supports browsing only, not picture export or preview. Encrypted or unindexed containers may not expose filenames."
+    "no_items":
+      "zh-CN": "没有可显示的内容。请调整筛选；加密或未索引的归档可能无法列出文件名。"
+      "en": "No items to show. Adjust the filter; encrypted or unindexed archives may not expose filenames."
+    "save":
+      "zh-CN": "导出并预览"
+      "en": "Export & preview"
+    "more":
+      "zh-CN": "加载更多"
+      "en": "Load more"
+    "consent":
+      "zh-CN": "仅可提取自己制作或已获权利人许可的游戏内容。允许本次读取并向所选位置写入文件？不会覆盖已有文件。"
+      "en": "Extract only games you made or have the rights holder's permission to unpack. Allow this read and write to the selected destination? Existing files will not be overwritten."
+    "allow":
+      "zh-CN": "我有权限，允许本次"
+      "en": "I have permission; allow once"
+    "loading":
+      "zh-CN": "正在处理…"
+      "en": "Working…"
+    "saved":
+      "zh-CN": "已保存，%{width} × %{height}"
+      "en": "Saved, %{width} × %{height}"
+    "failed":
+      "zh-CN": "操作失败。请检查文件是否可读取、输出是否已存在，或调整选择后重试。"
+      "en": "Operation failed. Check that the source is readable and the output does not already exist, or change the selection and retry."
+    "unavailable":
+      "zh-CN": "此工具在当前目标或系统上不可用。请检查目标和分析设置。"
+      "en": "This tool is unavailable for the current target or system. Check the target and analysis settings."
+    "unsupported":
+      "zh-CN": "不支持此归档的读取方式，请选择支持的游戏归档。"
+      "en": "This archive's listing method is unsupported. Choose a supported game archive."
+    "invalid_result":
+      "zh-CN": "分析工具返回了无法识别的结果。"
+      "en": "The analysis tool returned an unrecognized result."
+    "picker_failed":
+      "zh-CN": "无法打开文件选择器，请重试。"
+      "en": "The file picker could not be opened. Try again."
+    "output_exists":
+      "zh-CN": "所选 PNG 文件已存在，不会覆盖。请重新导出并选择其他文件名。"
+      "en": "The PNG file already exists and will not be overwritten. Export again with a different file name."

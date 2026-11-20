@@ -1,0 +1,578 @@
+[
+  {
+    "command": "prompt",
+    "id": "probe-3",
+    "success": true,
+    "type": "response"
+  },
+  {
+    "type": "agent_start"
+  },
+  {
+    "type": "turn_start"
+  },
+  {
+    "message": {
+      "attribution": "user",
+      "content": [
+        {
+          "text": "Exercise the requested probe tool once; its approval will be denied.",
+          "type": "text"
+        }
+      ],
+      "role": "user",
+      "timestamp": 1794310849222
+    },
+    "messageId": "msg-1",
+    "type": "message_start"
+  },
+  {
+    "message": {
+      "attribution": "user",
+      "content": [
+        {
+          "text": "Exercise the requested probe tool once; its approval will be denied.",
+          "type": "text"
+        }
+      ],
+      "role": "user",
+      "timestamp": 1794310849222
+    },
+    "messageId": "msg-1",
+    "type": "message_end"
+  },
+  {
+    "message": {
+      "api": "openai-completions",
+      "content": [
+        {
+          "arguments": {
+            "content": "PROBE_CONTENT_PLACEHOLDER\n",
+            "path": "probe-write.txt"
+          },
+          "id": "call_autocraft_1",
+          "name": "write",
+          "partialArgs": "{\"content\":\"PROBE_CONTENT_PLACEHOLDER\\n\",\"path\":\"probe-write.txt\"}",
+          "streamIndex": 0,
+          "type": "toolCall"
+        }
+      ],
+      "model": "probe-model",
+      "provider": "autocraft-probe",
+      "responseId": "chatcmpl-autocraft-1",
+      "role": "assistant",
+      "stopReason": "stop",
+      "timestamp": 1794310849243,
+      "usage": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "input": 0,
+        "output": 0,
+        "totalTokens": 0
+      }
+    },
+    "messageId": "msg-2",
+    "type": "message_start"
+  },
+  {
+    "assistantMessageEvent": {
+      "block": {
+        "arguments": {},
+        "id": "call_autocraft_1",
+        "name": "write",
+        "partialArgs": "{\"content\":\"PROBE_CONTENT_PLACEHOLDER\\n\",\"path\":\"probe-write.txt\"}",
+        "streamIndex": 0,
+        "type": "toolCall"
+      },
+      "contentIndex": 0,
+      "type": "toolcall_start"
+    },
+    "message": {
+      "role": "assistant"
+    },
+    "messageId": "msg-2",
+    "type": "message_update"
+  },
+  {
+    "assistantMessageEvent": {
+      "contentIndex": 0,
+      "delta": "{\"content\":\"PROBE_CONTENT_PLACEHOLDER\\n\",\"path\":\"probe-write.txt\"}",
+      "type": "toolcall_delta"
+    },
+    "message": {
+      "role": "assistant"
+    },
+    "messageId": "msg-2",
+    "type": "message_update"
+  },
+  {
+    "assistantMessageEvent": {
+      "contentIndex": 0,
+      "toolCall": {
+        "arguments": {
+          "content": "PROBE_CONTENT_PLACEHOLDER\n",
+          "path": "probe-write.txt"
+        },
+        "id": "call_autocraft_1",
+        "name": "write",
+        "partialArgs": "{\"content\":\"PROBE_CONTENT_PLACEHOLDER\\n\",\"path\":\"probe-write.txt\"}",
+        "streamIndex": 0,
+        "type": "toolCall"
+      },
+      "type": "toolcall_end"
+    },
+    "message": {
+      "role": "assistant"
+    },
+    "messageId": "msg-2",
+    "type": "message_update"
+  },
+  {
+    "id": "15c89e04b92daa4d",
+    "message": "autocraft:tool_call:{\"toolName\":\"write\",\"input\":{\"content\":\"PROBE_CONTENT_PLACEHOLDER\\n\",\"path\":\"probe-write.txt\"}}",
+    "method": "notify",
+    "notifyType": "info",
+    "type": "extension_ui_request"
+  },
+  {
+    "message": {
+      "api": "openai-completions",
+      "completedAt": 1794310849252,
+      "content": [
+        {
+          "arguments": {
+            "content": "PROBE_CONTENT_PLACEHOLDER\n",
+            "path": "probe-write.txt"
+          },
+          "id": "call_autocraft_1",
+          "name": "write",
+          "partialArgs": "{\"content\":\"PROBE_CONTENT_PLACEHOLDER\\n\",\"path\":\"probe-write.txt\"}",
+          "streamIndex": 0,
+          "type": "toolCall"
+        }
+      ],
+      "duration": 7.272299999999973,
+      "model": "probe-model",
+      "provider": "autocraft-probe",
+      "responseId": "chatcmpl-autocraft-1",
+      "role": "assistant",
+      "stopReason": "toolUse",
+      "timestamp": 1794310849243,
+      "ttft": 6.198100000000068,
+      "usage": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "input": 1,
+        "output": 1,
+        "totalTokens": 2
+      }
+    },
+    "messageId": "msg-2",
+    "type": "message_end"
+  },
+  {
+    "args": {
+      "content": "PROBE_CONTENT_PLACEHOLDER\n",
+      "path": "probe-write.txt"
+    },
+    "toolCallId": "call_autocraft_1",
+    "toolName": "write",
+    "type": "tool_execution_start"
+  },
+  {
+    "id": "15c89e04b9edaa4f",
+    "method": "select",
+    "options": [
+      "Approve",
+      "Approve write for this session",
+      "Deny"
+    ],
+    "title": "Allow tool: write\nPath: probe-write.txt\nContent:\nPROBE_CONTENT_PLACEHOLDER\n",
+    "type": "extension_ui_request"
+  },
+  {
+    "isError": true,
+    "result": {
+      "content": [
+        {
+          "text": "Tool call denied by user: write",
+          "type": "text"
+        }
+      ],
+      "details": {}
+    },
+    "toolCallId": "call_autocraft_1",
+    "toolName": "write",
+    "type": "tool_execution_end"
+  },
+  {
+    "message": {
+      "content": [
+        {
+          "text": "Tool call denied by user: write",
+          "type": "text"
+        }
+      ],
+      "details": {},
+      "isError": true,
+      "role": "toolResult",
+      "timestamp": 1794310849256,
+      "toolCallId": "call_autocraft_1",
+      "toolName": "write"
+    },
+    "messageId": "msg-3",
+    "type": "message_start"
+  },
+  {
+    "message": {
+      "content": [
+        {
+          "text": "Tool call denied by user: write",
+          "type": "text"
+        }
+      ],
+      "details": {},
+      "isError": true,
+      "role": "toolResult",
+      "timestamp": 1794310849256,
+      "toolCallId": "call_autocraft_1",
+      "toolName": "write"
+    },
+    "messageId": "msg-3",
+    "type": "message_end"
+  },
+  {
+    "message": {
+      "api": "openai-completions",
+      "content": [
+        {
+          "arguments": {
+            "content": "PROBE_CONTENT_PLACEHOLDER\n",
+            "path": "probe-write.txt"
+          },
+          "id": "call_autocraft_1",
+          "name": "write",
+          "partialArgs": "{\"content\":\"PROBE_CONTENT_PLACEHOLDER\\n\",\"path\":\"probe-write.txt\"}",
+          "streamIndex": 0,
+          "type": "toolCall"
+        }
+      ],
+      "duration": 7.272299999999973,
+      "model": "probe-model",
+      "provider": "autocraft-probe",
+      "responseId": "chatcmpl-autocraft-1",
+      "role": "assistant",
+      "stopReason": "toolUse",
+      "timestamp": 1794310849243,
+      "ttft": 6.198100000000068,
+      "usage": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "input": 1,
+        "output": 1,
+        "totalTokens": 2
+      }
+    },
+    "toolResults": [
+      {
+        "content": [
+          {
+            "text": "Tool call denied by user: write",
+            "type": "text"
+          }
+        ],
+        "details": {},
+        "isError": true,
+        "role": "toolResult",
+        "timestamp": 1794310849256,
+        "toolCallId": "call_autocraft_1",
+        "toolName": "write"
+      }
+    ],
+    "type": "turn_end"
+  },
+  {
+    "type": "turn_start"
+  },
+  {
+    "message": {
+      "api": "openai-completions",
+      "content": [
+        {
+          "text": "PROBE_TOOL_TURN_FINISHED_PLACEHOLDER",
+          "type": "text"
+        }
+      ],
+      "model": "probe-model",
+      "provider": "autocraft-probe",
+      "responseId": "chatcmpl-autocraft-2",
+      "role": "assistant",
+      "stopReason": "stop",
+      "timestamp": 1794310849260,
+      "usage": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "input": 0,
+        "output": 0,
+        "totalTokens": 0
+      }
+    },
+    "messageId": "msg-4",
+    "type": "message_start"
+  },
+  {
+    "assistantMessageEvent": {
+      "block": {
+        "text": "",
+        "type": "text"
+      },
+      "contentIndex": 0,
+      "type": "text_start"
+    },
+    "message": {
+      "role": "assistant"
+    },
+    "messageId": "msg-4",
+    "type": "message_update"
+  },
+  {
+    "assistantMessageEvent": {
+      "contentIndex": 0,
+      "delta": "PROBE_TOOL_TURN_FINISHED_PLACEHOLDER",
+      "type": "text_delta"
+    },
+    "message": {
+      "role": "assistant"
+    },
+    "messageId": "msg-4",
+    "type": "message_update"
+  },
+  {
+    "assistantMessageEvent": {
+      "block": {
+        "type": "text"
+      },
+      "content": "PROBE_TOOL_TURN_FINISHED_PLACEHOLDER",
+      "contentIndex": 0,
+      "type": "text_end"
+    },
+    "message": {
+      "role": "assistant"
+    },
+    "messageId": "msg-4",
+    "type": "message_update"
+  },
+  {
+    "message": {
+      "api": "openai-completions",
+      "completedAt": 1794310849268,
+      "content": [
+        {
+          "text": "PROBE_TOOL_TURN_FINISHED_PLACEHOLDER",
+          "type": "text"
+        }
+      ],
+      "duration": 8.045999999999935,
+      "model": "probe-model",
+      "provider": "autocraft-probe",
+      "responseId": "chatcmpl-autocraft-2",
+      "role": "assistant",
+      "stopReason": "stop",
+      "timestamp": 1794310849260,
+      "ttft": 7.462199999999939,
+      "usage": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "input": 1,
+        "output": 1,
+        "totalTokens": 2
+      }
+    },
+    "messageId": "msg-4",
+    "type": "message_end"
+  },
+  {
+    "message": {
+      "api": "openai-completions",
+      "content": [
+        {
+          "text": "PROBE_TOOL_TURN_FINISHED_PLACEHOLDER",
+          "type": "text"
+        }
+      ],
+      "duration": 8.045999999999935,
+      "model": "probe-model",
+      "provider": "autocraft-probe",
+      "responseId": "chatcmpl-autocraft-2",
+      "role": "assistant",
+      "stopReason": "stop",
+      "timestamp": 1794310849260,
+      "ttft": 7.462199999999939,
+      "usage": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "input": 1,
+        "output": 1,
+        "totalTokens": 2
+      }
+    },
+    "toolResults": [],
+    "type": "turn_end"
+  },
+  {
+    "id": "15c89e04bdedaa50",
+    "method": "setWidget",
+    "type": "extension_ui_request",
+    "widgetKey": "autoresearch"
+  },
+  {
+    "isTerminal": true,
+    "messages": [
+      {
+        "attribution": "user",
+        "content": [
+          {
+            "text": "Exercise the requested probe tool once; its approval will be denied.",
+            "type": "text"
+          }
+        ],
+        "role": "user",
+        "timestamp": 1794310849222
+      },
+      {
+        "api": "openai-completions",
+        "content": [
+          {
+            "arguments": {
+              "content": "PROBE_CONTENT_PLACEHOLDER\n",
+              "path": "probe-write.txt"
+            },
+            "id": "call_autocraft_1",
+            "name": "write",
+            "partialArgs": "{\"content\":\"PROBE_CONTENT_PLACEHOLDER\\n\",\"path\":\"probe-write.txt\"}",
+            "streamIndex": 0,
+            "type": "toolCall"
+          }
+        ],
+        "duration": 7.272299999999973,
+        "model": "probe-model",
+        "provider": "autocraft-probe",
+        "responseId": "chatcmpl-autocraft-1",
+        "role": "assistant",
+        "stopReason": "toolUse",
+        "timestamp": 1794310849243,
+        "ttft": 6.198100000000068,
+        "usage": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0,
+            "total": 0
+          },
+          "input": 1,
+          "output": 1,
+          "totalTokens": 2
+        }
+      },
+      {
+        "content": [
+          {
+            "text": "Tool call denied by user: write",
+            "type": "text"
+          }
+        ],
+        "details": {},
+        "isError": true,
+        "role": "toolResult",
+        "timestamp": 1794310849256,
+        "toolCallId": "call_autocraft_1",
+        "toolName": "write"
+      },
+      {
+        "api": "openai-completions",
+        "content": [
+          {
+            "text": "PROBE_TOOL_TURN_FINISHED_PLACEHOLDER",
+            "type": "text"
+          }
+        ],
+        "duration": 8.045999999999935,
+        "model": "probe-model",
+        "provider": "autocraft-probe",
+        "responseId": "chatcmpl-autocraft-2",
+        "role": "assistant",
+        "stopReason": "stop",
+        "timestamp": 1794310849260,
+        "ttft": 7.462199999999939,
+        "usage": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0,
+            "total": 0
+          },
+          "input": 1,
+          "output": 1,
+          "totalTokens": 2
+        }
+      }
+    ],
+    "type": "agent_end",
+    "yielded": true
+  },
+  {
+    "agentInvoked": true,
+    "id": "probe-3",
+    "sessionSettled": true,
+    "status": "completed",
+    "type": "prompt_result"
+  }
+]

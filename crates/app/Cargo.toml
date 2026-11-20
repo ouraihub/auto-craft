@@ -1,0 +1,50 @@
+[package]
+name = "autocraft"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "autocraft"
+path = "src/main.rs"
+
+
+[dependencies]
+gpui-kit.workspace = true
+lumakit-model-picker.workspace = true
+lumakit-usage-status.workspace = true
+lumakit-gpui.workspace = true
+lumakit-design.workspace = true
+autocraft-core.workspace = true
+autocraft-analysis.workspace = true
+autocraft-agents.workspace = true
+autocraft-bridge.workspace = true
+autocraft-observability.workspace = true
+autocraft-ui.workspace = true
+autocraft-settings.workspace = true
+autocraft-routing.workspace = true
+autocraft-rebuild.workspace = true
+autocraft-terminal.workspace = true
+ca-engine.workspace = true
+ca-engines.workspace = true
+url.workspace = true
+anyhow.workspace = true
+async-channel.workspace = true
+serde_json.workspace = true
+serde.workspace = true
+tracing.workspace = true
+unicode-width.workspace = true
+vt100.workspace = true
+rust-i18n.workspace = true
+sys-locale.workspace = true
+uuid.workspace = true
+
+[dev-dependencies]
+gpui-kit = { workspace = true, features = ["test-support"] }
+tempfile.workspace = true
+serde_yaml.workspace = true
+autocraft-testkit.workspace = true
+
+[lints]
+workspace = true

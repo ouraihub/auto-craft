@@ -1,0 +1,12 @@
+{
+  "approval_request_present": false,
+  "result_messages": [
+    {
+      "content": "URL: http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER\nContent-Type: unknown\nMethod: failed\nNotes: Failed to fetch URL; Cause: ECONNREFUSED: Unable to connect. Is the computer able to access the url?\n\n---\n\n",
+      "role": "tool",
+      "tool_call_id": "call_autocraft_1"
+    }
+  ],
+  "tool": "read",
+  "tool_call_hook": true
+}

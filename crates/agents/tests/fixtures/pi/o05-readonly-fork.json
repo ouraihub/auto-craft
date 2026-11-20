@@ -1,0 +1,1985 @@
+{
+  "fork_response": {
+    "cancelled": false,
+    "text": "Second native history message."
+  },
+  "fork_state": {
+    "autoCompactionEnabled": true,
+    "followUpMode": "one-at-a-time",
+    "isCompacting": false,
+    "isStreaming": false,
+    "messageCount": 3,
+    "model": {
+      "api": "openai-completions",
+      "baseUrl": "http://127.0.0.1:56781/v1",
+      "contextWindow": 128000,
+      "cost": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "input": 0,
+        "output": 0
+      },
+      "id": "p02-scripted",
+      "input": [
+        "text"
+      ],
+      "maxTokens": 4096,
+      "name": "P02 scripted",
+      "provider": "autocraft-p02-loopback",
+      "reasoning": false
+    },
+    "pendingMessageCount": 0,
+    "sessionFile": "\\\\?\\C:\\Users\\Administrator\\AppData\\Local\\Temp\\autocraft-smoke-lkQJPt\\pi\\sessions\\--C--Users-Administrator-AppData-Local-Temp-autocraft-smoke-lkQJPt-workspace--\\2026-11-10T11-39-03-621Z_01a1c541-2644-7354-9e38-46a3639da234.jsonl",
+    "sessionId": "01a1c541-2644-7354-9e38-46a3639da234",
+    "steeringMode": "one-at-a-time",
+    "thinkingLevel": "off"
+  },
+  "frames": [
+    {
+      "command": "get_state",
+      "data": {
+        "autoCompactionEnabled": true,
+        "followUpMode": "one-at-a-time",
+        "isCompacting": false,
+        "isStreaming": false,
+        "messageCount": 5,
+        "model": {
+          "api": "openai-completions",
+          "baseUrl": "http://127.0.0.1:56781/v1",
+          "contextWindow": 128000,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0
+          },
+          "id": "p02-scripted",
+          "input": [
+            "text"
+          ],
+          "maxTokens": 4096,
+          "name": "P02 scripted",
+          "provider": "autocraft-p02-loopback",
+          "reasoning": false
+        },
+        "pendingMessageCount": 0,
+        "sessionFile": "\\\\?\\C:\\Users\\Administrator\\AppData\\Local\\Temp\\autocraft-smoke-lkQJPt\\pi\\sessions\\--C--Users-Administrator-AppData-Local-Temp-autocraft-smoke-lkQJPt-workspace--\\2026-11-10T11-38-59-233Z_01a1c541-1520-753e-a506-d4a613b96499.jsonl",
+        "sessionId": "01a1c541-1520-753e-a506-d4a613b96499",
+        "steeringMode": "one-at-a-time",
+        "thinkingLevel": "off"
+      },
+      "id": "p02-1",
+      "success": true,
+      "type": "response"
+    },
+    {
+      "command": "get_entries",
+      "data": {
+        "entries": [
+          {
+            "id": "480a127b",
+            "modelId": "p02-scripted",
+            "parentId": null,
+            "provider": "autocraft-p02-loopback",
+            "timestamp": "2026-11-10T11:38:59.284Z",
+            "type": "model_change"
+          },
+          {
+            "id": "212c8edd",
+            "parentId": "480a127b",
+            "thinkingLevel": "off",
+            "timestamp": "2026-11-10T11:38:59.284Z",
+            "type": "thinking_level_change"
+          },
+          {
+            "id": "67e2f79d",
+            "message": {
+              "content": "",
+              "role": "system",
+              "sections": {
+                "cwd": "<cwd>\nC:/Users/Administrator/AppData/Local/Temp/autocraft-smoke-lkQJPt/workspace\n</cwd>",
+                "docs": "<docs>\nPi documentation (read only when the user asks about pi itself, its SDK, extensions, themes, skills, or TUI):\n- Main documentation: E:\\workspace\\notepad-dev\\autocraft-smoke-engines\\pi\\1.4.0\\node_modules\\@earendil-works\\pi-coding-agent\\README.md\n- Additional docs: E:\\workspace\\notepad-dev\\autocraft-smoke-engines\\pi\\1.4.0\\node_modules\\@earendil-works\\pi-coding-agent\\docs\n- Examples: E:\\workspace\\notepad-dev\\autocraft-smoke-engines\\pi\\1.4.0\\node_modules\\@earendil-works\\pi-coding-agent\\examples (extensions, custom tools, SDK)\n- When reading pi docs or examples, resolve docs/... under Additional docs and examples/... under Examples, not the current working directory\n- When asked about: extensions (docs/extensions.md, examples/extensions/), themes (docs/themes.md), skills (docs/skills.md), prompt templates (docs/prompt-templates.md), TUI components (docs/tui.md), keybindings (docs/keybindings.md), SDK integrations (docs/sdk.md), custom providers (docs/custom-provider.md), adding models (docs/models.md), pi packages (docs/packages.md), environment variables (docs/environment-variables.md), MCP servers (docs/mcp.md), codemode scripts and non-LLM models such as classifiers and image models (docs/codemode.md)\n- When working on pi topics, read the docs and examples, and follow .md cross-references before implementing\n- Always read pi .md files completely and follow links to related docs (e.g., tui.md for TUI API details)\n</docs>",
+                "preamble": "You are an expert coding assistant operating inside pi, a coding agent harness. You help users by reading files, executing commands, editing code, and writing new files.",
+                "rules": "<rules>\n- Use bash for file operations like ls, rg, find\n- Use read to examine files instead of cat or sed.\n- You can inspect PI_* environment variables for current model and session details.\n- Use edit for precise changes (edits[].oldText must match exactly)\n- When changing multiple separate locations in one file, use one edit call with multiple entries in edits[] instead of multiple edit calls\n- Each edits[].oldText is matched against the original file, not after earlier edits are applied. Do not emit overlapping or nested edits. Merge nearby changes into one edit.\n- Keep edits[].oldText as small as possible while still being unique in the file. Do not pad with large unchanged regions.\n- Use write only for new files or complete rewrites.\n- Be concise in your responses\n- Show file paths clearly when working with files\n</rules>",
+                "tools": "<tools>\n- read: Read file contents\n- bash: Execute bash commands (ls, grep, find, etc.)\n- edit: Make precise file edits with exact text replacement, including multiple disjoint edits in one call\n- write: Create or overwrite files\n\nIn addition to the tools above, you may have access to other custom tools depending on the project.\n</tools>"
+              },
+              "timestamp": 1794310739298,
+              "toolsAdded": [
+                {
+                  "constrainedSampling": {
+                    "strict": "prefer",
+                    "type": "json_schema"
+                  },
+                  "description": "Read the contents of a file. Supports text files and images (jpg, png, gif, webp, bmp). Images are sent as attachments. For text files, output is truncated to 2000 lines or 50KB (whichever is hit first). Use offset/limit for large files. When you need the full file, continue with offset until complete.",
+                  "name": "read",
+                  "parameters": {
+                    "properties": {
+                      "limit": {
+                        "description": "Maximum number of lines to read",
+                        "type": "number"
+                      },
+                      "offset": {
+                        "description": "Line number to start reading from (1-indexed)",
+                        "type": "number"
+                      },
+                      "path": {
+                        "description": "Path to the file to read (relative or absolute)",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "path"
+                    ],
+                    "type": "object"
+                  }
+                },
+                {
+                  "constrainedSampling": {
+                    "strict": "prefer",
+                    "type": "json_schema"
+                  },
+                  "description": "Execute a bash command in the current working directory. Returns stdout and stderr. Output is truncated to last 2000 lines or 50KB (whichever is hit first). If truncated, full output is saved to a temp file. Optionally provide a timeout in seconds.",
+                  "name": "bash",
+                  "parameters": {
+                    "properties": {
+                      "command": {
+                        "description": "Shell command to execute",
+                        "type": "string"
+                      },
+                      "timeout": {
+                        "description": "Timeout in seconds (optional, no default timeout)",
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "command"
+                    ],
+                    "type": "object"
+                  }
+                },
+                {
+                  "constrainedSampling": {
+                    "strict": "prefer",
+                    "type": "json_schema"
+                  },
+                  "description": "Edit a single file using exact text replacement. Every edits[].oldText must match a unique, non-overlapping region of the original file. If two changes affect the same block or nearby lines, merge them into one edit instead of emitting overlapping edits. Do not include large unchanged regions just to connect distant changes.",
+                  "name": "edit",
+                  "parameters": {
+                    "properties": {
+                      "edits": {
+                        "description": "One or more targeted replacements. Each edit is matched against the original file, not incrementally. Do not include overlapping or nested edits. If two changes touch the same block or nearby lines, merge them into one edit instead.",
+                        "items": {
+                          "properties": {
+                            "newText": {
+                              "description": "Replacement text for this targeted edit.",
+                              "type": "string"
+                            },
+                            "oldText": {
+                              "description": "Exact text for one targeted replacement. It must be unique in the original file and must not overlap with any other edits[].oldText in the same call.",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "oldText",
+                            "newText"
+                          ],
+                          "type": "object"
+                        },
+                        "type": "array"
+                      },
+                      "path": {
+                        "description": "Path to the file to edit (relative or absolute)",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "edits"
+                    ],
+                    "type": "object"
+                  }
+                },
+                {
+                  "constrainedSampling": {
+                    "strict": "prefer",
+                    "type": "json_schema"
+                  },
+                  "description": "Write content to a file. Creates the file if it doesn't exist, overwrites if it does. Automatically creates parent directories.",
+                  "name": "write",
+                  "parameters": {
+                    "properties": {
+                      "content": {
+                        "description": "Content to write to the file",
+                        "type": "string"
+                      },
+                      "path": {
+                        "description": "Path to the file to write (relative or absolute)",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "content"
+                    ],
+                    "type": "object"
+                  }
+                }
+              ]
+            },
+            "parentId": "212c8edd",
+            "timestamp": "2026-11-10T11:38:59.299Z",
+            "type": "message"
+          },
+          {
+            "id": "1d76889d",
+            "message": {
+              "content": [
+                {
+                  "text": "First native history message.",
+                  "type": "text"
+                }
+              ],
+              "role": "user",
+              "timestamp": 1794310739297
+            },
+            "parentId": "67e2f79d",
+            "timestamp": "2026-11-10T11:38:59.299Z",
+            "type": "message"
+          },
+          {
+            "id": "53f94e77",
+            "message": {
+              "api": "openai-completions",
+              "content": [
+                {
+                  "text": "P02_ORIGINAL_FIRST",
+                  "type": "text"
+                }
+              ],
+              "durationMs": 26,
+              "model": "p02-scripted",
+              "provider": "autocraft-p02-loopback",
+              "rawStopReason": "stop",
+              "responseId": "chatcmpl-autocraft-1",
+              "role": "assistant",
+              "stopReason": "stop",
+              "thinkingLevel": "off",
+              "timestamp": 1794310739309,
+              "usage": {
+                "cacheRead": 0,
+                "cacheWrite": 0,
+                "cost": {
+                  "cacheRead": 0,
+                  "cacheWrite": 0,
+                  "input": 0,
+                  "output": 0,
+                  "total": 0
+                },
+                "input": 1,
+                "output": 1,
+                "reasoning": 0,
+                "totalTokens": 2
+              }
+            },
+            "parentId": "1d76889d",
+            "timestamp": "2026-11-10T11:38:59.336Z",
+            "type": "message"
+          },
+          {
+            "id": "52ea8438",
+            "message": {
+              "content": [
+                {
+                  "text": "Second native history message.",
+                  "type": "text"
+                }
+              ],
+              "role": "user",
+              "timestamp": 1794310739338
+            },
+            "parentId": "53f94e77",
+            "timestamp": "2026-11-10T11:38:59.339Z",
+            "type": "message"
+          },
+          {
+            "id": "3382a6ae",
+            "message": {
+              "api": "openai-completions",
+              "content": [
+                {
+                  "text": "P02_ORIGINAL_SECOND",
+                  "type": "text"
+                }
+              ],
+              "durationMs": 4016,
+              "model": "p02-scripted",
+              "provider": "autocraft-p02-loopback",
+              "rawStopReason": "stop",
+              "responseId": "chatcmpl-autocraft-2",
+              "role": "assistant",
+              "stopReason": "stop",
+              "thinkingLevel": "off",
+              "timestamp": 1794310739340,
+              "usage": {
+                "cacheRead": 0,
+                "cacheWrite": 0,
+                "cost": {
+                  "cacheRead": 0,
+                  "cacheWrite": 0,
+                  "input": 0,
+                  "output": 0,
+                  "total": 0
+                },
+                "input": 1,
+                "output": 1,
+                "reasoning": 0,
+                "totalTokens": 2
+              }
+            },
+            "parentId": "52ea8438",
+            "timestamp": "2026-11-10T11:39:03.356Z",
+            "type": "message"
+          }
+        ],
+        "leafId": "3382a6ae"
+      },
+      "id": "p02-2",
+      "success": true,
+      "type": "response"
+    },
+    {
+      "command": "fork",
+      "data": {
+        "cancelled": false,
+        "text": "Second native history message."
+      },
+      "id": "p02-3",
+      "success": true,
+      "type": "response"
+    },
+    {
+      "command": "get_state",
+      "data": {
+        "autoCompactionEnabled": true,
+        "followUpMode": "one-at-a-time",
+        "isCompacting": false,
+        "isStreaming": false,
+        "messageCount": 3,
+        "model": {
+          "api": "openai-completions",
+          "baseUrl": "http://127.0.0.1:56781/v1",
+          "contextWindow": 128000,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0
+          },
+          "id": "p02-scripted",
+          "input": [
+            "text"
+          ],
+          "maxTokens": 4096,
+          "name": "P02 scripted",
+          "provider": "autocraft-p02-loopback",
+          "reasoning": false
+        },
+        "pendingMessageCount": 0,
+        "sessionFile": "\\\\?\\C:\\Users\\Administrator\\AppData\\Local\\Temp\\autocraft-smoke-lkQJPt\\pi\\sessions\\--C--Users-Administrator-AppData-Local-Temp-autocraft-smoke-lkQJPt-workspace--\\2026-11-10T11-39-03-621Z_01a1c541-2644-7354-9e38-46a3639da234.jsonl",
+        "sessionId": "01a1c541-2644-7354-9e38-46a3639da234",
+        "steeringMode": "one-at-a-time",
+        "thinkingLevel": "off"
+      },
+      "id": "p02-4",
+      "success": true,
+      "type": "response"
+    },
+    {
+      "command": "prompt",
+      "data": {
+        "disposition": "started"
+      },
+      "id": "p02-5",
+      "success": true,
+      "type": "response"
+    },
+    {
+      "type": "agent_start"
+    },
+    {
+      "type": "turn_start"
+    },
+    {
+      "message": {
+        "content": "",
+        "role": "system",
+        "sections": {
+          "rules": "<rules>\n- Use read to examine files instead of cat or sed.\n- Be concise in your responses\n- Show file paths clearly when working with files\n</rules>",
+          "tools": "<tools>\n- read: Read file contents\n- grep: Search file contents for patterns (respects .gitignore)\n- find: Find files by glob pattern (respects .gitignore)\n- ls: List directory contents\n\nIn addition to the tools above, you may have access to other custom tools depending on the project.\n</tools>"
+        },
+        "timestamp": 1794310743657,
+        "toolsAdded": [
+          {
+            "description": "Search file contents for a pattern. Returns matching lines with file paths and line numbers. Respects .gitignore. Output is truncated to 100 matches or 50KB (whichever is hit first). Long lines are truncated to 500 chars.",
+            "name": "grep",
+            "parameters": {
+              "properties": {
+                "context": {
+                  "description": "Number of lines to show before and after each match (default: 0)",
+                  "type": "number"
+                },
+                "glob": {
+                  "description": "Filter files by glob pattern, e.g. '*.ts' or '**/*.spec.ts'",
+                  "type": "string"
+                },
+                "ignoreCase": {
+                  "description": "Case-insensitive search (default: false)",
+                  "type": "boolean"
+                },
+                "limit": {
+                  "description": "Maximum number of matches to return (default: 100)",
+                  "type": "number"
+                },
+                "literal": {
+                  "description": "Treat pattern as literal string instead of regex (default: false)",
+                  "type": "boolean"
+                },
+                "path": {
+                  "description": "Directory or file to search (default: current directory)",
+                  "type": "string"
+                },
+                "pattern": {
+                  "description": "Search pattern (regex or literal string)",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "pattern"
+              ],
+              "type": "object"
+            }
+          },
+          {
+            "description": "Search for files by glob pattern. Returns matching file paths relative to the search directory. Respects .gitignore. Output is truncated to 1000 results or 50KB (whichever is hit first).",
+            "name": "find",
+            "parameters": {
+              "properties": {
+                "limit": {
+                  "description": "Maximum number of results (default: 1000)",
+                  "type": "number"
+                },
+                "path": {
+                  "description": "Directory to search in (default: current directory)",
+                  "type": "string"
+                },
+                "pattern": {
+                  "description": "Glob pattern to match files, e.g. '*.ts', '**/*.json', or 'src/**/*.spec.ts'",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "pattern"
+              ],
+              "type": "object"
+            }
+          },
+          {
+            "description": "List directory contents. Returns entries sorted alphabetically, with '/' suffix for directories. Includes dotfiles. Output is truncated to 500 entries or 50KB (whichever is hit first).",
+            "name": "ls",
+            "parameters": {
+              "properties": {
+                "limit": {
+                  "description": "Maximum number of entries to return (default: 500)",
+                  "type": "number"
+                },
+                "path": {
+                  "description": "Directory to list (default: current directory)",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        ],
+        "toolsRemoved": [
+          {
+            "name": "bash"
+          },
+          {
+            "name": "edit"
+          },
+          {
+            "name": "write"
+          }
+        ]
+      },
+      "type": "message_start"
+    },
+    {
+      "message": {
+        "content": "",
+        "role": "system",
+        "sections": {
+          "rules": "<rules>\n- Use read to examine files instead of cat or sed.\n- Be concise in your responses\n- Show file paths clearly when working with files\n</rules>",
+          "tools": "<tools>\n- read: Read file contents\n- grep: Search file contents for patterns (respects .gitignore)\n- find: Find files by glob pattern (respects .gitignore)\n- ls: List directory contents\n\nIn addition to the tools above, you may have access to other custom tools depending on the project.\n</tools>"
+        },
+        "timestamp": 1794310743657,
+        "toolsAdded": [
+          {
+            "description": "Search file contents for a pattern. Returns matching lines with file paths and line numbers. Respects .gitignore. Output is truncated to 100 matches or 50KB (whichever is hit first). Long lines are truncated to 500 chars.",
+            "name": "grep",
+            "parameters": {
+              "properties": {
+                "context": {
+                  "description": "Number of lines to show before and after each match (default: 0)",
+                  "type": "number"
+                },
+                "glob": {
+                  "description": "Filter files by glob pattern, e.g. '*.ts' or '**/*.spec.ts'",
+                  "type": "string"
+                },
+                "ignoreCase": {
+                  "description": "Case-insensitive search (default: false)",
+                  "type": "boolean"
+                },
+                "limit": {
+                  "description": "Maximum number of matches to return (default: 100)",
+                  "type": "number"
+                },
+                "literal": {
+                  "description": "Treat pattern as literal string instead of regex (default: false)",
+                  "type": "boolean"
+                },
+                "path": {
+                  "description": "Directory or file to search (default: current directory)",
+                  "type": "string"
+                },
+                "pattern": {
+                  "description": "Search pattern (regex or literal string)",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "pattern"
+              ],
+              "type": "object"
+            }
+          },
+          {
+            "description": "Search for files by glob pattern. Returns matching file paths relative to the search directory. Respects .gitignore. Output is truncated to 1000 results or 50KB (whichever is hit first).",
+            "name": "find",
+            "parameters": {
+              "properties": {
+                "limit": {
+                  "description": "Maximum number of results (default: 1000)",
+                  "type": "number"
+                },
+                "path": {
+                  "description": "Directory to search in (default: current directory)",
+                  "type": "string"
+                },
+                "pattern": {
+                  "description": "Glob pattern to match files, e.g. '*.ts', '**/*.json', or 'src/**/*.spec.ts'",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "pattern"
+              ],
+              "type": "object"
+            }
+          },
+          {
+            "description": "List directory contents. Returns entries sorted alphabetically, with '/' suffix for directories. Includes dotfiles. Output is truncated to 500 entries or 50KB (whichever is hit first).",
+            "name": "ls",
+            "parameters": {
+              "properties": {
+                "limit": {
+                  "description": "Maximum number of entries to return (default: 500)",
+                  "type": "number"
+                },
+                "path": {
+                  "description": "Directory to list (default: current directory)",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        ],
+        "toolsRemoved": [
+          {
+            "name": "bash"
+          },
+          {
+            "name": "edit"
+          },
+          {
+            "name": "write"
+          }
+        ]
+      },
+      "type": "message_end"
+    },
+    {
+      "message": {
+        "content": [
+          {
+            "text": "Try writing the probe file.",
+            "type": "text"
+          }
+        ],
+        "role": "user",
+        "timestamp": 1794310743656
+      },
+      "type": "message_start"
+    },
+    {
+      "message": {
+        "content": [
+          {
+            "text": "Try writing the probe file.",
+            "type": "text"
+          }
+        ],
+        "role": "user",
+        "timestamp": 1794310743656
+      },
+      "type": "message_end"
+    },
+    {
+      "message": {
+        "api": "openai-completions",
+        "content": [],
+        "model": "p02-scripted",
+        "provider": "autocraft-p02-loopback",
+        "role": "assistant",
+        "stopReason": "pending",
+        "timestamp": 1794310743667,
+        "usage": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0,
+            "total": 0
+          },
+          "input": 0,
+          "output": 0,
+          "totalTokens": 0
+        }
+      },
+      "type": "message_start"
+    },
+    {
+      "assistantMessageEvent": {
+        "contentIndex": 0,
+        "id": "call_autocraft_3",
+        "toolName": "write",
+        "type": "toolcall_start"
+      },
+      "type": "message_update",
+      "usage": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "input": 0,
+        "output": 0,
+        "totalTokens": 0
+      }
+    },
+    {
+      "assistantMessageEvent": {
+        "contentIndex": 0,
+        "delta": "{\"content\":\"forbidden\",\"path\":\"p02-forbidden-write.txt\"}",
+        "type": "toolcall_delta"
+      },
+      "type": "message_update",
+      "usage": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "input": 1,
+        "output": 1,
+        "reasoning": 0,
+        "totalTokens": 2
+      }
+    },
+    {
+      "assistantMessageEvent": {
+        "contentIndex": 0,
+        "toolCall": {
+          "arguments": {
+            "content": "forbidden",
+            "path": "p02-forbidden-write.txt"
+          },
+          "id": "call_autocraft_3",
+          "name": "write",
+          "type": "toolCall"
+        },
+        "type": "toolcall_end"
+      },
+      "type": "message_update",
+      "usage": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "input": 1,
+        "output": 1,
+        "reasoning": 0,
+        "totalTokens": 2
+      }
+    },
+    {
+      "message": {
+        "api": "openai-completions",
+        "content": [
+          {
+            "arguments": {
+              "content": "forbidden",
+              "path": "p02-forbidden-write.txt"
+            },
+            "id": "call_autocraft_3",
+            "name": "write",
+            "type": "toolCall"
+          }
+        ],
+        "durationMs": 22,
+        "model": "p02-scripted",
+        "provider": "autocraft-p02-loopback",
+        "rawStopReason": "tool_calls",
+        "responseId": "chatcmpl-autocraft-3",
+        "role": "assistant",
+        "stopReason": "toolUse",
+        "thinkingLevel": "off",
+        "timestamp": 1794310743667,
+        "usage": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0,
+            "total": 0
+          },
+          "input": 1,
+          "output": 1,
+          "reasoning": 0,
+          "totalTokens": 2
+        }
+      },
+      "type": "message_end"
+    },
+    {
+      "args": {
+        "content": "forbidden",
+        "path": "p02-forbidden-write.txt"
+      },
+      "toolCallId": "call_autocraft_3",
+      "toolName": "write",
+      "type": "tool_execution_start"
+    },
+    {
+      "isError": true,
+      "result": {
+        "content": [
+          {
+            "text": "Tool write not found",
+            "type": "text"
+          }
+        ],
+        "details": {}
+      },
+      "toolCallId": "call_autocraft_3",
+      "toolName": "write",
+      "type": "tool_execution_end"
+    },
+    {
+      "message": {
+        "content": [
+          {
+            "text": "Tool write not found",
+            "type": "text"
+          }
+        ],
+        "details": {},
+        "isError": true,
+        "role": "toolResult",
+        "timestamp": 1794310743690,
+        "toolCallId": "call_autocraft_3",
+        "toolName": "write"
+      },
+      "type": "message_start"
+    },
+    {
+      "message": {
+        "content": [
+          {
+            "text": "Tool write not found",
+            "type": "text"
+          }
+        ],
+        "details": {},
+        "isError": true,
+        "role": "toolResult",
+        "timestamp": 1794310743690,
+        "toolCallId": "call_autocraft_3",
+        "toolName": "write"
+      },
+      "type": "message_end"
+    },
+    {
+      "message": {
+        "api": "openai-completions",
+        "content": [
+          {
+            "arguments": {
+              "content": "forbidden",
+              "path": "p02-forbidden-write.txt"
+            },
+            "id": "call_autocraft_3",
+            "name": "write",
+            "type": "toolCall"
+          }
+        ],
+        "durationMs": 22,
+        "model": "p02-scripted",
+        "provider": "autocraft-p02-loopback",
+        "rawStopReason": "tool_calls",
+        "responseId": "chatcmpl-autocraft-3",
+        "role": "assistant",
+        "stopReason": "toolUse",
+        "thinkingLevel": "off",
+        "timestamp": 1794310743667,
+        "usage": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0,
+            "total": 0
+          },
+          "input": 1,
+          "output": 1,
+          "reasoning": 0,
+          "totalTokens": 2
+        }
+      },
+      "toolResults": [
+        {
+          "content": [
+            {
+              "text": "Tool write not found",
+              "type": "text"
+            }
+          ],
+          "details": {},
+          "isError": true,
+          "role": "toolResult",
+          "timestamp": 1794310743690,
+          "toolCallId": "call_autocraft_3",
+          "toolName": "write"
+        }
+      ],
+      "type": "turn_end"
+    },
+    {
+      "type": "turn_start"
+    },
+    {
+      "message": {
+        "api": "openai-completions",
+        "content": [],
+        "model": "p02-scripted",
+        "provider": "autocraft-p02-loopback",
+        "role": "assistant",
+        "stopReason": "pending",
+        "timestamp": 1794310743692,
+        "usage": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0,
+            "total": 0
+          },
+          "input": 0,
+          "output": 0,
+          "totalTokens": 0
+        }
+      },
+      "type": "message_start"
+    },
+    {
+      "assistantMessageEvent": {
+        "contentIndex": 0,
+        "type": "text_start"
+      },
+      "type": "message_update",
+      "usage": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "input": 0,
+        "output": 0,
+        "totalTokens": 0
+      }
+    },
+    {
+      "assistantMessageEvent": {
+        "contentIndex": 0,
+        "delta": "P02_WRITE_REJECTED",
+        "type": "text_delta"
+      },
+      "type": "message_update",
+      "usage": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "input": 0,
+        "output": 0,
+        "totalTokens": 0
+      }
+    },
+    {
+      "assistantMessageEvent": {
+        "content": "P02_WRITE_REJECTED",
+        "contentIndex": 0,
+        "type": "text_end"
+      },
+      "type": "message_update",
+      "usage": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "input": 1,
+        "output": 1,
+        "reasoning": 0,
+        "totalTokens": 2
+      }
+    },
+    {
+      "message": {
+        "api": "openai-completions",
+        "content": [
+          {
+            "text": "P02_WRITE_REJECTED",
+            "type": "text"
+          }
+        ],
+        "durationMs": 9,
+        "model": "p02-scripted",
+        "provider": "autocraft-p02-loopback",
+        "rawStopReason": "stop",
+        "responseId": "chatcmpl-autocraft-4",
+        "role": "assistant",
+        "stopReason": "stop",
+        "thinkingLevel": "off",
+        "timestamp": 1794310743692,
+        "usage": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0,
+            "total": 0
+          },
+          "input": 1,
+          "output": 1,
+          "reasoning": 0,
+          "totalTokens": 2
+        }
+      },
+      "type": "message_end"
+    },
+    {
+      "message": {
+        "api": "openai-completions",
+        "content": [
+          {
+            "text": "P02_WRITE_REJECTED",
+            "type": "text"
+          }
+        ],
+        "durationMs": 9,
+        "model": "p02-scripted",
+        "provider": "autocraft-p02-loopback",
+        "rawStopReason": "stop",
+        "responseId": "chatcmpl-autocraft-4",
+        "role": "assistant",
+        "stopReason": "stop",
+        "thinkingLevel": "off",
+        "timestamp": 1794310743692,
+        "usage": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0,
+            "total": 0
+          },
+          "input": 1,
+          "output": 1,
+          "reasoning": 0,
+          "totalTokens": 2
+        }
+      },
+      "toolResults": [],
+      "type": "turn_end"
+    },
+    {
+      "messages": [
+        {
+          "content": "",
+          "role": "system",
+          "sections": {
+            "rules": "<rules>\n- Use read to examine files instead of cat or sed.\n- Be concise in your responses\n- Show file paths clearly when working with files\n</rules>",
+            "tools": "<tools>\n- read: Read file contents\n- grep: Search file contents for patterns (respects .gitignore)\n- find: Find files by glob pattern (respects .gitignore)\n- ls: List directory contents\n\nIn addition to the tools above, you may have access to other custom tools depending on the project.\n</tools>"
+          },
+          "timestamp": 1794310743657,
+          "toolsAdded": [
+            {
+              "description": "Search file contents for a pattern. Returns matching lines with file paths and line numbers. Respects .gitignore. Output is truncated to 100 matches or 50KB (whichever is hit first). Long lines are truncated to 500 chars.",
+              "name": "grep",
+              "parameters": {
+                "properties": {
+                  "context": {
+                    "description": "Number of lines to show before and after each match (default: 0)",
+                    "type": "number"
+                  },
+                  "glob": {
+                    "description": "Filter files by glob pattern, e.g. '*.ts' or '**/*.spec.ts'",
+                    "type": "string"
+                  },
+                  "ignoreCase": {
+                    "description": "Case-insensitive search (default: false)",
+                    "type": "boolean"
+                  },
+                  "limit": {
+                    "description": "Maximum number of matches to return (default: 100)",
+                    "type": "number"
+                  },
+                  "literal": {
+                    "description": "Treat pattern as literal string instead of regex (default: false)",
+                    "type": "boolean"
+                  },
+                  "path": {
+                    "description": "Directory or file to search (default: current directory)",
+                    "type": "string"
+                  },
+                  "pattern": {
+                    "description": "Search pattern (regex or literal string)",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "pattern"
+                ],
+                "type": "object"
+              }
+            },
+            {
+              "description": "Search for files by glob pattern. Returns matching file paths relative to the search directory. Respects .gitignore. Output is truncated to 1000 results or 50KB (whichever is hit first).",
+              "name": "find",
+              "parameters": {
+                "properties": {
+                  "limit": {
+                    "description": "Maximum number of results (default: 1000)",
+                    "type": "number"
+                  },
+                  "path": {
+                    "description": "Directory to search in (default: current directory)",
+                    "type": "string"
+                  },
+                  "pattern": {
+                    "description": "Glob pattern to match files, e.g. '*.ts', '**/*.json', or 'src/**/*.spec.ts'",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "pattern"
+                ],
+                "type": "object"
+              }
+            },
+            {
+              "description": "List directory contents. Returns entries sorted alphabetically, with '/' suffix for directories. Includes dotfiles. Output is truncated to 500 entries or 50KB (whichever is hit first).",
+              "name": "ls",
+              "parameters": {
+                "properties": {
+                  "limit": {
+                    "description": "Maximum number of entries to return (default: 500)",
+                    "type": "number"
+                  },
+                  "path": {
+                    "description": "Directory to list (default: current directory)",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          ],
+          "toolsRemoved": [
+            {
+              "name": "bash"
+            },
+            {
+              "name": "edit"
+            },
+            {
+              "name": "write"
+            }
+          ]
+        },
+        {
+          "content": [
+            {
+              "text": "Try writing the probe file.",
+              "type": "text"
+            }
+          ],
+          "role": "user",
+          "timestamp": 1794310743656
+        },
+        {
+          "api": "openai-completions",
+          "content": [
+            {
+              "arguments": {
+                "content": "forbidden",
+                "path": "p02-forbidden-write.txt"
+              },
+              "id": "call_autocraft_3",
+              "name": "write",
+              "type": "toolCall"
+            }
+          ],
+          "durationMs": 22,
+          "model": "p02-scripted",
+          "provider": "autocraft-p02-loopback",
+          "rawStopReason": "tool_calls",
+          "responseId": "chatcmpl-autocraft-3",
+          "role": "assistant",
+          "stopReason": "toolUse",
+          "thinkingLevel": "off",
+          "timestamp": 1794310743667,
+          "usage": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0,
+              "total": 0
+            },
+            "input": 1,
+            "output": 1,
+            "reasoning": 0,
+            "totalTokens": 2
+          }
+        },
+        {
+          "content": [
+            {
+              "text": "Tool write not found",
+              "type": "text"
+            }
+          ],
+          "details": {},
+          "isError": true,
+          "role": "toolResult",
+          "timestamp": 1794310743690,
+          "toolCallId": "call_autocraft_3",
+          "toolName": "write"
+        },
+        {
+          "api": "openai-completions",
+          "content": [
+            {
+              "text": "P02_WRITE_REJECTED",
+              "type": "text"
+            }
+          ],
+          "durationMs": 9,
+          "model": "p02-scripted",
+          "provider": "autocraft-p02-loopback",
+          "rawStopReason": "stop",
+          "responseId": "chatcmpl-autocraft-4",
+          "role": "assistant",
+          "stopReason": "stop",
+          "thinkingLevel": "off",
+          "timestamp": 1794310743692,
+          "usage": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0,
+              "total": 0
+            },
+            "input": 1,
+            "output": 1,
+            "reasoning": 0,
+            "totalTokens": 2
+          }
+        }
+      ],
+      "type": "agent_end",
+      "willRetry": false
+    },
+    {
+      "aborted": false,
+      "type": "agent_settled"
+    },
+    {
+      "command": "prompt",
+      "data": {
+        "disposition": "started"
+      },
+      "id": "p02-6",
+      "success": true,
+      "type": "response"
+    },
+    {
+      "type": "agent_start"
+    },
+    {
+      "type": "turn_start"
+    },
+    {
+      "message": {
+        "content": [
+          {
+            "text": "Try running the probe shell command.",
+            "type": "text"
+          }
+        ],
+        "role": "user",
+        "timestamp": 1794310743702
+      },
+      "type": "message_start"
+    },
+    {
+      "message": {
+        "content": [
+          {
+            "text": "Try running the probe shell command.",
+            "type": "text"
+          }
+        ],
+        "role": "user",
+        "timestamp": 1794310743702
+      },
+      "type": "message_end"
+    },
+    {
+      "message": {
+        "api": "openai-completions",
+        "content": [],
+        "model": "p02-scripted",
+        "provider": "autocraft-p02-loopback",
+        "role": "assistant",
+        "stopReason": "pending",
+        "timestamp": 1794310743703,
+        "usage": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0,
+            "total": 0
+          },
+          "input": 0,
+          "output": 0,
+          "totalTokens": 0
+        }
+      },
+      "type": "message_start"
+    },
+    {
+      "assistantMessageEvent": {
+        "contentIndex": 0,
+        "id": "call_autocraft_5",
+        "toolName": "bash",
+        "type": "toolcall_start"
+      },
+      "type": "message_update",
+      "usage": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "input": 0,
+        "output": 0,
+        "totalTokens": 0
+      }
+    },
+    {
+      "assistantMessageEvent": {
+        "contentIndex": 0,
+        "delta": "{\"command\":\"echo forbidden > p02-forbidden-bash.txt\"}",
+        "type": "toolcall_delta"
+      },
+      "type": "message_update",
+      "usage": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "input": 0,
+        "output": 0,
+        "totalTokens": 0
+      }
+    },
+    {
+      "assistantMessageEvent": {
+        "contentIndex": 0,
+        "toolCall": {
+          "arguments": {
+            "command": "echo forbidden > p02-forbidden-bash.txt"
+          },
+          "id": "call_autocraft_5",
+          "name": "bash",
+          "type": "toolCall"
+        },
+        "type": "toolcall_end"
+      },
+      "type": "message_update",
+      "usage": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "input": 1,
+        "output": 1,
+        "reasoning": 0,
+        "totalTokens": 2
+      }
+    },
+    {
+      "message": {
+        "api": "openai-completions",
+        "content": [
+          {
+            "arguments": {
+              "command": "echo forbidden > p02-forbidden-bash.txt"
+            },
+            "id": "call_autocraft_5",
+            "name": "bash",
+            "type": "toolCall"
+          }
+        ],
+        "durationMs": 3,
+        "model": "p02-scripted",
+        "provider": "autocraft-p02-loopback",
+        "rawStopReason": "tool_calls",
+        "responseId": "chatcmpl-autocraft-5",
+        "role": "assistant",
+        "stopReason": "toolUse",
+        "thinkingLevel": "off",
+        "timestamp": 1794310743703,
+        "usage": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0,
+            "total": 0
+          },
+          "input": 1,
+          "output": 1,
+          "reasoning": 0,
+          "totalTokens": 2
+        }
+      },
+      "type": "message_end"
+    },
+    {
+      "args": {
+        "command": "echo forbidden > p02-forbidden-bash.txt"
+      },
+      "toolCallId": "call_autocraft_5",
+      "toolName": "bash",
+      "type": "tool_execution_start"
+    },
+    {
+      "isError": true,
+      "result": {
+        "content": [
+          {
+            "text": "Tool bash not found",
+            "type": "text"
+          }
+        ],
+        "details": {}
+      },
+      "toolCallId": "call_autocraft_5",
+      "toolName": "bash",
+      "type": "tool_execution_end"
+    },
+    {
+      "message": {
+        "content": [
+          {
+            "text": "Tool bash not found",
+            "type": "text"
+          }
+        ],
+        "details": {},
+        "isError": true,
+        "role": "toolResult",
+        "timestamp": 1794310743707,
+        "toolCallId": "call_autocraft_5",
+        "toolName": "bash"
+      },
+      "type": "message_start"
+    },
+    {
+      "message": {
+        "content": [
+          {
+            "text": "Tool bash not found",
+            "type": "text"
+          }
+        ],
+        "details": {},
+        "isError": true,
+        "role": "toolResult",
+        "timestamp": 1794310743707,
+        "toolCallId": "call_autocraft_5",
+        "toolName": "bash"
+      },
+      "type": "message_end"
+    },
+    {
+      "message": {
+        "api": "openai-completions",
+        "content": [
+          {
+            "arguments": {
+              "command": "echo forbidden > p02-forbidden-bash.txt"
+            },
+            "id": "call_autocraft_5",
+            "name": "bash",
+            "type": "toolCall"
+          }
+        ],
+        "durationMs": 3,
+        "model": "p02-scripted",
+        "provider": "autocraft-p02-loopback",
+        "rawStopReason": "tool_calls",
+        "responseId": "chatcmpl-autocraft-5",
+        "role": "assistant",
+        "stopReason": "toolUse",
+        "thinkingLevel": "off",
+        "timestamp": 1794310743703,
+        "usage": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0,
+            "total": 0
+          },
+          "input": 1,
+          "output": 1,
+          "reasoning": 0,
+          "totalTokens": 2
+        }
+      },
+      "toolResults": [
+        {
+          "content": [
+            {
+              "text": "Tool bash not found",
+              "type": "text"
+            }
+          ],
+          "details": {},
+          "isError": true,
+          "role": "toolResult",
+          "timestamp": 1794310743707,
+          "toolCallId": "call_autocraft_5",
+          "toolName": "bash"
+        }
+      ],
+      "type": "turn_end"
+    },
+    {
+      "type": "turn_start"
+    },
+    {
+      "message": {
+        "api": "openai-completions",
+        "content": [],
+        "model": "p02-scripted",
+        "provider": "autocraft-p02-loopback",
+        "role": "assistant",
+        "stopReason": "pending",
+        "timestamp": 1794310743708,
+        "usage": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0,
+            "total": 0
+          },
+          "input": 0,
+          "output": 0,
+          "totalTokens": 0
+        }
+      },
+      "type": "message_start"
+    },
+    {
+      "assistantMessageEvent": {
+        "contentIndex": 0,
+        "type": "text_start"
+      },
+      "type": "message_update",
+      "usage": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "input": 0,
+        "output": 0,
+        "totalTokens": 0
+      }
+    },
+    {
+      "assistantMessageEvent": {
+        "contentIndex": 0,
+        "delta": "P02_BASH_REJECTED",
+        "type": "text_delta"
+      },
+      "type": "message_update",
+      "usage": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "input": 1,
+        "output": 1,
+        "reasoning": 0,
+        "totalTokens": 2
+      }
+    },
+    {
+      "assistantMessageEvent": {
+        "content": "P02_BASH_REJECTED",
+        "contentIndex": 0,
+        "type": "text_end"
+      },
+      "type": "message_update",
+      "usage": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "input": 1,
+        "output": 1,
+        "reasoning": 0,
+        "totalTokens": 2
+      }
+    },
+    {
+      "message": {
+        "api": "openai-completions",
+        "content": [
+          {
+            "text": "P02_BASH_REJECTED",
+            "type": "text"
+          }
+        ],
+        "durationMs": 3,
+        "model": "p02-scripted",
+        "provider": "autocraft-p02-loopback",
+        "rawStopReason": "stop",
+        "responseId": "chatcmpl-autocraft-6",
+        "role": "assistant",
+        "stopReason": "stop",
+        "thinkingLevel": "off",
+        "timestamp": 1794310743708,
+        "usage": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0,
+            "total": 0
+          },
+          "input": 1,
+          "output": 1,
+          "reasoning": 0,
+          "totalTokens": 2
+        }
+      },
+      "type": "message_end"
+    },
+    {
+      "message": {
+        "api": "openai-completions",
+        "content": [
+          {
+            "text": "P02_BASH_REJECTED",
+            "type": "text"
+          }
+        ],
+        "durationMs": 3,
+        "model": "p02-scripted",
+        "provider": "autocraft-p02-loopback",
+        "rawStopReason": "stop",
+        "responseId": "chatcmpl-autocraft-6",
+        "role": "assistant",
+        "stopReason": "stop",
+        "thinkingLevel": "off",
+        "timestamp": 1794310743708,
+        "usage": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0,
+            "total": 0
+          },
+          "input": 1,
+          "output": 1,
+          "reasoning": 0,
+          "totalTokens": 2
+        }
+      },
+      "toolResults": [],
+      "type": "turn_end"
+    },
+    {
+      "messages": [
+        {
+          "content": [
+            {
+              "text": "Try running the probe shell command.",
+              "type": "text"
+            }
+          ],
+          "role": "user",
+          "timestamp": 1794310743702
+        },
+        {
+          "api": "openai-completions",
+          "content": [
+            {
+              "arguments": {
+                "command": "echo forbidden > p02-forbidden-bash.txt"
+              },
+              "id": "call_autocraft_5",
+              "name": "bash",
+              "type": "toolCall"
+            }
+          ],
+          "durationMs": 3,
+          "model": "p02-scripted",
+          "provider": "autocraft-p02-loopback",
+          "rawStopReason": "tool_calls",
+          "responseId": "chatcmpl-autocraft-5",
+          "role": "assistant",
+          "stopReason": "toolUse",
+          "thinkingLevel": "off",
+          "timestamp": 1794310743703,
+          "usage": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0,
+              "total": 0
+            },
+            "input": 1,
+            "output": 1,
+            "reasoning": 0,
+            "totalTokens": 2
+          }
+        },
+        {
+          "content": [
+            {
+              "text": "Tool bash not found",
+              "type": "text"
+            }
+          ],
+          "details": {},
+          "isError": true,
+          "role": "toolResult",
+          "timestamp": 1794310743707,
+          "toolCallId": "call_autocraft_5",
+          "toolName": "bash"
+        },
+        {
+          "api": "openai-completions",
+          "content": [
+            {
+              "text": "P02_BASH_REJECTED",
+              "type": "text"
+            }
+          ],
+          "durationMs": 3,
+          "model": "p02-scripted",
+          "provider": "autocraft-p02-loopback",
+          "rawStopReason": "stop",
+          "responseId": "chatcmpl-autocraft-6",
+          "role": "assistant",
+          "stopReason": "stop",
+          "thinkingLevel": "off",
+          "timestamp": 1794310743708,
+          "usage": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0,
+              "total": 0
+            },
+            "input": 1,
+            "output": 1,
+            "reasoning": 0,
+            "totalTokens": 2
+          }
+        }
+      ],
+      "type": "agent_end",
+      "willRetry": false
+    }
+  ],
+  "original_sha256_after": "aba7d5fd897aa7139f4ca25a4dd61ffc547655c66868d31045249bd50b97201e",
+  "original_sha256_before": "aba7d5fd897aa7139f4ca25a4dd61ffc547655c66868d31045249bd50b97201e",
+  "original_state": {
+    "autoCompactionEnabled": true,
+    "followUpMode": "one-at-a-time",
+    "isCompacting": false,
+    "isStreaming": false,
+    "messageCount": 5,
+    "model": {
+      "api": "openai-completions",
+      "baseUrl": "http://127.0.0.1:56781/v1",
+      "contextWindow": 128000,
+      "cost": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "input": 0,
+        "output": 0
+      },
+      "id": "p02-scripted",
+      "input": [
+        "text"
+      ],
+      "maxTokens": 4096,
+      "name": "P02 scripted",
+      "provider": "autocraft-p02-loopback",
+      "reasoning": false
+    },
+    "pendingMessageCount": 0,
+    "sessionFile": "\\\\?\\C:\\Users\\Administrator\\AppData\\Local\\Temp\\autocraft-smoke-lkQJPt\\pi\\sessions\\--C--Users-Administrator-AppData-Local-Temp-autocraft-smoke-lkQJPt-workspace--\\2026-11-10T11-38-59-233Z_01a1c541-1520-753e-a506-d4a613b96499.jsonl",
+    "sessionId": "01a1c541-1520-753e-a506-d4a613b96499",
+    "steeringMode": "one-at-a-time",
+    "thinkingLevel": "off"
+  },
+  "tool_failures": [
+    {
+      "isError": true,
+      "result": {
+        "content": [
+          {
+            "text": "Tool write not found",
+            "type": "text"
+          }
+        ],
+        "details": {}
+      },
+      "toolCallId": "call_autocraft_3",
+      "toolName": "write",
+      "type": "tool_execution_end"
+    },
+    {
+      "isError": true,
+      "result": {
+        "content": [
+          {
+            "text": "Tool bash not found",
+            "type": "text"
+          }
+        ],
+        "details": {}
+      },
+      "toolCallId": "call_autocraft_5",
+      "toolName": "bash",
+      "type": "tool_execution_end"
+    }
+  ],
+  "tool_snapshots": [
+    {
+      "active": [
+        "read",
+        "bash",
+        "edit",
+        "write"
+      ],
+      "configured": [
+        "read",
+        "bash",
+        "powershell",
+        "edit",
+        "write",
+        "grep",
+        "find",
+        "ls",
+        "codemode",
+        "tool_search"
+      ],
+      "reason": "startup"
+    },
+    {
+      "active": [
+        "read",
+        "grep",
+        "find",
+        "ls"
+      ],
+      "configured": [
+        "read",
+        "grep",
+        "find",
+        "ls"
+      ],
+      "reason": "startup"
+    },
+    {
+      "active": [
+        "read",
+        "grep",
+        "find",
+        "ls"
+      ],
+      "configured": [
+        "read",
+        "grep",
+        "find",
+        "ls"
+      ],
+      "reason": "fork"
+    },
+    {
+      "active": [
+        "read",
+        "grep",
+        "find",
+        "ls"
+      ],
+      "configured": [
+        "read",
+        "grep",
+        "find",
+        "ls"
+      ],
+      "reason": "fork"
+    }
+  ],
+  "成立": true,
+  "方案": "只读恢复后立即 fork"
+}

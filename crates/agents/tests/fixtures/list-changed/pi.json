@@ -1,0 +1,76 @@
+{
+  "all_tools_required": false,
+  "backend": "pi",
+  "initial_model_tool_count": 5,
+  "initial_model_tools": [
+    "read",
+    "bash",
+    "edit",
+    "write",
+    "mcp__autocraft_p05__enable_toolset"
+  ],
+  "mcp_requests": [
+    {
+      "id": 1,
+      "jsonrpc": "2.0",
+      "method": "initialize",
+      "params": {
+        "capabilities": {
+          "roots": {}
+        },
+        "clientInfo": {
+          "name": "pi",
+          "version": "1.4.0"
+        },
+        "protocolVersion": "2025-11-25"
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "method": "notifications/initialized"
+    },
+    {
+      "id": 2,
+      "jsonrpc": "2.0",
+      "method": "tools/list"
+    },
+    {
+      "id": 3,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+        "_meta": {
+          "progressToken": 3
+        },
+        "arguments": {
+          "toolset": "native"
+        },
+        "name": "enable_toolset"
+      }
+    },
+    {
+      "emitted": "notifications/tools/list_changed"
+    },
+    {
+      "id": 4,
+      "jsonrpc": "2.0",
+      "method": "tools/list"
+    },
+    {
+      "id": 5,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+        "_meta": {
+          "progressToken": 5
+        },
+        "arguments": {},
+        "name": "native_functions_list"
+      }
+    }
+  ],
+  "native_call_reached_mcp": true,
+  "native_model_declared": true,
+  "native_result_seen_by_model": true,
+  "refreshed_tools_list": true
+}

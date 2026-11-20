@@ -1,0 +1,21 @@
+[package]
+name = "autocraft-observability"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]
+lumakit-observability.workspace = true
+autocraft-core.workspace = true
+anyhow.workspace = true
+time.workspace = true
+tracing.workspace = true
+tracing-appender.workspace = true
+tracing-subscriber.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
+
+[lints]
+workspace = true

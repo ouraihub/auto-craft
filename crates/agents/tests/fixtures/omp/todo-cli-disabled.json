@@ -1,0 +1,8 @@
+{
+  "cli_tools": "read",
+  "model_tools": [
+    "read"
+  ],
+  "selection": "cli-disabled",
+  "todo_ids": []
+}

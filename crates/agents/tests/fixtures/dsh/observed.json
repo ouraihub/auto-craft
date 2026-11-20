@@ -1,0 +1,45 @@
+{
+  "engine": "dsh 0.2.1-rc.5",
+  "source": "Parent Main actual probe execution report",
+  "O04": {
+    "probe": "o04_upstream_errors",
+    "passed_http_statuses": [429, 500],
+    "raw_responses": "o04-http-{429,500}.json, matching .acp.json and .stderr.log; actual full probe execution 2026-11-11, 3 passed in 100.13s.",
+    "updated_probe_run": true,
+    "source_contract": {
+      "dsh_acp": "Installed @deepseek-ai/dsh-acp 0.2.1-rc.5 lib/index.js:1057-1064 calls internalError(undefined, detail) for failed turns; helper at 653-654 delegates to ACP RequestError.internalError.",
+      "acp_sdk": "Installed @agentclientprotocol/sdk dist/jsonrpc.js:1020-1021 maps internalError to -32603; 1044-1050 serializes code/message/data (undefined data omitted on JSON wire).",
+      "assertion": "Six local HTTP requests, session/prompt error.code=-32603, no result and no error.data. Never derive HTTP status, Retry-After or retry eligibility from the message."
+    }
+  },
+  "O10": {
+    "probe": "o10_usage_fields",
+    "passed": true,
+    "observed_usage_update": {"sessionUpdate": "usage_update", "size": 128000, "used": 7139},
+    "input_output_token_counters_present": false,
+    "cost_counters_present": false
+  },
+  "O07": {
+    "status": "60300ms prompt duration; correlated MCP cancellation and failed result delivered to the next model request",
+    "progress_token_present": false,
+    "progress_notifications_sent_every_seconds": null,
+    "intended_tool_duration_seconds": 70,
+    "interpretation": "The unmodified rc.5 client did not supply _meta.progressToken; the corrected fixture recorded progress_unavailable and emitted no fabricated progress.",
+    "decision": "Keep the conservative asynchronous long-tool path.",
+    "raw_frames_and_timestamps": "o07-long-mcp.json, .acp.json, .stderr.log and .mcp.jsonl; actual full probe execution 2026-11-11.",
+    "updated_probe_run": true,
+    "corrected_fixture": "Uses the actual string/number request.params._meta.progressToken only. Missing/invalid token records progress_unavailable and sends no notifications/progress. No request-id fallback.",
+    "source_contract": {
+      "dsh_mcp_client": "Installed @deepseek-ai/dsh-mcp-client 0.2.1-rc.5 lib/index.js:140-147 calls client.callTool with signal/timeout/toolDefinition, without onprogress or resetTimeoutOnProgress; default timeout at 765-766 is 60000ms.",
+      "mcp_sdk": "Installed @modelcontextprotocol/client dist/src-xKF0PJN-.mjs:6166-6175 adds _meta.progressToken only for onprogress; 6231-6233 defaults resetTimeoutOnProgress to false.",
+      "assertion": "Pin rc.5 missing-token behavior: no fabricated progress, correlated cancellation at 55-70s, one failed ACP tool update with the same result delivered to the next model request, then final model text.",
+      "unresolved": "This unmodified DSH path cannot exercise valid correlated progress, so runtime timeout-reset behavior for a valid token remains unproven. A token in a newer engine deliberately fails the rc.5 assertion and leaves raw evidence for investigation."
+    }
+  },
+  "evidence_capture": {
+    "directory": "crates/agents/tests/fixtures/dsh; override with AUTOCRAFT_DSH_PROBE_FIXTURES",
+    "safety": "Only isolated synthetic loopback traffic; no inherited provider environment, no actual user configuration. Model request headers are excluded. ACP responses and child stderr are retained verbatim, not classified by error text.",
+    "lifecycle": "ACP stdout frames and stderr are written after stopping/joining the real child, including Drop during failed assertions. MCP traffic is written directly outside the disposable isolation directory.",
+    "verification": "Parent executed probe_dsh: 3 passed, 0 failed, 100.13s. Valid correlated progress remains unexercisable through this unmodified rc.5 path."
+  }
+}

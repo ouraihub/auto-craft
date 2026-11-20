@@ -1,0 +1,20 @@
+[package]
+name = "autocraft-ui"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]
+gpui-kit = { workspace = true, features = ["tree-sitter-c", "tree-sitter-javascript"] }
+autocraft-core.workspace = true
+anyhow.workspace = true
+serde_json.workspace = true
+tracing.workspace = true
+ttf-parser.workspace = true
+
+[dev-dependencies]
+gpui-kit = { workspace = true, features = ["test-support"] }
+
+[lints]
+workspace = true

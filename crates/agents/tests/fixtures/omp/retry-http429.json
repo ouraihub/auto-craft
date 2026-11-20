@@ -1,0 +1,266 @@
+{
+  "frames": [
+    {
+      "command": "prompt",
+      "id": "probe-3",
+      "success": true,
+      "type": "response"
+    },
+    {
+      "type": "agent_start"
+    },
+    {
+      "type": "turn_start"
+    },
+    {
+      "message": {
+        "attribution": "user",
+        "content": [
+          {
+            "text": "Probe the scripted local rate limit.",
+            "type": "text"
+          }
+        ],
+        "role": "user",
+        "timestamp": 1794310853627
+      },
+      "messageId": "msg-1",
+      "type": "message_start"
+    },
+    {
+      "message": {
+        "attribution": "user",
+        "content": [
+          {
+            "text": "Probe the scripted local rate limit.",
+            "type": "text"
+          }
+        ],
+        "role": "user",
+        "timestamp": 1794310853627
+      },
+      "messageId": "msg-1",
+      "type": "message_end"
+    },
+    {
+      "message": {
+        "api": "openai-completions",
+        "content": [
+          {
+            "text": "PROBE_RETRY_RECOVERED_PLACEHOLDER",
+            "type": "text"
+          }
+        ],
+        "model": "probe-model",
+        "provider": "autocraft-probe",
+        "responseId": "chatcmpl-autocraft-2",
+        "role": "assistant",
+        "stopReason": "stop",
+        "timestamp": 1794310853648,
+        "usage": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0,
+            "total": 0
+          },
+          "input": 0,
+          "output": 0,
+          "totalTokens": 0
+        }
+      },
+      "messageId": "msg-2",
+      "type": "message_start"
+    },
+    {
+      "assistantMessageEvent": {
+        "block": {
+          "text": "",
+          "type": "text"
+        },
+        "contentIndex": 0,
+        "type": "text_start"
+      },
+      "message": {
+        "role": "assistant"
+      },
+      "messageId": "msg-2",
+      "type": "message_update"
+    },
+    {
+      "assistantMessageEvent": {
+        "contentIndex": 0,
+        "delta": "PROBE_RETRY_RECOVERED_PLACEHOLDER",
+        "type": "text_delta"
+      },
+      "message": {
+        "role": "assistant"
+      },
+      "messageId": "msg-2",
+      "type": "message_update"
+    },
+    {
+      "assistantMessageEvent": {
+        "block": {
+          "type": "text"
+        },
+        "content": "PROBE_RETRY_RECOVERED_PLACEHOLDER",
+        "contentIndex": 0,
+        "type": "text_end"
+      },
+      "message": {
+        "role": "assistant"
+      },
+      "messageId": "msg-2",
+      "type": "message_update"
+    },
+    {
+      "message": {
+        "api": "openai-completions",
+        "completedAt": 1794310853663,
+        "content": [
+          {
+            "text": "PROBE_RETRY_RECOVERED_PLACEHOLDER",
+            "type": "text"
+          }
+        ],
+        "duration": 14.645899999999983,
+        "model": "probe-model",
+        "provider": "autocraft-probe",
+        "responseId": "chatcmpl-autocraft-2",
+        "role": "assistant",
+        "stopReason": "stop",
+        "timestamp": 1794310853648,
+        "ttft": 13.853999999999928,
+        "usage": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0,
+            "total": 0
+          },
+          "input": 1,
+          "output": 1,
+          "totalTokens": 2
+        }
+      },
+      "messageId": "msg-2",
+      "type": "message_end"
+    },
+    {
+      "message": {
+        "api": "openai-completions",
+        "content": [
+          {
+            "text": "PROBE_RETRY_RECOVERED_PLACEHOLDER",
+            "type": "text"
+          }
+        ],
+        "duration": 14.645899999999983,
+        "model": "probe-model",
+        "provider": "autocraft-probe",
+        "responseId": "chatcmpl-autocraft-2",
+        "role": "assistant",
+        "stopReason": "stop",
+        "timestamp": 1794310853648,
+        "ttft": 13.853999999999928,
+        "usage": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0,
+            "total": 0
+          },
+          "input": 1,
+          "output": 1,
+          "totalTokens": 2
+        }
+      },
+      "toolResults": [],
+      "type": "turn_end"
+    },
+    {
+      "id": "15c89e0908dc237e",
+      "method": "setWidget",
+      "type": "extension_ui_request",
+      "widgetKey": "autoresearch"
+    },
+    {
+      "isTerminal": true,
+      "messages": [
+        {
+          "attribution": "user",
+          "content": [
+            {
+              "text": "Probe the scripted local rate limit.",
+              "type": "text"
+            }
+          ],
+          "role": "user",
+          "timestamp": 1794310853627
+        },
+        {
+          "api": "openai-completions",
+          "content": [
+            {
+              "text": "PROBE_RETRY_RECOVERED_PLACEHOLDER",
+              "type": "text"
+            }
+          ],
+          "duration": 14.645899999999983,
+          "model": "probe-model",
+          "provider": "autocraft-probe",
+          "responseId": "chatcmpl-autocraft-2",
+          "role": "assistant",
+          "stopReason": "stop",
+          "timestamp": 1794310853648,
+          "ttft": 13.853999999999928,
+          "usage": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0,
+              "total": 0
+            },
+            "input": 1,
+            "output": 1,
+            "totalTokens": 2
+          }
+        }
+      ],
+      "type": "agent_end",
+      "yielded": true
+    },
+    {
+      "agentInvoked": true,
+      "id": "probe-3",
+      "sessionSettled": true,
+      "status": "completed",
+      "type": "prompt_result"
+    }
+  ],
+  "http_status_script": 429,
+  "outcome": {
+    "agentInvoked": true,
+    "id": "probe-3",
+    "sessionSettled": true,
+    "status": "completed",
+    "type": "prompt_result"
+  },
+  "requests_received": 2,
+  "retry_after_script": 0,
+  "retry_frames": [],
+  "retry_frames_present": false
+}

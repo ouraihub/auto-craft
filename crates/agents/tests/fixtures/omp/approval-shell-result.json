@@ -1,0 +1,12 @@
+{
+  "approval_request_present": true,
+  "result_messages": [
+    {
+      "content": "Tool call denied by user: bash",
+      "role": "tool",
+      "tool_call_id": "call_autocraft_1"
+    }
+  ],
+  "tool": "bash",
+  "tool_call_hook": true
+}

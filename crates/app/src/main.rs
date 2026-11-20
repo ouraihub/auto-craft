@@ -1,0 +1,232 @@
+//! autocraft desktop app: composition root and GPUI views; logging is `autocraft-observability`.
+
+#![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
+
+mod appearance;
+mod dialog_keys;
+mod i18n;
+mod panels;
+mod services;
+mod state;
+mod statusline;
+#[cfg(test)]
+mod testing;
+mod topbar;
+mod views;
+mod workbench;
+
+rust_i18n::i18n!(
+    "locales",
+    fallback = ["en", "zh-CN"],
+    backend = crate::i18n::PseudoBackend
+);
+
+use std::path::PathBuf;
+
+use anyhow::{Context as _, bail};
+use autocraft_ui::{UiAssets, fonts};
+use gpui_kit::{
+    AppContext as _, QuitMode, TitlebarOptions, WindowBounds, WindowOptions, component::TitleBar,
+    px, size,
+};
+use tracing::{info, warn};
+
+struct Args {
+    data_dir: PathBuf,
+    db_path: PathBuf,
+}
+
+fn derive_paths(
+    data_dir: Option<PathBuf>,
+    exe_dir: &std::path::Path,
+    user_profile: Option<PathBuf>,
+) -> anyhow::Result<(PathBuf, PathBuf)> {
+    match data_dir {
+        Some(dir) => Ok((dir.clone(), dir.join("autocraft.db"))),
+        None => {
+            let data_dir = user_profile
+                .ok_or_else(|| anyhow::anyhow!("找不到用户目录，请用 --data-dir 指定数据目录"))?
+                .join(".autocraft");
+            Ok((data_dir, exe_dir.join("data").join("autocraft.db")))
+        }
+    }
+}
+
+fn args() -> anyhow::Result<Args> {
+    let mut data_dir = None;
+    let mut args = std::env::args_os().skip(1);
+    while let Some(arg) = args.next() {
+        match arg.to_str() {
+            Some("--data-dir") => {
+                data_dir = Some(PathBuf::from(
+                    args.next().context("--data-dir 需要一个目录")?,
+                ))
+            }
+            _ => bail!(
+                "未知参数：{}（可用：--data-dir <目录>）",
+                arg.to_string_lossy()
+            ),
+        }
+    }
+    let exe_dir = std::env::current_exe()?
+        .parent()
+        .map(PathBuf::from)
+        .ok_or_else(|| anyhow::anyhow!("找不到程序目录，请用 --data-dir 指定数据目录"))?;
+    let user_profile = std::env::var_os("USERPROFILE").map(PathBuf::from);
+    let (data_dir, db_path) = derive_paths(data_dir, &exe_dir, user_profile)?;
+    Ok(Args { data_dir, db_path })
+}
+
+fn main() {
+    // An engine launches this same executable as its stdio MCP server; no window, no logging.
+    if std::env::args_os()
+        .nth(1)
+        .is_some_and(|arg| arg == "mcp-host")
+    {
+        let code = match autocraft_bridge::run_mcp_stdio() {
+            Ok(()) => 0,
+            Err(error) => {
+                use std::io::Write as _;
+                let code = if error.kind() == std::io::ErrorKind::InvalidInput {
+                    2
+                } else {
+                    1
+                };
+                if writeln!(
+                    std::io::stderr(),
+                    "autocraft MCP host failed [MCP_HOST_FAILED]"
+                )
+                .is_err()
+                {
+                    std::process::exit(3);
+                }
+                code
+            }
+        };
+        std::process::exit(code);
+    }
+    let args = match args() {
+        Ok(args) => args,
+        Err(_) => fail("启动参数无效，请检查 --data-dir <目录> [STARTUP_ARGUMENTS_INVALID]"),
+    };
+    let log = match autocraft_observability::init(&args.data_dir) {
+        Ok(handle) => std::sync::Arc::new(handle),
+        Err(_) => fail("日志初始化失败，请检查数据目录权限 [LOG_INIT_FAILED]"),
+    };
+    info!(version = env!("CARGO_PKG_VERSION"), "app.starting");
+    let (startup_trace, startup) =
+        autocraft_observability::TraceContext::root("app.startup", "app");
+    let startup_span = startup.span().clone();
+    let built =
+        startup_span.in_scope(|| services::build(&args.data_dir, &args.db_path, log.clone()));
+    let (services, channels) = match built {
+        Ok(built) => built,
+        Err(error) => {
+            let code = error
+                .downcast_ref::<autocraft_core::Error>()
+                .map(autocraft_core::ErrorCode::code)
+                .unwrap_or("STARTUP_FAILED");
+            startup.fail(code);
+            drop(log);
+            fail(&format!(
+                "应用服务初始化失败 [{code}]，诊断 ID：{}",
+                startup_trace.trace_id()
+            ))
+        }
+    };
+    let app_prefs = services.app_prefs.clone();
+    let shutdown = services.clone();
+    let data_dir = args.data_dir.clone();
+    gpui_kit::application()
+        .with_assets(lumakit_usage_status::UsageStatusAssets(
+            lumakit_model_picker::PickerAssets(UiAssets),
+        ))
+        .with_quit_mode(QuitMode::LastWindowClosed)
+        .run(move |cx| {
+            let _entered = startup_span.enter();
+            gpui_kit::init(cx);
+            if let Err(error) = i18n::init(app_prefs.as_ref(), cx) {
+                startup.fail(autocraft_core::ErrorCode::code(&error));
+                cx.quit();
+                return;
+            }
+            dialog_keys::init(cx);
+            if fonts::register_bundled(cx).is_err() {
+                warn!(code = "BUNDLED_FONTS_UNAVAILABLE", "app.fonts.fallback");
+            }
+            // Before the window opens, so its first frame already has the user's theme.
+            appearance::AppearanceState::init(app_prefs, &data_dir, cx);
+            // The workbench top bar is the title bar (no system caption); the title stays for the
+            // taskbar and Alt+Tab.
+            let options = WindowOptions {
+                window_bounds: Some(WindowBounds::centered(size(px(1440.), px(900.)), cx)),
+                titlebar: Some(TitlebarOptions {
+                    title: Some(rust_i18n::t!("app.shell.window_title").into_owned().into()),
+                    ..TitleBar::title_bar_options()
+                }),
+                ..TitleBar::window_options()
+            };
+            let opened = gpui_kit::open_window(options, cx, move |window, cx| {
+                // A system close (title-bar X, Alt+F4, taskbar) must not fall through to
+                // DefWindowProc: Windows would destroy the HWND before GPUI drops the window,
+                // whose teardown then calls Win32 on a dead handle. Closing the last window quits
+                // instead (as `LastWindowClosed` would): GPUI drops windows after its message loop
+                // ends, so the hide and its deactivation never reach a removed window.
+                window.on_window_should_close(cx, |window, cx| {
+                    if cx.windows().len() > 1 {
+                        window.remove_window();
+                    } else {
+                        cx.quit();
+                    }
+                    false
+                });
+                cx.new(|cx| workbench::Workbench::new(services, channels, window, cx))
+            });
+            if opened.is_err() {
+                startup.fail("WINDOW_OPEN_FAILED");
+                cx.quit();
+            } else {
+                startup.finish("SUCCESS");
+            }
+        });
+    shutdown.shutdown();
+    info!("app.exited");
+}
+
+/// Reports a failure that happens before logging exists (stderr is used only here), then exits.
+fn fail(message: &str) -> ! {
+    use std::io::Write as _;
+    if writeln!(std::io::stderr(), "autocraft 无法启动：{message}").is_err() {
+        std::process::exit(3);
+    }
+    std::process::exit(2)
+}
+#[cfg(test)]
+mod tests {
+    use super::derive_paths;
+    use std::path::PathBuf;
+
+    #[test]
+    fn explicit_data_dir_places_database_inside_it() {
+        let (data, db) = derive_paths(
+            Some(PathBuf::from("C:/data")),
+            PathBuf::from("C:/exe").as_path(),
+            None,
+        )
+        .expect("path derivation");
+        assert_eq!(data, PathBuf::from("C:/data"));
+        assert_eq!(db, PathBuf::from("C:/data/autocraft.db"));
+    }
+
+    #[test]
+    fn default_uses_autocraft_and_keeps_database_portable() {
+        let (data, db) = derive_paths(
+            None,
+            PathBuf::from("C:/exe").as_path(),
+            Some(PathBuf::from("C:/user")),
+        )
+        .expect("path derivation");
+        assert_eq!(data, PathBuf::from("C:/user/.autocraft"));
+        assert_eq!(db, PathBuf::from("C:/exe/data/autocraft.db"));
+    }
+}

@@ -1,0 +1,13 @@
+[
+  {
+    "id": "15c89e0668970628",
+    "method": "select",
+    "options": [
+      "Approve",
+      "Approve bash for this session",
+      "Deny"
+    ],
+    "title": "Allow tool: bash\nCommand: echo PROBE_SHELL_PLACEHOLDER",
+    "type": "extension_ui_request"
+  }
+]

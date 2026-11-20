@@ -1,0 +1,646 @@
+[
+  {
+    "command": "prompt",
+    "id": "probe-3",
+    "success": true,
+    "type": "response"
+  },
+  {
+    "type": "agent_start"
+  },
+  {
+    "type": "turn_start"
+  },
+  {
+    "message": {
+      "attribution": "user",
+      "content": [
+        {
+          "text": "Exercise the requested probe tool once; its approval will be denied.",
+          "type": "text"
+        }
+      ],
+      "role": "user",
+      "timestamp": 1794310851850
+    },
+    "messageId": "msg-1",
+    "type": "message_start"
+  },
+  {
+    "message": {
+      "attribution": "user",
+      "content": [
+        {
+          "text": "Exercise the requested probe tool once; its approval will be denied.",
+          "type": "text"
+        }
+      ],
+      "role": "user",
+      "timestamp": 1794310851850
+    },
+    "messageId": "msg-1",
+    "type": "message_end"
+  },
+  {
+    "message": {
+      "api": "openai-completions",
+      "content": [
+        {
+          "arguments": {
+            "path": "http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER"
+          },
+          "id": "call_autocraft_1",
+          "name": "read",
+          "partialArgs": "{\"path\":\"http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER\"}",
+          "streamIndex": 0,
+          "type": "toolCall"
+        }
+      ],
+      "model": "probe-model",
+      "provider": "autocraft-probe",
+      "responseId": "chatcmpl-autocraft-1",
+      "role": "assistant",
+      "stopReason": "stop",
+      "timestamp": 1794310851874,
+      "usage": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "input": 0,
+        "output": 0,
+        "totalTokens": 0
+      }
+    },
+    "messageId": "msg-2",
+    "type": "message_start"
+  },
+  {
+    "assistantMessageEvent": {
+      "block": {
+        "arguments": {},
+        "id": "call_autocraft_1",
+        "name": "read",
+        "partialArgs": "{\"path\":\"http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER\"}",
+        "streamIndex": 0,
+        "type": "toolCall"
+      },
+      "contentIndex": 0,
+      "type": "toolcall_start"
+    },
+    "message": {
+      "role": "assistant"
+    },
+    "messageId": "msg-2",
+    "type": "message_update"
+  },
+  {
+    "assistantMessageEvent": {
+      "contentIndex": 0,
+      "delta": "{\"path\":\"http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER\"}",
+      "type": "toolcall_delta"
+    },
+    "message": {
+      "role": "assistant"
+    },
+    "messageId": "msg-2",
+    "type": "message_update"
+  },
+  {
+    "assistantMessageEvent": {
+      "contentIndex": 0,
+      "toolCall": {
+        "arguments": {
+          "path": "http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER"
+        },
+        "id": "call_autocraft_1",
+        "name": "read",
+        "partialArgs": "{\"path\":\"http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER\"}",
+        "streamIndex": 0,
+        "type": "toolCall"
+      },
+      "type": "toolcall_end"
+    },
+    "message": {
+      "role": "assistant"
+    },
+    "messageId": "msg-2",
+    "type": "message_update"
+  },
+  {
+    "id": "15c89e074b1c316d",
+    "message": "autocraft:tool_call:{\"toolName\":\"read\",\"input\":{\"path\":\"http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER\"}}",
+    "method": "notify",
+    "notifyType": "info",
+    "type": "extension_ui_request"
+  },
+  {
+    "message": {
+      "api": "openai-completions",
+      "completedAt": 1794310851885,
+      "content": [
+        {
+          "arguments": {
+            "path": "http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER"
+          },
+          "id": "call_autocraft_1",
+          "name": "read",
+          "partialArgs": "{\"path\":\"http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER\"}",
+          "streamIndex": 0,
+          "type": "toolCall"
+        }
+      ],
+      "duration": 9.119699999999966,
+      "model": "probe-model",
+      "provider": "autocraft-probe",
+      "responseId": "chatcmpl-autocraft-1",
+      "role": "assistant",
+      "stopReason": "toolUse",
+      "timestamp": 1794310851874,
+      "ttft": 8.145800000000008,
+      "usage": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "input": 1,
+        "output": 1,
+        "totalTokens": 2
+      }
+    },
+    "messageId": "msg-2",
+    "type": "message_end"
+  },
+  {
+    "args": {
+      "path": "http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER"
+    },
+    "toolCallId": "call_autocraft_1",
+    "toolName": "read",
+    "type": "tool_execution_start"
+  },
+  {
+    "isError": false,
+    "result": {
+      "content": [
+        {
+          "text": "URL: http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER\nContent-Type: unknown\nMethod: failed\nNotes: Failed to fetch URL; Cause: ECONNREFUSED: Unable to connect. Is the computer able to access the url?\n\n---\n\n",
+          "type": "text"
+        }
+      ],
+      "details": {
+        "contentType": "unknown",
+        "finalUrl": "http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER",
+        "kind": "url",
+        "meta": {
+          "source": {
+            "type": "url",
+            "value": "http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER"
+          }
+        },
+        "method": "failed",
+        "notes": [
+          "Failed to fetch URL",
+          "Cause: ECONNREFUSED: Unable to connect. Is the computer able to access the url?"
+        ],
+        "truncated": false,
+        "url": "http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER"
+      }
+    },
+    "toolCallId": "call_autocraft_1",
+    "toolName": "read",
+    "type": "tool_execution_end"
+  },
+  {
+    "message": {
+      "content": [
+        {
+          "text": "URL: http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER\nContent-Type: unknown\nMethod: failed\nNotes: Failed to fetch URL; Cause: ECONNREFUSED: Unable to connect. Is the computer able to access the url?\n\n---\n\n",
+          "type": "text"
+        }
+      ],
+      "details": {
+        "contentType": "unknown",
+        "finalUrl": "http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER",
+        "kind": "url",
+        "meta": {
+          "source": {
+            "type": "url",
+            "value": "http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER"
+          }
+        },
+        "method": "failed",
+        "notes": [
+          "Failed to fetch URL",
+          "Cause: ECONNREFUSED: Unable to connect. Is the computer able to access the url?"
+        ],
+        "truncated": false,
+        "url": "http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER"
+      },
+      "isError": false,
+      "role": "toolResult",
+      "timestamp": 1794310851893,
+      "toolCallId": "call_autocraft_1",
+      "toolName": "read"
+    },
+    "messageId": "msg-3",
+    "type": "message_start"
+  },
+  {
+    "message": {
+      "content": [
+        {
+          "text": "URL: http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER\nContent-Type: unknown\nMethod: failed\nNotes: Failed to fetch URL; Cause: ECONNREFUSED: Unable to connect. Is the computer able to access the url?\n\n---\n\n",
+          "type": "text"
+        }
+      ],
+      "details": {
+        "contentType": "unknown",
+        "finalUrl": "http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER",
+        "kind": "url",
+        "meta": {
+          "source": {
+            "type": "url",
+            "value": "http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER"
+          }
+        },
+        "method": "failed",
+        "notes": [
+          "Failed to fetch URL",
+          "Cause: ECONNREFUSED: Unable to connect. Is the computer able to access the url?"
+        ],
+        "truncated": false,
+        "url": "http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER"
+      },
+      "isError": false,
+      "role": "toolResult",
+      "timestamp": 1794310851893,
+      "toolCallId": "call_autocraft_1",
+      "toolName": "read"
+    },
+    "messageId": "msg-3",
+    "type": "message_end"
+  },
+  {
+    "message": {
+      "api": "openai-completions",
+      "content": [
+        {
+          "arguments": {
+            "path": "http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER"
+          },
+          "id": "call_autocraft_1",
+          "name": "read",
+          "partialArgs": "{\"path\":\"http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER\"}",
+          "streamIndex": 0,
+          "type": "toolCall"
+        }
+      ],
+      "duration": 9.119699999999966,
+      "model": "probe-model",
+      "provider": "autocraft-probe",
+      "responseId": "chatcmpl-autocraft-1",
+      "role": "assistant",
+      "stopReason": "toolUse",
+      "timestamp": 1794310851874,
+      "ttft": 8.145800000000008,
+      "usage": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "input": 1,
+        "output": 1,
+        "totalTokens": 2
+      }
+    },
+    "toolResults": [
+      {
+        "content": [
+          {
+            "text": "URL: http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER\nContent-Type: unknown\nMethod: failed\nNotes: Failed to fetch URL; Cause: ECONNREFUSED: Unable to connect. Is the computer able to access the url?\n\n---\n\n",
+            "type": "text"
+          }
+        ],
+        "details": {
+          "contentType": "unknown",
+          "finalUrl": "http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER",
+          "kind": "url",
+          "meta": {
+            "source": {
+              "type": "url",
+              "value": "http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER"
+            }
+          },
+          "method": "failed",
+          "notes": [
+            "Failed to fetch URL",
+            "Cause: ECONNREFUSED: Unable to connect. Is the computer able to access the url?"
+          ],
+          "truncated": false,
+          "url": "http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER"
+        },
+        "isError": false,
+        "role": "toolResult",
+        "timestamp": 1794310851893,
+        "toolCallId": "call_autocraft_1",
+        "toolName": "read"
+      }
+    ],
+    "type": "turn_end"
+  },
+  {
+    "type": "turn_start"
+  },
+  {
+    "message": {
+      "api": "openai-completions",
+      "content": [
+        {
+          "text": "PROBE_TOOL_TURN_FINISHED_PLACEHOLDER",
+          "type": "text"
+        }
+      ],
+      "model": "probe-model",
+      "provider": "autocraft-probe",
+      "responseId": "chatcmpl-autocraft-2",
+      "role": "assistant",
+      "stopReason": "stop",
+      "timestamp": 1794310851898,
+      "usage": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "input": 0,
+        "output": 0,
+        "totalTokens": 0
+      }
+    },
+    "messageId": "msg-4",
+    "type": "message_start"
+  },
+  {
+    "assistantMessageEvent": {
+      "block": {
+        "text": "",
+        "type": "text"
+      },
+      "contentIndex": 0,
+      "type": "text_start"
+    },
+    "message": {
+      "role": "assistant"
+    },
+    "messageId": "msg-4",
+    "type": "message_update"
+  },
+  {
+    "assistantMessageEvent": {
+      "contentIndex": 0,
+      "delta": "PROBE_TOOL_TURN_FINISHED_PLACEHOLDER",
+      "type": "text_delta"
+    },
+    "message": {
+      "role": "assistant"
+    },
+    "messageId": "msg-4",
+    "type": "message_update"
+  },
+  {
+    "assistantMessageEvent": {
+      "block": {
+        "type": "text"
+      },
+      "content": "PROBE_TOOL_TURN_FINISHED_PLACEHOLDER",
+      "contentIndex": 0,
+      "type": "text_end"
+    },
+    "message": {
+      "role": "assistant"
+    },
+    "messageId": "msg-4",
+    "type": "message_update"
+  },
+  {
+    "message": {
+      "api": "openai-completions",
+      "completedAt": 1794310851906,
+      "content": [
+        {
+          "text": "PROBE_TOOL_TURN_FINISHED_PLACEHOLDER",
+          "type": "text"
+        }
+      ],
+      "duration": 7.636799999999994,
+      "model": "probe-model",
+      "provider": "autocraft-probe",
+      "responseId": "chatcmpl-autocraft-2",
+      "role": "assistant",
+      "stopReason": "stop",
+      "timestamp": 1794310851898,
+      "ttft": 7.003699999999981,
+      "usage": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "input": 1,
+        "output": 1,
+        "totalTokens": 2
+      }
+    },
+    "messageId": "msg-4",
+    "type": "message_end"
+  },
+  {
+    "message": {
+      "api": "openai-completions",
+      "content": [
+        {
+          "text": "PROBE_TOOL_TURN_FINISHED_PLACEHOLDER",
+          "type": "text"
+        }
+      ],
+      "duration": 7.636799999999994,
+      "model": "probe-model",
+      "provider": "autocraft-probe",
+      "responseId": "chatcmpl-autocraft-2",
+      "role": "assistant",
+      "stopReason": "stop",
+      "timestamp": 1794310851898,
+      "ttft": 7.003699999999981,
+      "usage": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "input": 1,
+        "output": 1,
+        "totalTokens": 2
+      }
+    },
+    "toolResults": [],
+    "type": "turn_end"
+  },
+  {
+    "id": "15c89e07511c316f",
+    "method": "setWidget",
+    "type": "extension_ui_request",
+    "widgetKey": "autoresearch"
+  },
+  {
+    "isTerminal": true,
+    "messages": [
+      {
+        "attribution": "user",
+        "content": [
+          {
+            "text": "Exercise the requested probe tool once; its approval will be denied.",
+            "type": "text"
+          }
+        ],
+        "role": "user",
+        "timestamp": 1794310851850
+      },
+      {
+        "api": "openai-completions",
+        "content": [
+          {
+            "arguments": {
+              "path": "http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER"
+            },
+            "id": "call_autocraft_1",
+            "name": "read",
+            "partialArgs": "{\"path\":\"http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER\"}",
+            "streamIndex": 0,
+            "type": "toolCall"
+          }
+        ],
+        "duration": 9.119699999999966,
+        "model": "probe-model",
+        "provider": "autocraft-probe",
+        "responseId": "chatcmpl-autocraft-1",
+        "role": "assistant",
+        "stopReason": "toolUse",
+        "timestamp": 1794310851874,
+        "ttft": 8.145800000000008,
+        "usage": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0,
+            "total": 0
+          },
+          "input": 1,
+          "output": 1,
+          "totalTokens": 2
+        }
+      },
+      {
+        "content": [
+          {
+            "text": "URL: http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER\nContent-Type: unknown\nMethod: failed\nNotes: Failed to fetch URL; Cause: ECONNREFUSED: Unable to connect. Is the computer able to access the url?\n\n---\n\n",
+            "type": "text"
+          }
+        ],
+        "details": {
+          "contentType": "unknown",
+          "finalUrl": "http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER",
+          "kind": "url",
+          "meta": {
+            "source": {
+              "type": "url",
+              "value": "http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER"
+            }
+          },
+          "method": "failed",
+          "notes": [
+            "Failed to fetch URL",
+            "Cause: ECONNREFUSED: Unable to connect. Is the computer able to access the url?"
+          ],
+          "truncated": false,
+          "url": "http://127.0.0.1:9/PROBE_WEB_PLACEHOLDER"
+        },
+        "isError": false,
+        "role": "toolResult",
+        "timestamp": 1794310851893,
+        "toolCallId": "call_autocraft_1",
+        "toolName": "read"
+      },
+      {
+        "api": "openai-completions",
+        "content": [
+          {
+            "text": "PROBE_TOOL_TURN_FINISHED_PLACEHOLDER",
+            "type": "text"
+          }
+        ],
+        "duration": 7.636799999999994,
+        "model": "probe-model",
+        "provider": "autocraft-probe",
+        "responseId": "chatcmpl-autocraft-2",
+        "role": "assistant",
+        "stopReason": "stop",
+        "timestamp": 1794310851898,
+        "ttft": 7.003699999999981,
+        "usage": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0,
+            "total": 0
+          },
+          "input": 1,
+          "output": 1,
+          "totalTokens": 2
+        }
+      }
+    ],
+    "type": "agent_end",
+    "yielded": true
+  },
+  {
+    "agentInvoked": true,
+    "id": "probe-3",
+    "sessionSettled": true,
+    "status": "completed",
+    "type": "prompt_result"
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "at_ms": 1794355825107,
+    "elapsed_ms": 1562,
+    "frame": {
+      "id": 1,
+      "jsonrpc": "2.0",
+      "result": {
+        "agentCapabilities": {
+          "mcpCapabilities": {
+            "http": true
+          },
+          "promptCapabilities": {
+            "audio": false,
+            "embeddedContext": false,
+            "image": false
+          },
+          "sessionCapabilities": {
+            "close": {},
+            "list": {},
+            "resume": {}
+          }
+        },
+        "agentInfo": {
+          "name": "deepseek-harness-acp",
+          "version": "0.0.1"
+        },
+        "authMethods": [],
+        "protocolVersion": 1
+      }
+    }
+  },
+  {
+    "at_ms": 1794355825142,
+    "elapsed_ms": 1597,
+    "frame": {
+      "id": 2,
+      "jsonrpc": "2.0",
+      "result": {
+        "configOptions": [
+          {
+            "category": "model",
+            "currentValue": "[\"probe\",\"probe-model\"]",
+            "id": "model",
+            "name": "Model",
+            "options": [
+              {
+                "group": "probe",
+                "name": "probe",
+                "options": [
+                  {
+                    "name": "Probe",
+                    "value": "[\"probe\",\"probe-model\"]"
+                  }
+                ]
+              }
+            ],
+            "type": "select"
+          }
+        ],
+        "sessionId": "a3840ef3-fb52-46cf-9a3f-2c437200d2b5"
+      }
+    }
+  },
+  {
+    "at_ms": 1794355841753,
+    "elapsed_ms": 18208,
+    "frame": {
+      "error": {
+        "code": -32603,
+        "message": "Internal error: turn failed: 500: {\"code\":500,\"message\":\"scripted upstream error\",\"type\":\"scripted_error\"}"
+      },
+      "id": 3,
+      "jsonrpc": "2.0"
+    }
+  }
+]

@@ -1,0 +1,103 @@
+[workspace]
+resolver = "3"
+members = [
+    "crates/core",
+    "crates/analysis",
+    "crates/testkit",
+    "crates/rebuild",
+    "crates/settings",
+    "crates/routing",
+    "crates/terminal",
+    "crates/agents",
+    "crates/bridge",
+    "crates/observability",
+    "crates/ui",
+    "crates/app",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.99"
+publish = false
+
+[workspace.dependencies]
+autocraft-core = { path = "crates/core" }
+autocraft-analysis = { path = "crates/analysis" }
+autocraft-testkit = { path = "crates/testkit" }
+autocraft-rebuild = { path = "crates/rebuild" }
+ca-engine = { package = "craft-anything-engine", git = "https://github.com/storytold/craft-anything", rev = "300dba586bab63b32555ec11cf84104f7f147f5e", features = ["wasm-plugins"] }
+ca-mcp = { package = "craft-anything-mcp", git = "https://github.com/storytold/craft-anything", rev = "300dba586bab63b32555ec11cf84104f7f147f5e" }
+ca-evidence = { package = "craft-anything-evidence", git = "https://github.com/storytold/craft-anything", rev = "300dba586bab63b32555ec11cf84104f7f147f5e" }
+ca-engines = { package = "craft-anything-engines", git = "https://github.com/storytold/craft-anything", rev = "300dba586bab63b32555ec11cf84104f7f147f5e" }
+ca-formats = { package = "craft-anything-formats", git = "https://github.com/storytold/craft-anything", rev = "300dba586bab63b32555ec11cf84104f7f147f5e" }
+ca-platform = { package = "craft-anything-platform", git = "https://github.com/storytold/craft-anything", rev = "300dba586bab63b32555ec11cf84104f7f147f5e" }
+ca-testkit = { package = "craft-anything-testkit", git = "https://github.com/storytold/craft-anything", rev = "300dba586bab63b32555ec11cf84104f7f147f5e" }
+autocraft-settings = { path = "crates/settings" }
+autocraft-routing = { path = "crates/routing" }
+autocraft-terminal = { path = "crates/terminal" }
+autocraft-agents = { path = "crates/agents" }
+autocraft-bridge = { path = "crates/bridge" }
+autocraft-observability = { path = "crates/observability" }
+autocraft-ui = { path = "crates/ui" }
+gpui-kit = { version = "=0.9.1", features = ["gpui-fast", "tree-sitter-c"] }
+# Shared desktop components; pinned to a pushed LumaKit commit so CI and other machines resolve it.
+# 88472d1 is feat/host-localization (host translator + effort labels) merged with main (presets, GPUI Kit 0.9.1).
+lumakit-support = { git = "https://github.com/ouraihub/LumaKit.git", rev = "88472d13614f1e26ce25b8e53a707149d25ab2b4" }
+lumakit-observability = { git = "https://github.com/ouraihub/LumaKit.git", rev = "88472d13614f1e26ce25b8e53a707149d25ab2b4" }
+lumakit-model-picker = { git = "https://github.com/ouraihub/LumaKit.git", rev = "88472d13614f1e26ce25b8e53a707149d25ab2b4" }
+lumakit-usage-status = { git = "https://github.com/ouraihub/LumaKit.git", rev = "88472d13614f1e26ce25b8e53a707149d25ab2b4" }
+lumakit-gpui = { git = "https://github.com/ouraihub/LumaKit.git", rev = "88472d13614f1e26ce25b8e53a707149d25ab2b4", default-features = false }
+lumakit-design = { git = "https://github.com/ouraihub/LumaKit.git", rev = "88472d13614f1e26ce25b8e53a707149d25ab2b4" }
+anyhow = "=1.0.104"
+async-channel = "=2.5.0"
+base64 = "=0.23.1"
+fs2 = "=0.4.3"
+interprocess = "=2.4.7"
+parking_lot = "=0.13.0"
+portable-pty = "=0.9.0"
+pollster = "=1.0.1"
+rust-i18n = "=4.2.4"
+sys-locale = "=0.3.2"
+image = { version = "=0.25.10", default-features = false, features = ["png", "jpeg", "webp", "gif"] }
+schemars = "=1.2.3"
+serde_yaml = "=0.9.34"
+serde = { version = "=1.0.229", features = ["derive"] }
+serde_json = "=1.0.154"
+regex = "=1.13.1"
+serde_yaml_ng = "=0.10.0"
+sha2 = "=0.11.1"
+tempfile = "=3.27.0"
+toml = "=0.9.12"
+thiserror = "=2.0.21"
+time = { version = "=0.3.55", features = ["formatting"] }
+tracing = "=0.1.44"
+tracing-appender = "=0.2.5"
+tracing-subscriber = { version = "=0.3.23", features = ["env-filter", "fmt", "time"] }
+ttf-parser = { version = "=0.25.1", default-features = false, features = ["std", "variable-fonts"] }
+turso = { version = "=0.8.3", default-features = false }
+uuid = { version = "=1.29.0", features = ["v4", "serde"] }
+url = "=2.5.8"
+unicode-width = "=0.2.3"
+vt100 = "=0.18.1"
+bytes = "=1.12.1"
+futures-util = "=0.3.34"
+http-body-util = "=0.1.5"
+hyper = { version = "=1.12.0", features = ["server", "http1"] }
+hyper-util = { version = "=0.1.21", features = ["server-auto", "tokio"] }
+reqwest = { version = "=0.13.5", default-features = false, features = ["rustls-no-provider", "stream", "http2", "json"] }
+rustls = { version = "=0.23.46", default-features = false, features = ["ring", "std", "tls12", "logging"] }
+tokio = { version = "=1.54.1", features = ["rt-multi-thread", "net", "macros", "time"] }
+
+[workspace.lints.rust]
+unsafe_code = "deny"
+missing_debug_implementations = "warn"
+
+[workspace.lints.clippy]
+unwrap_used = "warn"
+expect_used = "warn"
+dbg_macro = "deny"
+print_stdout = "deny"
+print_stderr = "warn"
+todo = "deny"
+unimplemented = "deny"

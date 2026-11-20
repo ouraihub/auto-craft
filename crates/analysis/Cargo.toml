@@ -1,0 +1,24 @@
+[package]
+name = "autocraft-analysis"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]
+autocraft-core.workspace = true
+ca-engine.workspace = true
+ca-mcp.workspace = true
+ca-evidence.workspace = true
+parking_lot.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tracing.workspace = true
+lumakit-observability.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
+ca-testkit.workspace = true
+
+[lints]
+workspace = true

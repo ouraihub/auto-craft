@@ -1,0 +1,16 @@
+{
+  "namespace": "GenericNamespaced",
+  "node_output": {
+    "connected": true,
+    "response": {
+      "id": 14,
+      "result": "P02_PIPE_PONG"
+    }
+  },
+  "node_path": "\\\\.\\pipe\\autocraft-p02-12328-autocraft-smoke-ma3uJU",
+  "received_request": {
+    "id": 14,
+    "method": "ping"
+  },
+  "成立": true
+}

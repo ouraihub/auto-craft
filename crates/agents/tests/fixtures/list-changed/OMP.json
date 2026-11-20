@@ -1,0 +1,92 @@
+{
+  "all_tools_required": false,
+  "backend": "OMP",
+  "initial_model_tool_count": 16,
+  "initial_model_tools": [
+    "read",
+    "bash",
+    "edit",
+    "ast_edit",
+    "ask",
+    "debug",
+    "eval",
+    "glob",
+    "grep",
+    "lsp",
+    "task",
+    "wait",
+    "todo",
+    "web_search",
+    "write",
+    "mcp__autocraft_p05_enable_toolset"
+  ],
+  "mcp_requests": [
+    {
+      "id": 1,
+      "jsonrpc": "2.0",
+      "method": "initialize",
+      "params": {
+        "capabilities": {
+          "roots": {
+            "listChanged": false
+          }
+        },
+        "clientInfo": {
+          "name": "omp-coding-agent",
+          "version": "1.0.0"
+        },
+        "protocolVersion": "2025-11-25"
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "method": "notifications/initialized",
+      "params": {}
+    },
+    {
+      "id": 2,
+      "jsonrpc": "2.0",
+      "method": "tools/list",
+      "params": {}
+    },
+    {
+      "id": 3,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+        "_meta": {
+          "progressToken": 3
+        },
+        "arguments": {
+          "toolset": "native"
+        },
+        "name": "enable_toolset"
+      }
+    },
+    {
+      "emitted": "notifications/tools/list_changed"
+    },
+    {
+      "id": 4,
+      "jsonrpc": "2.0",
+      "method": "tools/list",
+      "params": {}
+    },
+    {
+      "id": 5,
+      "jsonrpc": "2.0",
+      "method": "tools/call",
+      "params": {
+        "_meta": {
+          "progressToken": 5
+        },
+        "arguments": {},
+        "name": "native_functions_list"
+      }
+    }
+  ],
+  "native_call_reached_mcp": true,
+  "native_model_declared": true,
+  "native_result_seen_by_model": true,
+  "refreshed_tools_list": true
+}

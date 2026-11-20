@@ -1,0 +1,111 @@
+[
+  {
+    "at_ms": 1794355905451,
+    "elapsed_ms": 1639,
+    "frame": {
+      "id": 1,
+      "jsonrpc": "2.0",
+      "result": {
+        "agentCapabilities": {
+          "mcpCapabilities": {
+            "http": true
+          },
+          "promptCapabilities": {
+            "audio": false,
+            "embeddedContext": false,
+            "image": false
+          },
+          "sessionCapabilities": {
+            "close": {},
+            "list": {},
+            "resume": {}
+          }
+        },
+        "agentInfo": {
+          "name": "deepseek-harness-acp",
+          "version": "0.0.1"
+        },
+        "authMethods": [],
+        "protocolVersion": 1
+      }
+    }
+  },
+  {
+    "at_ms": 1794355905493,
+    "elapsed_ms": 1682,
+    "frame": {
+      "id": 2,
+      "jsonrpc": "2.0",
+      "result": {
+        "configOptions": [
+          {
+            "category": "model",
+            "currentValue": "[\"probe\",\"probe-model\"]",
+            "id": "model",
+            "name": "Model",
+            "options": [
+              {
+                "group": "probe",
+                "name": "probe",
+                "options": [
+                  {
+                    "name": "Probe",
+                    "value": "[\"probe\",\"probe-model\"]"
+                  }
+                ]
+              }
+            ],
+            "type": "select"
+          }
+        ],
+        "sessionId": "0c11fcb4-a7ca-4ecd-9fbe-2a3d5d2b3268"
+      }
+    }
+  },
+  {
+    "at_ms": 1794355905686,
+    "elapsed_ms": 1874,
+    "frame": {
+      "jsonrpc": "2.0",
+      "method": "session/update",
+      "params": {
+        "sessionId": "0c11fcb4-a7ca-4ecd-9fbe-2a3d5d2b3268",
+        "update": {
+          "content": {
+            "text": "usage probe response",
+            "type": "text"
+          },
+          "messageId": "d9b58fab-f0ae-4c6f-9025-13a632273abd",
+          "sessionUpdate": "agent_message_chunk"
+        }
+      }
+    }
+  },
+  {
+    "at_ms": 1794355905686,
+    "elapsed_ms": 1875,
+    "frame": {
+      "jsonrpc": "2.0",
+      "method": "session/update",
+      "params": {
+        "sessionId": "0c11fcb4-a7ca-4ecd-9fbe-2a3d5d2b3268",
+        "update": {
+          "sessionUpdate": "usage_update",
+          "size": 128000,
+          "used": 7139
+        }
+      }
+    }
+  },
+  {
+    "at_ms": 1794355905686,
+    "elapsed_ms": 1875,
+    "frame": {
+      "id": 3,
+      "jsonrpc": "2.0",
+      "result": {
+        "stopReason": "end_turn"
+      }
+    }
+  }
+]

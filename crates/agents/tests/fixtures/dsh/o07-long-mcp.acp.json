@@ -1,0 +1,171 @@
+[
+  {
+    "at_ms": 1794355843351,
+    "elapsed_ms": 1558,
+    "frame": {
+      "id": 1,
+      "jsonrpc": "2.0",
+      "result": {
+        "agentCapabilities": {
+          "mcpCapabilities": {
+            "http": true
+          },
+          "promptCapabilities": {
+            "audio": false,
+            "embeddedContext": false,
+            "image": false
+          },
+          "sessionCapabilities": {
+            "close": {},
+            "list": {},
+            "resume": {}
+          }
+        },
+        "agentInfo": {
+          "name": "deepseek-harness-acp",
+          "version": "0.0.1"
+        },
+        "authMethods": [],
+        "protocolVersion": 1
+      }
+    }
+  },
+  {
+    "at_ms": 1794355843483,
+    "elapsed_ms": 1690,
+    "frame": {
+      "id": 2,
+      "jsonrpc": "2.0",
+      "result": {
+        "configOptions": [
+          {
+            "category": "model",
+            "currentValue": "[\"probe\",\"probe-model\"]",
+            "id": "model",
+            "name": "Model",
+            "options": [
+              {
+                "group": "probe",
+                "name": "probe",
+                "options": [
+                  {
+                    "name": "Probe",
+                    "value": "[\"probe\",\"probe-model\"]"
+                  }
+                ]
+              }
+            ],
+            "type": "select"
+          }
+        ],
+        "sessionId": "dd3fcdb4-4022-41b2-be2f-61265897791d"
+      }
+    }
+  },
+  {
+    "at_ms": 1794355843691,
+    "elapsed_ms": 1898,
+    "frame": {
+      "jsonrpc": "2.0",
+      "method": "session/update",
+      "params": {
+        "sessionId": "dd3fcdb4-4022-41b2-be2f-61265897791d",
+        "update": {
+          "sessionUpdate": "usage_update",
+          "size": 128000,
+          "used": 7484
+        }
+      }
+    }
+  },
+  {
+    "at_ms": 1794355843691,
+    "elapsed_ms": 1898,
+    "frame": {
+      "jsonrpc": "2.0",
+      "method": "session/update",
+      "params": {
+        "sessionId": "dd3fcdb4-4022-41b2-be2f-61265897791d",
+        "update": {
+          "kind": "other",
+          "rawInput": {},
+          "sessionUpdate": "tool_call",
+          "status": "in_progress",
+          "title": "mcp__probe__slow",
+          "toolCallId": "call_autocraft_1"
+        }
+      }
+    }
+  },
+  {
+    "at_ms": 1794355903745,
+    "elapsed_ms": 61951,
+    "frame": {
+      "jsonrpc": "2.0",
+      "method": "session/update",
+      "params": {
+        "sessionId": "dd3fcdb4-4022-41b2-be2f-61265897791d",
+        "update": {
+          "content": [
+            {
+              "content": {
+                "text": "Error: Request timed out",
+                "type": "text"
+              },
+              "type": "content"
+            }
+          ],
+          "sessionUpdate": "tool_call_update",
+          "status": "failed",
+          "toolCallId": "call_autocraft_1"
+        }
+      }
+    }
+  },
+  {
+    "at_ms": 1794355903782,
+    "elapsed_ms": 61989,
+    "frame": {
+      "jsonrpc": "2.0",
+      "method": "session/update",
+      "params": {
+        "sessionId": "dd3fcdb4-4022-41b2-be2f-61265897791d",
+        "update": {
+          "content": {
+            "text": "long tool observed",
+            "type": "text"
+          },
+          "messageId": "ef4bc796-8072-48db-a2d7-7f9893f55630",
+          "sessionUpdate": "agent_message_chunk"
+        }
+      }
+    }
+  },
+  {
+    "at_ms": 1794355903783,
+    "elapsed_ms": 61989,
+    "frame": {
+      "jsonrpc": "2.0",
+      "method": "session/update",
+      "params": {
+        "sessionId": "dd3fcdb4-4022-41b2-be2f-61265897791d",
+        "update": {
+          "sessionUpdate": "usage_update",
+          "size": 128000,
+          "used": 7511
+        }
+      }
+    }
+  },
+  {
+    "at_ms": 1794355903783,
+    "elapsed_ms": 61989,
+    "frame": {
+      "id": 3,
+      "jsonrpc": "2.0",
+      "result": {
+        "stopReason": "end_turn"
+      }
+    }
+  }
+]

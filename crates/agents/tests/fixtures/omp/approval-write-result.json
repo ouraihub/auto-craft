@@ -1,0 +1,12 @@
+{
+  "approval_request_present": true,
+  "result_messages": [
+    {
+      "content": "Tool call denied by user: write",
+      "role": "tool",
+      "tool_call_id": "call_autocraft_1"
+    }
+  ],
+  "tool": "write",
+  "tool_call_hook": true
+}

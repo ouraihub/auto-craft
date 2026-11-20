@@ -1,0 +1,13 @@
+[
+  {
+    "id": "15c89e04b9edaa4f",
+    "method": "select",
+    "options": [
+      "Approve",
+      "Approve write for this session",
+      "Deny"
+    ],
+    "title": "Allow tool: write\nPath: probe-write.txt\nContent:\nPROBE_CONTENT_PLACEHOLDER\n",
+    "type": "extension_ui_request"
+  }
+]

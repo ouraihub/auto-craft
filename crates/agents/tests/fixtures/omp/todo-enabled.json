@@ -1,0 +1,11 @@
+{
+  "cli_tools": "read,todo",
+  "model_tools": [
+    "read",
+    "todo"
+  ],
+  "selection": "enabled",
+  "todo_ids": [
+    "todo"
+  ]
+}

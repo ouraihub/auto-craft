@@ -1,0 +1,879 @@
+{
+  "actual_request_count": 2,
+  "frames": [
+    {
+      "command": "get_state",
+      "data": {
+        "autoCompactionEnabled": true,
+        "followUpMode": "one-at-a-time",
+        "isCompacting": false,
+        "isStreaming": false,
+        "messageCount": 0,
+        "model": {
+          "api": "openai-completions",
+          "baseUrl": "http://127.0.0.1:56777/v1",
+          "contextWindow": 128000,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0
+          },
+          "id": "p02-scripted",
+          "input": [
+            "text"
+          ],
+          "maxTokens": 4096,
+          "name": "P02 scripted",
+          "provider": "autocraft-p02-loopback",
+          "reasoning": false
+        },
+        "pendingMessageCount": 0,
+        "sessionFile": "\\\\?\\C:\\Users\\Administrator\\AppData\\Local\\Temp\\autocraft-smoke-5F23sT\\pi\\sessions\\--C--Users-Administrator-AppData-Local-Temp-autocraft-smoke-5F23sT-workspace--\\2026-11-10T11-38-58-834Z_01a1c541-1392-752a-9e11-7eb4501314be.jsonl",
+        "sessionId": "01a1c541-1392-752a-9e11-7eb4501314be",
+        "steeringMode": "one-at-a-time",
+        "thinkingLevel": "off"
+      },
+      "id": "p02-1",
+      "success": true,
+      "type": "response"
+    },
+    {
+      "command": "prompt",
+      "data": {
+        "disposition": "started"
+      },
+      "id": "p02-2",
+      "success": true,
+      "type": "response"
+    },
+    {
+      "type": "agent_start"
+    },
+    {
+      "type": "turn_start"
+    },
+    {
+      "message": {
+        "content": "",
+        "role": "system",
+        "sections": {
+          "cwd": "<cwd>\nC:/Users/Administrator/AppData/Local/Temp/autocraft-smoke-5F23sT/workspace\n</cwd>",
+          "docs": "<docs>\nPi documentation (read only when the user asks about pi itself, its SDK, extensions, themes, skills, or TUI):\n- Main documentation: E:\\workspace\\notepad-dev\\autocraft-smoke-engines\\pi\\1.4.0\\node_modules\\@earendil-works\\pi-coding-agent\\README.md\n- Additional docs: E:\\workspace\\notepad-dev\\autocraft-smoke-engines\\pi\\1.4.0\\node_modules\\@earendil-works\\pi-coding-agent\\docs\n- Examples: E:\\workspace\\notepad-dev\\autocraft-smoke-engines\\pi\\1.4.0\\node_modules\\@earendil-works\\pi-coding-agent\\examples (extensions, custom tools, SDK)\n- When reading pi docs or examples, resolve docs/... under Additional docs and examples/... under Examples, not the current working directory\n- When asked about: extensions (docs/extensions.md, examples/extensions/), themes (docs/themes.md), skills (docs/skills.md), prompt templates (docs/prompt-templates.md), TUI components (docs/tui.md), keybindings (docs/keybindings.md), SDK integrations (docs/sdk.md), custom providers (docs/custom-provider.md), adding models (docs/models.md), pi packages (docs/packages.md), environment variables (docs/environment-variables.md), MCP servers (docs/mcp.md), codemode scripts and non-LLM models such as classifiers and image models (docs/codemode.md)\n- When working on pi topics, read the docs and examples, and follow .md cross-references before implementing\n- Always read pi .md files completely and follow links to related docs (e.g., tui.md for TUI API details)\n</docs>",
+          "preamble": "You are an expert coding assistant operating inside pi, a coding agent harness. You help users by reading files, executing commands, editing code, and writing new files.",
+          "rules": "<rules>\n- Use bash for file operations like ls, rg, find\n- Use read to examine files instead of cat or sed.\n- You can inspect PI_* environment variables for current model and session details.\n- Use edit for precise changes (edits[].oldText must match exactly)\n- When changing multiple separate locations in one file, use one edit call with multiple entries in edits[] instead of multiple edit calls\n- Each edits[].oldText is matched against the original file, not after earlier edits are applied. Do not emit overlapping or nested edits. Merge nearby changes into one edit.\n- Keep edits[].oldText as small as possible while still being unique in the file. Do not pad with large unchanged regions.\n- Use write only for new files or complete rewrites.\n- Be concise in your responses\n- Show file paths clearly when working with files\n</rules>",
+          "tools": "<tools>\n- read: Read file contents\n- bash: Execute bash commands (ls, grep, find, etc.)\n- edit: Make precise file edits with exact text replacement, including multiple disjoint edits in one call\n- write: Create or overwrite files\n\nIn addition to the tools above, you may have access to other custom tools depending on the project.\n</tools>"
+        },
+        "timestamp": 1794310738896,
+        "toolsAdded": [
+          {
+            "constrainedSampling": {
+              "strict": "prefer",
+              "type": "json_schema"
+            },
+            "description": "Read the contents of a file. Supports text files and images (jpg, png, gif, webp, bmp). Images are sent as attachments. For text files, output is truncated to 2000 lines or 50KB (whichever is hit first). Use offset/limit for large files. When you need the full file, continue with offset until complete.",
+            "name": "read",
+            "parameters": {
+              "properties": {
+                "limit": {
+                  "description": "Maximum number of lines to read",
+                  "type": "number"
+                },
+                "offset": {
+                  "description": "Line number to start reading from (1-indexed)",
+                  "type": "number"
+                },
+                "path": {
+                  "description": "Path to the file to read (relative or absolute)",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "path"
+              ],
+              "type": "object"
+            }
+          },
+          {
+            "constrainedSampling": {
+              "strict": "prefer",
+              "type": "json_schema"
+            },
+            "description": "Execute a bash command in the current working directory. Returns stdout and stderr. Output is truncated to last 2000 lines or 50KB (whichever is hit first). If truncated, full output is saved to a temp file. Optionally provide a timeout in seconds.",
+            "name": "bash",
+            "parameters": {
+              "properties": {
+                "command": {
+                  "description": "Shell command to execute",
+                  "type": "string"
+                },
+                "timeout": {
+                  "description": "Timeout in seconds (optional, no default timeout)",
+                  "type": "number"
+                }
+              },
+              "required": [
+                "command"
+              ],
+              "type": "object"
+            }
+          },
+          {
+            "constrainedSampling": {
+              "strict": "prefer",
+              "type": "json_schema"
+            },
+            "description": "Edit a single file using exact text replacement. Every edits[].oldText must match a unique, non-overlapping region of the original file. If two changes affect the same block or nearby lines, merge them into one edit instead of emitting overlapping edits. Do not include large unchanged regions just to connect distant changes.",
+            "name": "edit",
+            "parameters": {
+              "properties": {
+                "edits": {
+                  "description": "One or more targeted replacements. Each edit is matched against the original file, not incrementally. Do not include overlapping or nested edits. If two changes touch the same block or nearby lines, merge them into one edit instead.",
+                  "items": {
+                    "properties": {
+                      "newText": {
+                        "description": "Replacement text for this targeted edit.",
+                        "type": "string"
+                      },
+                      "oldText": {
+                        "description": "Exact text for one targeted replacement. It must be unique in the original file and must not overlap with any other edits[].oldText in the same call.",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "oldText",
+                      "newText"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "path": {
+                  "description": "Path to the file to edit (relative or absolute)",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "path",
+                "edits"
+              ],
+              "type": "object"
+            }
+          },
+          {
+            "constrainedSampling": {
+              "strict": "prefer",
+              "type": "json_schema"
+            },
+            "description": "Write content to a file. Creates the file if it doesn't exist, overwrites if it does. Automatically creates parent directories.",
+            "name": "write",
+            "parameters": {
+              "properties": {
+                "content": {
+                  "description": "Content to write to the file",
+                  "type": "string"
+                },
+                "path": {
+                  "description": "Path to the file to write (relative or absolute)",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "path",
+                "content"
+              ],
+              "type": "object"
+            }
+          }
+        ]
+      },
+      "type": "message_start"
+    },
+    {
+      "message": {
+        "content": "",
+        "role": "system",
+        "sections": {
+          "cwd": "<cwd>\nC:/Users/Administrator/AppData/Local/Temp/autocraft-smoke-5F23sT/workspace\n</cwd>",
+          "docs": "<docs>\nPi documentation (read only when the user asks about pi itself, its SDK, extensions, themes, skills, or TUI):\n- Main documentation: E:\\workspace\\notepad-dev\\autocraft-smoke-engines\\pi\\1.4.0\\node_modules\\@earendil-works\\pi-coding-agent\\README.md\n- Additional docs: E:\\workspace\\notepad-dev\\autocraft-smoke-engines\\pi\\1.4.0\\node_modules\\@earendil-works\\pi-coding-agent\\docs\n- Examples: E:\\workspace\\notepad-dev\\autocraft-smoke-engines\\pi\\1.4.0\\node_modules\\@earendil-works\\pi-coding-agent\\examples (extensions, custom tools, SDK)\n- When reading pi docs or examples, resolve docs/... under Additional docs and examples/... under Examples, not the current working directory\n- When asked about: extensions (docs/extensions.md, examples/extensions/), themes (docs/themes.md), skills (docs/skills.md), prompt templates (docs/prompt-templates.md), TUI components (docs/tui.md), keybindings (docs/keybindings.md), SDK integrations (docs/sdk.md), custom providers (docs/custom-provider.md), adding models (docs/models.md), pi packages (docs/packages.md), environment variables (docs/environment-variables.md), MCP servers (docs/mcp.md), codemode scripts and non-LLM models such as classifiers and image models (docs/codemode.md)\n- When working on pi topics, read the docs and examples, and follow .md cross-references before implementing\n- Always read pi .md files completely and follow links to related docs (e.g., tui.md for TUI API details)\n</docs>",
+          "preamble": "You are an expert coding assistant operating inside pi, a coding agent harness. You help users by reading files, executing commands, editing code, and writing new files.",
+          "rules": "<rules>\n- Use bash for file operations like ls, rg, find\n- Use read to examine files instead of cat or sed.\n- You can inspect PI_* environment variables for current model and session details.\n- Use edit for precise changes (edits[].oldText must match exactly)\n- When changing multiple separate locations in one file, use one edit call with multiple entries in edits[] instead of multiple edit calls\n- Each edits[].oldText is matched against the original file, not after earlier edits are applied. Do not emit overlapping or nested edits. Merge nearby changes into one edit.\n- Keep edits[].oldText as small as possible while still being unique in the file. Do not pad with large unchanged regions.\n- Use write only for new files or complete rewrites.\n- Be concise in your responses\n- Show file paths clearly when working with files\n</rules>",
+          "tools": "<tools>\n- read: Read file contents\n- bash: Execute bash commands (ls, grep, find, etc.)\n- edit: Make precise file edits with exact text replacement, including multiple disjoint edits in one call\n- write: Create or overwrite files\n\nIn addition to the tools above, you may have access to other custom tools depending on the project.\n</tools>"
+        },
+        "timestamp": 1794310738896,
+        "toolsAdded": [
+          {
+            "constrainedSampling": {
+              "strict": "prefer",
+              "type": "json_schema"
+            },
+            "description": "Read the contents of a file. Supports text files and images (jpg, png, gif, webp, bmp). Images are sent as attachments. For text files, output is truncated to 2000 lines or 50KB (whichever is hit first). Use offset/limit for large files. When you need the full file, continue with offset until complete.",
+            "name": "read",
+            "parameters": {
+              "properties": {
+                "limit": {
+                  "description": "Maximum number of lines to read",
+                  "type": "number"
+                },
+                "offset": {
+                  "description": "Line number to start reading from (1-indexed)",
+                  "type": "number"
+                },
+                "path": {
+                  "description": "Path to the file to read (relative or absolute)",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "path"
+              ],
+              "type": "object"
+            }
+          },
+          {
+            "constrainedSampling": {
+              "strict": "prefer",
+              "type": "json_schema"
+            },
+            "description": "Execute a bash command in the current working directory. Returns stdout and stderr. Output is truncated to last 2000 lines or 50KB (whichever is hit first). If truncated, full output is saved to a temp file. Optionally provide a timeout in seconds.",
+            "name": "bash",
+            "parameters": {
+              "properties": {
+                "command": {
+                  "description": "Shell command to execute",
+                  "type": "string"
+                },
+                "timeout": {
+                  "description": "Timeout in seconds (optional, no default timeout)",
+                  "type": "number"
+                }
+              },
+              "required": [
+                "command"
+              ],
+              "type": "object"
+            }
+          },
+          {
+            "constrainedSampling": {
+              "strict": "prefer",
+              "type": "json_schema"
+            },
+            "description": "Edit a single file using exact text replacement. Every edits[].oldText must match a unique, non-overlapping region of the original file. If two changes affect the same block or nearby lines, merge them into one edit instead of emitting overlapping edits. Do not include large unchanged regions just to connect distant changes.",
+            "name": "edit",
+            "parameters": {
+              "properties": {
+                "edits": {
+                  "description": "One or more targeted replacements. Each edit is matched against the original file, not incrementally. Do not include overlapping or nested edits. If two changes touch the same block or nearby lines, merge them into one edit instead.",
+                  "items": {
+                    "properties": {
+                      "newText": {
+                        "description": "Replacement text for this targeted edit.",
+                        "type": "string"
+                      },
+                      "oldText": {
+                        "description": "Exact text for one targeted replacement. It must be unique in the original file and must not overlap with any other edits[].oldText in the same call.",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "oldText",
+                      "newText"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "path": {
+                  "description": "Path to the file to edit (relative or absolute)",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "path",
+                "edits"
+              ],
+              "type": "object"
+            }
+          },
+          {
+            "constrainedSampling": {
+              "strict": "prefer",
+              "type": "json_schema"
+            },
+            "description": "Write content to a file. Creates the file if it doesn't exist, overwrites if it does. Automatically creates parent directories.",
+            "name": "write",
+            "parameters": {
+              "properties": {
+                "content": {
+                  "description": "Content to write to the file",
+                  "type": "string"
+                },
+                "path": {
+                  "description": "Path to the file to write (relative or absolute)",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "path",
+                "content"
+              ],
+              "type": "object"
+            }
+          }
+        ]
+      },
+      "type": "message_end"
+    },
+    {
+      "message": {
+        "content": [
+          {
+            "text": "Reply with one text message.",
+            "type": "text"
+          }
+        ],
+        "role": "user",
+        "timestamp": 1794310738896
+      },
+      "type": "message_start"
+    },
+    {
+      "message": {
+        "content": [
+          {
+            "text": "Reply with one text message.",
+            "type": "text"
+          }
+        ],
+        "role": "user",
+        "timestamp": 1794310738896
+      },
+      "type": "message_end"
+    },
+    {
+      "message": {
+        "api": "openai-completions",
+        "content": [],
+        "durationMs": 20,
+        "errorMessage": "429: {\"code\":429,\"message\":\"scripted upstream error\",\"type\":\"scripted_error\"}",
+        "model": "p02-scripted",
+        "provider": "autocraft-p02-loopback",
+        "role": "assistant",
+        "stopReason": "error",
+        "thinkingLevel": "off",
+        "timestamp": 1794310738943,
+        "usage": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0,
+            "total": 0
+          },
+          "input": 0,
+          "output": 0,
+          "totalTokens": 0
+        }
+      },
+      "type": "message_start"
+    },
+    {
+      "message": {
+        "api": "openai-completions",
+        "content": [],
+        "durationMs": 20,
+        "errorMessage": "429: {\"code\":429,\"message\":\"scripted upstream error\",\"type\":\"scripted_error\"}",
+        "model": "p02-scripted",
+        "provider": "autocraft-p02-loopback",
+        "role": "assistant",
+        "stopReason": "error",
+        "thinkingLevel": "off",
+        "timestamp": 1794310738943,
+        "usage": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0,
+            "total": 0
+          },
+          "input": 0,
+          "output": 0,
+          "totalTokens": 0
+        }
+      },
+      "type": "message_end"
+    },
+    {
+      "message": {
+        "api": "openai-completions",
+        "content": [],
+        "durationMs": 20,
+        "errorMessage": "429: {\"code\":429,\"message\":\"scripted upstream error\",\"type\":\"scripted_error\"}",
+        "model": "p02-scripted",
+        "provider": "autocraft-p02-loopback",
+        "role": "assistant",
+        "stopReason": "error",
+        "thinkingLevel": "off",
+        "timestamp": 1794310738943,
+        "usage": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0,
+            "total": 0
+          },
+          "input": 0,
+          "output": 0,
+          "totalTokens": 0
+        }
+      },
+      "toolResults": [],
+      "type": "turn_end"
+    },
+    {
+      "messages": [
+        {
+          "content": "",
+          "role": "system",
+          "sections": {
+            "cwd": "<cwd>\nC:/Users/Administrator/AppData/Local/Temp/autocraft-smoke-5F23sT/workspace\n</cwd>",
+            "docs": "<docs>\nPi documentation (read only when the user asks about pi itself, its SDK, extensions, themes, skills, or TUI):\n- Main documentation: E:\\workspace\\notepad-dev\\autocraft-smoke-engines\\pi\\1.4.0\\node_modules\\@earendil-works\\pi-coding-agent\\README.md\n- Additional docs: E:\\workspace\\notepad-dev\\autocraft-smoke-engines\\pi\\1.4.0\\node_modules\\@earendil-works\\pi-coding-agent\\docs\n- Examples: E:\\workspace\\notepad-dev\\autocraft-smoke-engines\\pi\\1.4.0\\node_modules\\@earendil-works\\pi-coding-agent\\examples (extensions, custom tools, SDK)\n- When reading pi docs or examples, resolve docs/... under Additional docs and examples/... under Examples, not the current working directory\n- When asked about: extensions (docs/extensions.md, examples/extensions/), themes (docs/themes.md), skills (docs/skills.md), prompt templates (docs/prompt-templates.md), TUI components (docs/tui.md), keybindings (docs/keybindings.md), SDK integrations (docs/sdk.md), custom providers (docs/custom-provider.md), adding models (docs/models.md), pi packages (docs/packages.md), environment variables (docs/environment-variables.md), MCP servers (docs/mcp.md), codemode scripts and non-LLM models such as classifiers and image models (docs/codemode.md)\n- When working on pi topics, read the docs and examples, and follow .md cross-references before implementing\n- Always read pi .md files completely and follow links to related docs (e.g., tui.md for TUI API details)\n</docs>",
+            "preamble": "You are an expert coding assistant operating inside pi, a coding agent harness. You help users by reading files, executing commands, editing code, and writing new files.",
+            "rules": "<rules>\n- Use bash for file operations like ls, rg, find\n- Use read to examine files instead of cat or sed.\n- You can inspect PI_* environment variables for current model and session details.\n- Use edit for precise changes (edits[].oldText must match exactly)\n- When changing multiple separate locations in one file, use one edit call with multiple entries in edits[] instead of multiple edit calls\n- Each edits[].oldText is matched against the original file, not after earlier edits are applied. Do not emit overlapping or nested edits. Merge nearby changes into one edit.\n- Keep edits[].oldText as small as possible while still being unique in the file. Do not pad with large unchanged regions.\n- Use write only for new files or complete rewrites.\n- Be concise in your responses\n- Show file paths clearly when working with files\n</rules>",
+            "tools": "<tools>\n- read: Read file contents\n- bash: Execute bash commands (ls, grep, find, etc.)\n- edit: Make precise file edits with exact text replacement, including multiple disjoint edits in one call\n- write: Create or overwrite files\n\nIn addition to the tools above, you may have access to other custom tools depending on the project.\n</tools>"
+          },
+          "timestamp": 1794310738896,
+          "toolsAdded": [
+            {
+              "constrainedSampling": {
+                "strict": "prefer",
+                "type": "json_schema"
+              },
+              "description": "Read the contents of a file. Supports text files and images (jpg, png, gif, webp, bmp). Images are sent as attachments. For text files, output is truncated to 2000 lines or 50KB (whichever is hit first). Use offset/limit for large files. When you need the full file, continue with offset until complete.",
+              "name": "read",
+              "parameters": {
+                "properties": {
+                  "limit": {
+                    "description": "Maximum number of lines to read",
+                    "type": "number"
+                  },
+                  "offset": {
+                    "description": "Line number to start reading from (1-indexed)",
+                    "type": "number"
+                  },
+                  "path": {
+                    "description": "Path to the file to read (relative or absolute)",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "path"
+                ],
+                "type": "object"
+              }
+            },
+            {
+              "constrainedSampling": {
+                "strict": "prefer",
+                "type": "json_schema"
+              },
+              "description": "Execute a bash command in the current working directory. Returns stdout and stderr. Output is truncated to last 2000 lines or 50KB (whichever is hit first). If truncated, full output is saved to a temp file. Optionally provide a timeout in seconds.",
+              "name": "bash",
+              "parameters": {
+                "properties": {
+                  "command": {
+                    "description": "Shell command to execute",
+                    "type": "string"
+                  },
+                  "timeout": {
+                    "description": "Timeout in seconds (optional, no default timeout)",
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "command"
+                ],
+                "type": "object"
+              }
+            },
+            {
+              "constrainedSampling": {
+                "strict": "prefer",
+                "type": "json_schema"
+              },
+              "description": "Edit a single file using exact text replacement. Every edits[].oldText must match a unique, non-overlapping region of the original file. If two changes affect the same block or nearby lines, merge them into one edit instead of emitting overlapping edits. Do not include large unchanged regions just to connect distant changes.",
+              "name": "edit",
+              "parameters": {
+                "properties": {
+                  "edits": {
+                    "description": "One or more targeted replacements. Each edit is matched against the original file, not incrementally. Do not include overlapping or nested edits. If two changes touch the same block or nearby lines, merge them into one edit instead.",
+                    "items": {
+                      "properties": {
+                        "newText": {
+                          "description": "Replacement text for this targeted edit.",
+                          "type": "string"
+                        },
+                        "oldText": {
+                          "description": "Exact text for one targeted replacement. It must be unique in the original file and must not overlap with any other edits[].oldText in the same call.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "oldText",
+                        "newText"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "path": {
+                    "description": "Path to the file to edit (relative or absolute)",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "path",
+                  "edits"
+                ],
+                "type": "object"
+              }
+            },
+            {
+              "constrainedSampling": {
+                "strict": "prefer",
+                "type": "json_schema"
+              },
+              "description": "Write content to a file. Creates the file if it doesn't exist, overwrites if it does. Automatically creates parent directories.",
+              "name": "write",
+              "parameters": {
+                "properties": {
+                  "content": {
+                    "description": "Content to write to the file",
+                    "type": "string"
+                  },
+                  "path": {
+                    "description": "Path to the file to write (relative or absolute)",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "path",
+                  "content"
+                ],
+                "type": "object"
+              }
+            }
+          ]
+        },
+        {
+          "content": [
+            {
+              "text": "Reply with one text message.",
+              "type": "text"
+            }
+          ],
+          "role": "user",
+          "timestamp": 1794310738896
+        },
+        {
+          "api": "openai-completions",
+          "content": [],
+          "durationMs": 20,
+          "errorMessage": "429: {\"code\":429,\"message\":\"scripted upstream error\",\"type\":\"scripted_error\"}",
+          "model": "p02-scripted",
+          "provider": "autocraft-p02-loopback",
+          "role": "assistant",
+          "stopReason": "error",
+          "thinkingLevel": "off",
+          "timestamp": 1794310738943,
+          "usage": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0,
+              "total": 0
+            },
+            "input": 0,
+            "output": 0,
+            "totalTokens": 0
+          }
+        }
+      ],
+      "type": "agent_end",
+      "willRetry": true
+    },
+    {
+      "attempt": 1,
+      "delayMs": 25,
+      "errorMessage": "429: {\"code\":429,\"message\":\"scripted upstream error\",\"type\":\"scripted_error\"}",
+      "maxAttempts": 1,
+      "type": "auto_retry_start"
+    },
+    {
+      "entry": {
+        "id": "538f3d82",
+        "parentId": "7fdd18c6",
+        "replacement": null,
+        "targetId": "7fdd18c6",
+        "timestamp": "2026-11-10T11:38:58.965Z",
+        "type": "context_edit"
+      },
+      "type": "entry_appended"
+    },
+    {
+      "type": "agent_start"
+    },
+    {
+      "type": "turn_start"
+    },
+    {
+      "message": {
+        "api": "openai-completions",
+        "content": [],
+        "model": "p02-scripted",
+        "provider": "autocraft-p02-loopback",
+        "role": "assistant",
+        "stopReason": "pending",
+        "timestamp": 1794310739000,
+        "usage": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0,
+            "total": 0
+          },
+          "input": 0,
+          "output": 0,
+          "totalTokens": 0
+        }
+      },
+      "type": "message_start"
+    },
+    {
+      "assistantMessageEvent": {
+        "contentIndex": 0,
+        "type": "text_start"
+      },
+      "type": "message_update",
+      "usage": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "input": 0,
+        "output": 0,
+        "totalTokens": 0
+      }
+    },
+    {
+      "assistantMessageEvent": {
+        "contentIndex": 0,
+        "delta": "P02_RETRY_RECOVERED",
+        "type": "text_delta"
+      },
+      "type": "message_update",
+      "usage": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "input": 1,
+        "output": 1,
+        "reasoning": 0,
+        "totalTokens": 2
+      }
+    },
+    {
+      "assistantMessageEvent": {
+        "content": "P02_RETRY_RECOVERED",
+        "contentIndex": 0,
+        "type": "text_end"
+      },
+      "type": "message_update",
+      "usage": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cost": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "input": 1,
+        "output": 1,
+        "reasoning": 0,
+        "totalTokens": 2
+      }
+    },
+    {
+      "message": {
+        "api": "openai-completions",
+        "content": [
+          {
+            "text": "P02_RETRY_RECOVERED",
+            "type": "text"
+          }
+        ],
+        "durationMs": 9,
+        "model": "p02-scripted",
+        "provider": "autocraft-p02-loopback",
+        "rawStopReason": "stop",
+        "responseId": "chatcmpl-autocraft-2",
+        "role": "assistant",
+        "stopReason": "stop",
+        "thinkingLevel": "off",
+        "timestamp": 1794310739000,
+        "usage": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0,
+            "total": 0
+          },
+          "input": 1,
+          "output": 1,
+          "reasoning": 0,
+          "totalTokens": 2
+        }
+      },
+      "type": "message_end"
+    },
+    {
+      "attempt": 1,
+      "success": true,
+      "type": "auto_retry_end"
+    },
+    {
+      "message": {
+        "api": "openai-completions",
+        "content": [
+          {
+            "text": "P02_RETRY_RECOVERED",
+            "type": "text"
+          }
+        ],
+        "durationMs": 9,
+        "model": "p02-scripted",
+        "provider": "autocraft-p02-loopback",
+        "rawStopReason": "stop",
+        "responseId": "chatcmpl-autocraft-2",
+        "role": "assistant",
+        "stopReason": "stop",
+        "thinkingLevel": "off",
+        "timestamp": 1794310739000,
+        "usage": {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cost": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "input": 0,
+            "output": 0,
+            "total": 0
+          },
+          "input": 1,
+          "output": 1,
+          "reasoning": 0,
+          "totalTokens": 2
+        }
+      },
+      "toolResults": [],
+      "type": "turn_end"
+    },
+    {
+      "messages": [
+        {
+          "api": "openai-completions",
+          "content": [
+            {
+              "text": "P02_RETRY_RECOVERED",
+              "type": "text"
+            }
+          ],
+          "durationMs": 9,
+          "model": "p02-scripted",
+          "provider": "autocraft-p02-loopback",
+          "rawStopReason": "stop",
+          "responseId": "chatcmpl-autocraft-2",
+          "role": "assistant",
+          "stopReason": "stop",
+          "thinkingLevel": "off",
+          "timestamp": 1794310739000,
+          "usage": {
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0,
+              "total": 0
+            },
+            "input": 1,
+            "output": 1,
+            "reasoning": 0,
+            "totalTokens": 2
+          }
+        }
+      ],
+      "type": "agent_end",
+      "willRetry": false
+    },
+    {
+      "aborted": false,
+      "type": "agent_settled"
+    },
+    {
+      "command": "get_last_assistant_text",
+      "data": {
+        "text": "P02_RETRY_RECOVERED"
+      },
+      "id": "p02-3",
+      "success": true,
+      "type": "response"
+    }
+  ],
+  "retry_end": {
+    "attempt": 1,
+    "success": true,
+    "type": "auto_retry_end"
+  },
+  "retry_start": {
+    "attempt": 1,
+    "delayMs": 25,
+    "errorMessage": "429: {\"code\":429,\"message\":\"scripted upstream error\",\"type\":\"scripted_error\"}",
+    "maxAttempts": 1,
+    "type": "auto_retry_start"
+  },
+  "成立": true,
+  "方案": "pi 自动重试"
+}

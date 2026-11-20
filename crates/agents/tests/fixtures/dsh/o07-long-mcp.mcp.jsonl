@@ -1,0 +1,12 @@
+{"event":"receive","at_ms":1794355843415,"frame":{"jsonrpc":"2.0","id":"server-discover-probe-1","method":"server/discover","params":{"_meta":{"io.modelcontextprotocol/protocolVersion":"2026-07-28","io.modelcontextprotocol/clientInfo":{"name":"dsh-mcp-client","version":"0.0.1"},"io.modelcontextprotocol/clientCapabilities":{}}}}}
+{"event":"send","at_ms":1794355843415,"frame":{"jsonrpc":"2.0","id":"server-discover-probe-1","error":{"code":-32601,"message":"Unknown method"}}}
+{"event":"receive","at_ms":1794355843455,"frame":{"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{},"clientInfo":{"name":"dsh-mcp-client","version":"0.0.1"}},"jsonrpc":"2.0","id":0}}
+{"event":"send","at_ms":1794355843455,"frame":{"jsonrpc":"2.0","id":0,"result":{"protocolVersion":"2025-11-25","capabilities":{"tools":{}},"serverInfo":{"name":"autocraft-slow-probe","version":"1"}}}}
+{"event":"receive","at_ms":1794355843458,"frame":{"jsonrpc":"2.0","method":"notifications/initialized"}}
+{"event":"receive","at_ms":1794355843459,"frame":{"method":"tools/list","jsonrpc":"2.0","id":1}}
+{"event":"send","at_ms":1794355843459,"frame":{"jsonrpc":"2.0","id":1,"result":{"tools":[{"name":"slow","description":"Wait seventy seconds; report progress only when the client supplies a progress token.","inputSchema":{"type":"object","properties":{},"additionalProperties":false}}]}}}
+{"event":"receive","at_ms":1794355843734,"frame":{"method":"tools/call","params":{"name":"slow","arguments":{}},"jsonrpc":"2.0","id":2}}
+{"event":"call","at_ms":1794355843734,"request_id":2,"params":{"name":"slow","arguments":{}},"progress_token_present":false}
+{"event":"progress_unavailable","at_ms":1794355843734,"request_id":2,"reason":"missing_progress_token"}
+{"event":"receive","at_ms":1794355903742,"frame":{"jsonrpc":"2.0","method":"notifications/cancelled","params":{"requestId":2,"reason":"SdkError: Request timed out"}}}
+{"event":"cancelled","at_ms":1794355903742,"params":{"requestId":2,"reason":"SdkError: Request timed out"}}

@@ -1,0 +1,13 @@
+[
+  {
+    "id": "15c89e058ca64c1f",
+    "method": "select",
+    "options": [
+      "Approve",
+      "Approve edit for this session",
+      "Deny"
+    ],
+    "title": "Allow tool: edit\nFile: probe-edit.txt",
+    "type": "extension_ui_request"
+  }
+]

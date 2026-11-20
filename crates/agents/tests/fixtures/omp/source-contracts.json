@@ -1,0 +1,39 @@
+{
+  "kind": "source-inspection-only-not-runtime-output",
+  "engine_version": "18.18.6",
+  "binary": "E:/workspace/notepad-dev/autocraft-smoke-engines/omp/18.18.6/omp.exe",
+  "empty_extracted_package": "C:/Users/Administrator/AppData/Local/Temp/engine-src/omp/package (directories remained but source/type files were absent at inspection)",
+  "related_checkout": "E:/workspace/notepad-dev/oh-my-pi/packages/coding-agent (18.18.0; used for readable type declarations, not claimed as installed version)",
+  "tool_call": {
+    "bundle_source": "packages/coding-agent/src/extensibility/extensions/runner.ts",
+    "byte_offset": 186884518,
+    "observed": "handlers.get(\"tool_call\"); a handler can return block/reason",
+    "wrapper_source": "packages/coding-agent/src/extensibility/extensions/wrapper.ts",
+    "wrapper_byte_offset": 186899305,
+    "wrapper_observed": "emitToolCall({ type: \"tool_call\", toolName: this.tool.name, toolCallId: e, input: ... }); block throws reason",
+    "related_type_declaration": "E:/workspace/notepad-dev/oh-my-pi/packages/coding-agent/src/extensibility/extensions/types.ts:1514-1562,1914"
+  },
+  "todo": {
+    "bundle_source": "packages/coding-agent/src/tools/todo.ts",
+    "byte_offset": 186975165,
+    "observed": "name = \"todo\"; approval = \"read\"; loadMode = \"discoverable\"",
+    "disable_setting_source": "packages/coding-agent/src/tools/settings.ts",
+    "disable_setting_byte_offset": 182607594,
+    "disable_setting": "todo.enabled: false",
+    "cli_filter_source": "packages/coding-agent/src/cli/flag-tables.ts",
+    "cli_filter_byte_offset": 175944077,
+    "cli_filter_observed": "--tools splits comma-separated names into e.tools",
+    "runtime_proof": "omp_o06_todo_ids_and_disable_method compares actual model tools with --tools read,todo and --tools read"
+  },
+  "steer": {
+    "bundle_source": "packages/coding-agent/src/modes/rpc/rpc-mode.ts",
+    "byte_offset": 199186428,
+    "observed": "case \"steer\": case \"follow_up\": await ae(s, undefined); return p(o, s.type)"
+  },
+  "approval": {
+    "bundle_source": "packages/coding-agent/src/tools/approval.ts",
+    "byte_offset": 184556432,
+    "observed": "approval header is Allow tool: <tool.name>; formatApprovalDetails may supply tool-specific details; source inspection alone does not establish complete arguments in RPC frames"
+  },
+  "runtime_fixtures": "approval-*.json, steer.json, retry-http429.json and todo-*.json are generated only by running ignored real-engine probes; no synthetic protocol frames are checked in as observations"
+}
