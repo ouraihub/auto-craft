@@ -83,7 +83,7 @@ The host is the only writer of application metadata. Engine native history is no
 
 Settings are global across engines; effective MCP configuration is project-scoped. Default model preferences and the default Agent apply only to new chats. Configuration changes dispose idle engines (or defer until idle), preserve their native binding and restart only on the next send. Engines use their own default config directories; per-chat support files and gateway tokens are cleaned up after disposal, before another launch can use the same support directory. DSH user routes are merged without rewriting user YAML; OMP merges only host-owned `autocraft-` entries in `mcp.json`.
 
-Direct dependencies use exact latest non-yanked stable releases where compatible; pre-release versions and Git snapshots are not silently substituted. The one first-party exception is LumaKit, pinned by full commit `rev` to its GitHub repository and never to a local path. Rust is pinned to 1.99.1, GPUI Kit to the crates.io 0.9.1 release with GPUI Fast, and the dependency graph is committed in Cargo.lock. Upgrades require a Windows native-window smoke and exercised protocol behavior, not only dependency resolution.
+Direct dependencies use exact latest non-yanked stable releases where compatible; pre-release versions and Git snapshots are not silently substituted. The one first-party exception is LumaKit, pinned by full commit `rev` to its GitHub repository and never to a local path. Rust is pinned to 1.99.1, GPUI Kit to the crates.io 0.11.0 release with GPUI Fast, and the dependency graph is committed in Cargo.lock. Upgrades require a Windows native-window smoke and exercised protocol behavior, not only dependency resolution.
 
 ## Verification
 

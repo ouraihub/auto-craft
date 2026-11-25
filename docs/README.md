@@ -20,7 +20,7 @@ autocraft 是一个 Rust/GPUI 原生桌面应用，用来逆向分析软件（�
 |---|---|---|
 | craft-anything 分析库 | `https://github.com/storytold/craft-anything` | Git 依赖，`rev` 固定到完整提交号（根 `Cargo.toml`，以 `ca-engine` 等别名引入） |
 | LumaKit 共享组件 | `https://github.com/ouraihub/LumaKit.git` | Git 依赖，所有 LumaKit crate 用同一个 `rev`；更新步骤见 `AGENTS.md` |
-| GPUI Kit | crates.io | 精确版本 `=0.9.1`，开 `gpui-fast` 与 `tree-sitter-c` 特性 |
+| GPUI Kit | crates.io | 精确版本 `=0.11.0`，开 `gpui-fast` 与 `tree-sitter-c` 特性 |
 
 ## 文档
 

@@ -40,15 +40,14 @@ autocraft-agents = { path = "crates/agents" }
 autocraft-bridge = { path = "crates/bridge" }
 autocraft-observability = { path = "crates/observability" }
 autocraft-ui = { path = "crates/ui" }
-gpui-kit = { version = "=0.9.1", features = ["gpui-fast", "tree-sitter-c"] }
+gpui-kit = { version = "=0.11.0", features = ["gpui-fast", "tree-sitter-c"] }
 # Shared desktop components; pinned to a pushed LumaKit commit so CI and other machines resolve it.
-# 88472d1 is feat/host-localization (host translator + effort labels) merged with main (presets, GPUI Kit 0.9.1).
-lumakit-support = { git = "https://github.com/ouraihub/LumaKit.git", rev = "88472d13614f1e26ce25b8e53a707149d25ab2b4" }
-lumakit-observability = { git = "https://github.com/ouraihub/LumaKit.git", rev = "88472d13614f1e26ce25b8e53a707149d25ab2b4" }
-lumakit-model-picker = { git = "https://github.com/ouraihub/LumaKit.git", rev = "88472d13614f1e26ce25b8e53a707149d25ab2b4" }
-lumakit-usage-status = { git = "https://github.com/ouraihub/LumaKit.git", rev = "88472d13614f1e26ce25b8e53a707149d25ab2b4" }
-lumakit-gpui = { git = "https://github.com/ouraihub/LumaKit.git", rev = "88472d13614f1e26ce25b8e53a707149d25ab2b4", default-features = false }
-lumakit-design = { git = "https://github.com/ouraihub/LumaKit.git", rev = "88472d13614f1e26ce25b8e53a707149d25ab2b4" }
+lumakit-support = { git = "https://github.com/ouraihub/LumaKit.git", rev = "6ce7bb51ff366b37cfcd8a82617dcb7b361b7c68" }
+lumakit-observability = { git = "https://github.com/ouraihub/LumaKit.git", rev = "6ce7bb51ff366b37cfcd8a82617dcb7b361b7c68" }
+lumakit-model-picker = { git = "https://github.com/ouraihub/LumaKit.git", rev = "6ce7bb51ff366b37cfcd8a82617dcb7b361b7c68" }
+lumakit-usage-status = { git = "https://github.com/ouraihub/LumaKit.git", rev = "6ce7bb51ff366b37cfcd8a82617dcb7b361b7c68" }
+lumakit-gpui = { git = "https://github.com/ouraihub/LumaKit.git", rev = "6ce7bb51ff366b37cfcd8a82617dcb7b361b7c68", default-features = false }
+lumakit-design = { git = "https://github.com/ouraihub/LumaKit.git", rev = "6ce7bb51ff366b37cfcd8a82617dcb7b361b7c68" }
 anyhow = "=1.0.104"
 async-channel = "=2.5.0"
 base64 = "=0.23.1"
