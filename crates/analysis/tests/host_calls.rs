@@ -463,7 +463,10 @@ fn door_modes_and_overrides_survive_engine_unload_and_hub_recreation() {
         assert_eq!(hub.view(&summary.id).unwrap().mode, mode);
         if door == Door::WorkOnMine {
             assert!(summary.own_project);
-            assert_eq!(detail.app_dir, own);
+            // Project paths are canonical: a TEMP with 8.3 short names (CI runners) spells the
+            // same folder differently from the canonical form.
+            let own_id = autocraft_analysis::project_id(&own).unwrap();
+            assert_eq!(detail.app_dir, std::path::Path::new(own_id.as_str()));
         }
         if door == Door::LookInside {
             assert!(hub.view(&summary.id).unwrap().active.is_some());
